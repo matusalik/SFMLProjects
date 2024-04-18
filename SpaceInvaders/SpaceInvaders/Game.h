@@ -23,11 +23,17 @@ private:
 
 	//Game objects
 	sf::RectangleShape enemy;
+	sf::RectangleShape button;
+	sf::Text text;
+	sf::Font font;
 
 	//Private functions
 	void initVariables();
 	void initWindow();
 	void initEnemies();
+	void initButton();
+	void initText();
+	void initFont();
 public:
 	//Constructors / Destructors
 	Game();
