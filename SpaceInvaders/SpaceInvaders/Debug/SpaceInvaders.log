@@ -1,4 +1,32 @@
 ﻿  Game.cpp
-  SpaceInvaders.cpp
-  Generowanie kodu...
-  SpaceInvaders.vcxproj -> C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\Debug\SpaceInvaders.exe
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\Game.cpp(40,70): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+          with
+          [
+              T=int
+          ]
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\Game.cpp(40,50): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+          with
+          [
+              T=int
+          ]
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\Game.cpp(72,72): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+          with
+          [
+              T=int
+          ]
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\Game.cpp(72,52): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+          with
+          [
+              T=int
+          ]
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\Game.cpp(80,72): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+          with
+          [
+              T=int
+          ]
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\Game.cpp(80,52): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+          with
+          [
+              T=int
+          ]
+  SpaceInvaders.vcxproj -> C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\Debug\SpaceInvaders.exe

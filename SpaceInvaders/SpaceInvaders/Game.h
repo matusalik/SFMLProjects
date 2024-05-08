@@ -22,10 +22,33 @@ private:
 	sf::Event ev;
 
 	//Game objects
-	sf::RectangleShape enemy;
-	sf::RectangleShape button;
-	sf::Text text;
-	sf::Font font;
+	
+	//Buttons
+	sf::RectangleShape playButton;
+	sf::RectangleShape helpButton;
+	sf::RectangleShape exitButton;
+
+	//Text boxes
+	sf::RectangleShape nickTextBox;
+	bool isNickTextBoxClicked = false;
+
+	//Text and fonts
+	sf::Text MainMenuTitle;
+	sf::Text MainMenuNick;
+	sf::Text Nick;
+	sf::Text playButtonText;
+	sf::Text helpButtonText;
+	sf::Text exitButtonText;
+	std::string NickStr = "";
+	sf::Vector2i MainMenuTitlePos;
+	sf::Font MainMenuFont;
+	int mainMenuCharacterSize = 40;
+	int mainMenuHowOftenResizeCounter = 0;
+	bool charSizeState = true;
+
+
+	//Mouse
+	sf::Vector2i mousePosWindow;
 
 	//Private functions
 	void initVariables();
@@ -34,6 +57,9 @@ private:
 	void initButton();
 	void initText();
 	void initFont();
+	void initTextBoxes();
+	void updateMousePosWindow();
+	void updateMainMenuCharSize();
 public:
 	//Constructors / Destructors
 	Game();

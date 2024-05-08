@@ -4,34 +4,88 @@ void Game::initVariables(){
 	this->window = nullptr;
 }
 void Game::initWindow() {
-	this->videoMode.height = 600;
+	this->videoMode.height = 800;
 	this->videoMode.width = 800;
 	this->window = new sf::RenderWindow(this->videoMode, "SpaceInvaders", sf::Style::Titlebar | sf::Style::Close);
 	this->window->setFramerateLimit(144);
 }
 void Game::initEnemies() {
-	this->enemy.setPosition(10.f, 10.f);
-	this->enemy.setSize(sf::Vector2f(80.f, 80.f));
-	this->enemy.setFillColor(sf::Color::Cyan);
-	this->enemy.setOutlineColor(sf::Color::Green);
-	this->enemy.setOutlineThickness(10.f);
+	
 }
 void Game::initButton() {
-	this->button.setPosition(200.f, 200.f);
-	this->button.setSize(sf::Vector2f(200.f, 150.f));
-	this->button.setFillColor(sf::Color::Red);
-	this->button.setOutlineColor(sf::Color::Green);
+	this->playButton.setPosition(257.f, 370.f);
+	this->playButton.setSize(sf::Vector2f(280.f, 80.f));
+	this->playButton.setFillColor(sf::Color(138, 138, 138));
+	this->playButton.setOutlineColor(sf::Color(105, 105, 105));
+	this->playButton.setOutlineThickness(10.f);
+	this->helpButton.setPosition(257.f, 520.f);
+	this->helpButton.setSize(sf::Vector2f(280.f, 80.f));
+	this->helpButton.setFillColor(sf::Color(138, 138, 138));
+	this->helpButton.setOutlineColor(sf::Color(105, 105, 105));
+	this->helpButton.setOutlineThickness(10.f);
+	this->exitButton.setPosition(257.f, 670.f);
+	this->exitButton.setSize(sf::Vector2f(280.f, 80.f));
+	this->exitButton.setFillColor(sf::Color(138, 138, 138));
+	this->exitButton.setOutlineColor(sf::Color(105, 105, 105));
+	this->exitButton.setOutlineThickness(10.f);
 }
 void Game::initFont() {
-	this->font;
-	if (!this->font.loadFromFile("fonts/PressStart2P-vaV7.ttf")) {
+	if (!this->MainMenuFont.loadFromFile("fonts/PressStart2P-vaV7.ttf")) {
 		std::cout << "Couldn't load the font" << std::endl;
 	}
 }
 void Game::initText(){
-	this->text.setFont(this->font);
-	this->text.setPosition(500, 300);
-	this->text.setString("123");
+	this->MainMenuTitlePos = { 120, 50 };
+	this->MainMenuTitle.setFont(this->MainMenuFont);
+	this->MainMenuTitle.setPosition(MainMenuTitlePos.x, MainMenuTitlePos.y);
+	this->MainMenuTitle.setString("Space Invaders");
+	this->MainMenuTitle.setCharacterSize(this->mainMenuCharacterSize);
+	this->MainMenuNick.setFont(this->MainMenuFont);
+	this->MainMenuNick.setPosition(220.f, 150.f);
+	this->MainMenuNick.setString("Enter your nickname");
+	this->MainMenuNick.setCharacterSize(19);
+	this->Nick.setFont(this->MainMenuFont);
+	this->Nick.setPosition(250.f, 213.f);
+	this->Nick.setFillColor(sf::Color::Black);
+	this->playButtonText.setFont(this->MainMenuFont);
+	this->playButtonText.setPosition(340.f, 395.f);
+	this->playButtonText.setString("PLAY");
+	this->playButtonText.setFillColor(sf::Color::Black);
+	this->helpButtonText.setFont(this->MainMenuFont);
+	this->helpButtonText.setPosition(340.f, 600.f);
+	this->helpButtonText.setString("HELP");
+	this->helpButtonText.setFillColor(sf::Color::Black);
+}
+void Game::initTextBoxes() {
+	this->nickTextBox.setPosition(247.f, 200.f);
+	this->nickTextBox.setSize(sf::Vector2f(300.f, 50.f));
+	this->nickTextBox.setFillColor(sf::Color::White);
+	this->nickTextBox.setOutlineColor(sf::Color(100, 255, 43));
+}
+void Game::updateMousePosWindow() {
+	mousePosWindow = sf::Mouse::getPosition(*this->window);
+}
+void Game::updateMainMenuCharSize() {
+	if (this->mainMenuHowOftenResizeCounter % 4 == 0) {
+		if (this->charSizeState) {
+			this->MainMenuTitle.setCharacterSize(this->mainMenuCharacterSize--);
+			this->MainMenuTitle.setPosition(MainMenuTitlePos.x, MainMenuTitlePos.y);
+			MainMenuTitlePos.x += 7;
+			if (this->mainMenuCharacterSize == 20) {
+				this->charSizeState = false;
+			}
+		}
+		else if (!this->charSizeState) {
+			this->MainMenuTitle.setCharacterSize(this->mainMenuCharacterSize++);
+			this->MainMenuTitle.setPosition(MainMenuTitlePos.x, MainMenuTitlePos.y);
+			MainMenuTitlePos.x -= 7;
+			if (this->mainMenuCharacterSize == 50) {
+				this->charSizeState = true;
+			}
+		}
+		mainMenuHowOftenResizeCounter = 0;
+	}
+	mainMenuHowOftenResizeCounter++;
 }
 //Constructors / Destructors
 Game::Game() {
@@ -41,6 +95,7 @@ Game::Game() {
 	this->initButton();
 	this->initFont();
 	this->initText();
+	this->initTextBoxes();
 }
 Game::~Game() {
 	delete this->window;
@@ -59,42 +114,44 @@ void Game::pollEvents() {
 		case sf::Event::Closed:
 			this->window->close();
 			break;
-		case sf::Event::KeyPressed:
-			switch (ev.key.code) {
-			case sf::Keyboard::Escape:
-				this->window->close();
-				break;
-			case sf::Keyboard::W:
-				this->enemy.move(0, -10);
-				break;
-			case sf::Keyboard::D:
-				this->enemy.move(10, 0);
-				break;
-			case sf::Keyboard::S:
-				this->enemy.move(0, 10);
-				break;
-			case sf::Keyboard::A:
-				this->enemy.move(-10, 0);
-				break;
+		case sf::Event::MouseButtonPressed:
+			if (mousePosWindow.x >= 247 && mousePosWindow.x <= 547 && mousePosWindow.y >= 200 && mousePosWindow.y <= 250) {
+				this->isNickTextBoxClicked = true;
+			}
+			else {
+				this->isNickTextBoxClicked = false;
 			}
 			break;
+		case sf::Event::TextEntered:
+			if (this->isNickTextBoxClicked) {
+				if (this->ev.text.unicode == 8) {
+					if (this->NickStr.size() != 0) {
+						this->NickStr.pop_back();
+						this->Nick.setString(this->NickStr);
+					}
+				}
+				else {
+					if (this->NickStr.size() < 10 && this->ev.text.unicode >= 48 && this->ev.text.unicode <= 57 ||
+						this->ev.text.unicode >= 65 && this->ev.text.unicode <= 90 || 
+						this->ev.text.unicode >= 97 && this->ev.text.unicode <= 122) {
+						std::cout << this->ev.text.unicode << std::endl;
+						this->NickStr.push_back((char)this->ev.text.unicode);
+						this->Nick.setString(this->NickStr);
+					}
+				}
+			}
 		}
 	}
 }
 void Game::update(){
 	this->pollEvents();
-
-	//Update mouse position
-	//Relative to the screen
-	/*std::cout << "Mouse pos: " << sf::Mouse::getPosition().x << " " << sf::Mouse::getPosition().y << std::endl;*/
-	//Relative to the window
-	//std::cout << "Mouse pos: " << sf::Mouse::getPosition(*this->window).x << " " << sf::Mouse::getPosition(*this->window).y << std::endl;
-	if (sf::Mouse::getPosition(*this->window).x >= 200 && sf::Mouse::getPosition(*this->window).x <= 400
-		&& sf::Mouse::getPosition(*this->window).y >= 200 && sf::Mouse::getPosition(*this->window).y <= 350) {
-		this->button.setOutlineThickness(10.f);
+	this->updateMousePosWindow();
+	this->updateMainMenuCharSize();
+	if (mousePosWindow.x >= 247 && mousePosWindow.x <= 547 && mousePosWindow.y >= 200 && mousePosWindow.y <= 250) {
+		this->nickTextBox.setOutlineThickness(4.f);
 	}
-	else {
-		this->button.setOutlineThickness(0.f);
+	else if(!this->isNickTextBoxClicked){
+		this->nickTextBox.setOutlineThickness(0.f);
 	}
 }
 void Game::render() {
@@ -105,8 +162,14 @@ void Game::render() {
 	*/
 	this->window->clear();
 	//Draw game obj
-	this->window->draw(this->enemy);
-	this->window->draw(this->button);
-	this->window->draw(this->text);
+	this->window->draw(this->MainMenuTitle);
+	this->window->draw(this->MainMenuNick);
+	this->window->draw(this->nickTextBox);
+	this->window->draw(this->Nick);
+	this->window->draw(this->playButton);
+	this->window->draw(this->helpButton);
+	this->window->draw(this->exitButton);
+	this->window->draw(this->playButtonText);
+	this->window->draw(this->helpButtonText);
 	this->window->display();
 }
