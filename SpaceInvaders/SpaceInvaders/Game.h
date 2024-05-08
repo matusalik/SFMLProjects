@@ -6,15 +6,14 @@
 #include<SFML/Audio.hpp>
 #include<SFML/Network.hpp>
 
-/*
-	Class that acts as the game engine
-	Wrapper Class
-*/
 class Game
 {
 private:
-	//Variables
-	
+	//Enum game state
+	enum GameState {
+		MAIN_MENU,
+		HELP_PANEL
+	}state;
 
 	//Window
 	sf::RenderWindow* window;
@@ -58,6 +57,7 @@ private:
 	void initText();
 	void initFont();
 	void initTextBoxes();
+	void initEnum();
 	void updateMousePosWindow();
 	void updateMainMenuCharSize();
 public:

@@ -48,13 +48,23 @@ void Game::initText(){
 	this->Nick.setPosition(250.f, 213.f);
 	this->Nick.setFillColor(sf::Color::Black);
 	this->playButtonText.setFont(this->MainMenuFont);
-	this->playButtonText.setPosition(340.f, 395.f);
+	this->playButtonText.setPosition(340.f, 400.f);
 	this->playButtonText.setString("PLAY");
 	this->playButtonText.setFillColor(sf::Color::Black);
+	this->playButtonText.setOutlineColor(sf::Color(100, 255, 43));
 	this->helpButtonText.setFont(this->MainMenuFont);
-	this->helpButtonText.setPosition(340.f, 600.f);
+	this->helpButtonText.setPosition(340.f, 550.f);
 	this->helpButtonText.setString("HELP");
 	this->helpButtonText.setFillColor(sf::Color::Black);
+	this->helpButtonText.setOutlineColor(sf::Color(100, 255, 43));
+	this->exitButtonText.setFont(this->MainMenuFont);
+	this->exitButtonText.setPosition(340.f, 700.f);
+	this->exitButtonText.setString("EXIT");
+	this->exitButtonText.setFillColor(sf::Color::Black);
+	this->exitButtonText.setOutlineColor(sf::Color(100, 255, 43));
+}
+void Game::initEnum() {
+	this->state = MAIN_MENU;
 }
 void Game::initTextBoxes() {
 	this->nickTextBox.setPosition(247.f, 200.f);
@@ -89,6 +99,7 @@ void Game::updateMainMenuCharSize() {
 }
 //Constructors / Destructors
 Game::Game() {
+	this->initEnum();
 	this->initVariables();
 	this->initWindow();
 	this->initEnemies();
@@ -109,34 +120,36 @@ const bool Game::running() {
 //Functions
 void Game::pollEvents() {
 	//Event polling
-	while (this->window->pollEvent(this->ev)) {
-		switch (this->ev.type) {
-		case sf::Event::Closed:
-			this->window->close();
-			break;
-		case sf::Event::MouseButtonPressed:
-			if (mousePosWindow.x >= 247 && mousePosWindow.x <= 547 && mousePosWindow.y >= 200 && mousePosWindow.y <= 250) {
-				this->isNickTextBoxClicked = true;
-			}
-			else {
-				this->isNickTextBoxClicked = false;
-			}
-			break;
-		case sf::Event::TextEntered:
-			if (this->isNickTextBoxClicked) {
-				if (this->ev.text.unicode == 8) {
-					if (this->NickStr.size() != 0) {
-						this->NickStr.pop_back();
-						this->Nick.setString(this->NickStr);
-					}
+	if (this->state == MAIN_MENU) {
+		while (this->window->pollEvent(this->ev)) {
+			switch (this->ev.type) {
+			case sf::Event::Closed:
+				this->window->close();
+				break;
+			case sf::Event::MouseButtonPressed:
+				if (mousePosWindow.x >= 247 && mousePosWindow.x <= 547 && mousePosWindow.y >= 200 && mousePosWindow.y <= 250) {
+					this->isNickTextBoxClicked = true;
 				}
 				else {
-					if (this->NickStr.size() < 10 && this->ev.text.unicode >= 48 && this->ev.text.unicode <= 57 ||
-						this->ev.text.unicode >= 65 && this->ev.text.unicode <= 90 || 
-						this->ev.text.unicode >= 97 && this->ev.text.unicode <= 122) {
-						std::cout << this->ev.text.unicode << std::endl;
-						this->NickStr.push_back((char)this->ev.text.unicode);
-						this->Nick.setString(this->NickStr);
+					this->isNickTextBoxClicked = false;
+				}
+				break;
+			case sf::Event::TextEntered:
+				if (this->isNickTextBoxClicked) {
+					if (this->ev.text.unicode == 8) {
+						if (this->NickStr.size() != 0) {
+							this->NickStr.pop_back();
+							this->Nick.setString(this->NickStr);
+						}
+					}
+					else {
+						if (this->NickStr.size() < 10 && this->ev.text.unicode >= 48 && this->ev.text.unicode <= 57 ||
+							this->ev.text.unicode >= 65 && this->ev.text.unicode <= 90 ||
+							this->ev.text.unicode >= 97 && this->ev.text.unicode <= 122) {
+							std::cout << this->ev.text.unicode << std::endl;
+							this->NickStr.push_back((char)this->ev.text.unicode);
+							this->Nick.setString(this->NickStr);
+						}
 					}
 				}
 			}
@@ -144,32 +157,49 @@ void Game::pollEvents() {
 	}
 }
 void Game::update(){
-	this->pollEvents();
-	this->updateMousePosWindow();
-	this->updateMainMenuCharSize();
-	if (mousePosWindow.x >= 247 && mousePosWindow.x <= 547 && mousePosWindow.y >= 200 && mousePosWindow.y <= 250) {
-		this->nickTextBox.setOutlineThickness(4.f);
-	}
-	else if(!this->isNickTextBoxClicked){
-		this->nickTextBox.setOutlineThickness(0.f);
+	if (this->state == MAIN_MENU) {
+		this->pollEvents();
+		this->updateMousePosWindow();
+		this->updateMainMenuCharSize();
+		if (mousePosWindow.x >= 257 && mousePosWindow.x <= 537 && mousePosWindow.y >= 670 && mousePosWindow.y <= 750) {
+			this->exitButtonText.setOutlineThickness(3.f);
+		}
+		else {
+			this->exitButtonText.setOutlineThickness(0.f);
+		}
+		if (mousePosWindow.x >= 257 && mousePosWindow.x <= 537 && mousePosWindow.y >= 520 && mousePosWindow.y <= 600) {
+			this->helpButtonText.setOutlineThickness(3.f);
+		}
+		else {
+			this->helpButtonText.setOutlineThickness(0.f);
+		}
+		if (mousePosWindow.x >= 257 && mousePosWindow.x <= 537 && mousePosWindow.y >= 370 && mousePosWindow.y <= 450) {
+			this->playButtonText.setOutlineThickness(3.f);
+		}
+		else {
+			this->playButtonText.setOutlineThickness(0.f);
+		}
+		if (mousePosWindow.x >= 247 && mousePosWindow.x <= 547 && mousePosWindow.y >= 200 && mousePosWindow.y <= 250) {
+			this->nickTextBox.setOutlineThickness(4.f);
+		}
+		else if (!this->isNickTextBoxClicked) {
+			this->nickTextBox.setOutlineThickness(0.f);
+		}
 	}
 }
 void Game::render() {
-	/*
-		-clear old frame
-		-render objects
-		-display frame in window
-	*/
-	this->window->clear();
-	//Draw game obj
-	this->window->draw(this->MainMenuTitle);
-	this->window->draw(this->MainMenuNick);
-	this->window->draw(this->nickTextBox);
-	this->window->draw(this->Nick);
-	this->window->draw(this->playButton);
-	this->window->draw(this->helpButton);
-	this->window->draw(this->exitButton);
-	this->window->draw(this->playButtonText);
-	this->window->draw(this->helpButtonText);
-	this->window->display();
+	if (this->state == MAIN_MENU) {
+		this->window->clear();
+		this->window->draw(this->MainMenuTitle);
+		this->window->draw(this->MainMenuNick);
+		this->window->draw(this->nickTextBox);
+		this->window->draw(this->Nick);
+		this->window->draw(this->playButton);
+		this->window->draw(this->helpButton);
+		this->window->draw(this->exitButton);
+		this->window->draw(this->playButtonText);
+		this->window->draw(this->helpButtonText);
+		this->window->draw(this->exitButtonText);
+		this->window->display();
+	}
 }
