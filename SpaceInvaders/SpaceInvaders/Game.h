@@ -9,6 +9,9 @@
 class Game
 {
 private:
+	//Variables
+	bool isGuestChecked = false;
+
 	//Enum game state
 	enum GameState {
 		MAIN_MENU,
@@ -26,18 +29,21 @@ private:
 	sf::RectangleShape playButton;
 	sf::RectangleShape helpButton;
 	sf::RectangleShape exitButton;
+	sf::RectangleShape guestCheckBox;
 
 	//Text boxes
 	sf::RectangleShape nickTextBox;
 	bool isNickTextBoxClicked = false;
 
 	//Text and fonts
-	sf::Text MainMenuTitle;
+	sf::Text MainMenuTitle; 
 	sf::Text MainMenuNick;
 	sf::Text Nick;
 	sf::Text playButtonText;
 	sf::Text helpButtonText;
 	sf::Text exitButtonText;
+	sf::Text playAsAGuest;
+	sf::Text tick;
 	std::string NickStr = "";
 	sf::Vector2i MainMenuTitlePos;
 	sf::Font MainMenuFont;
