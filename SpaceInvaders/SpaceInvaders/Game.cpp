@@ -145,6 +145,8 @@ void Game::pollEvents() {
 				if (mousePosWindow.x >= 252 && mousePosWindow.x <= 282 && mousePosWindow.y >= 340 && mousePosWindow.y <= 370) {
 					if (this->tick.getString() == "") {
 						this->tick.setString("X");
+						this->NickStr = "";
+						this->Nick.setString(this->NickStr);
 						this->nickTextBox.setFillColor(sf::Color(207, 207, 207));
 						this->isGuestChecked = true;
 
