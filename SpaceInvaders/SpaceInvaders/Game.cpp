@@ -36,19 +36,31 @@ void Game::pollEvents() {
 	//Event polling
 	if (this->state == GameState::MAIN_MENU) {
 		this->mainMenu.pollEvents(this->window);
+		if (this->mainMenu.returnGameState() == 1) {
+			this->state = GameState::HELP_PANEL;
+		}
 	}
 }
 void Game::update(){
-	this->pollEvents();
 	this->updateMousePosWindow();
 	if (this->state == GameState::MAIN_MENU) {
-		this->mainMenu.update();
+		this->mainMenu.update(this->window);
+		this->pollEvents();
 	}
+	if (this->state == GameState::HELP_PANEL) {
+		this->helpPanel.update();
+	}
+
 }
 void Game::render() {
 	if (this->state == GameState::MAIN_MENU) {
 		this->window->clear();
 		this->mainMenu.draw(this->window);
+		this->window->display();
+	}
+	if (this->state == GameState::HELP_PANEL) {
+		this->window->clear();
+		this->helpPanel.draw(this->window);
 		this->window->display();
 	}
 }

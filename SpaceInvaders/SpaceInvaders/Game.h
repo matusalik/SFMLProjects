@@ -6,6 +6,7 @@
 #include<SFML/Audio.hpp>
 #include<SFML/Network.hpp>
 #include"MainMenu.h"
+#include"HelpPanel.h"
 //Enum game state
 enum class GameState {
 	MAIN_MENU,
@@ -17,6 +18,8 @@ class Game
 private:
 	//Panels
 	MainMenu mainMenu;
+	HelpPanel helpPanel;
+
 
 	//Enum State
 	GameState state;

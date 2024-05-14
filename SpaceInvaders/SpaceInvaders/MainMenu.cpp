@@ -86,6 +86,7 @@ void MainMenu::initVariables() {
 	this->mainMenuHowOftenResizeCounter = 0;
 	this->charSizeState = true;
 	this->isNickTextBoxClicked = false;
+	this->gameState = 0;
 }
 void MainMenu::updateMainMenuCharSize() {
 	if (this->mainMenuHowOftenResizeCounter % 4 == 0) {
@@ -109,6 +110,9 @@ void MainMenu::updateMainMenuCharSize() {
 	}
 	mainMenuHowOftenResizeCounter++;
 }
+int MainMenu::returnGameState() {
+	return this->gameState;
+}
 void MainMenu::draw(sf::RenderWindow*& window) {
 	window->draw(this->MainMenuTitle);
 	window->draw(this->MainMenuNick);
@@ -131,6 +135,9 @@ void MainMenu::pollEvents(sf::RenderWindow*& window) {
 			window->close();
 			break;
 		case sf::Event::MouseButtonPressed:
+			if (mousePosWindow.x >= 257 && mousePosWindow.x <= 537 && mousePosWindow.y >= 550 && mousePosWindow.y <= 630) {
+				this->gameState = 1;
+			}
 			if (mousePosWindow.x >= 252 && mousePosWindow.x <= 282 && mousePosWindow.y >= 340 && mousePosWindow.y <= 370) {
 				if (this->tick.getString() == "") {
 					this->tick.setString("X");
@@ -174,8 +181,9 @@ void MainMenu::pollEvents(sf::RenderWindow*& window) {
 		}
 	}
 }
-void MainMenu::update() {
+void MainMenu::update(sf::RenderWindow* window) {
 	this->updateMainMenuCharSize();
+	this->updateMousePosWindow(window);
 	if (mousePosWindow.x >= 252 && mousePosWindow.x <= 282 && mousePosWindow.y >= 340 && mousePosWindow.y <= 370) {
 		this->guestCheckBox.setFillColor(sf::Color(112, 112, 112));
 		this->guestCheckBox.setOutlineColor(sf::Color(79, 79, 79));

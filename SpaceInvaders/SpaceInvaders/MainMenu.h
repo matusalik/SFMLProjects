@@ -10,6 +10,7 @@ class MainMenu
 private:
 	//Variables
 	bool isGuestChecked = false;
+	int gameState;
 
 	//Events
 	sf::Event ev;
@@ -55,7 +56,8 @@ public:
 	void updateMainMenuCharSize();
 	void draw(sf::RenderWindow*& window);
 	void pollEvents(sf::RenderWindow*& window);
-	void update();
+	void update(sf::RenderWindow* window);
+	int returnGameState();
 
 	//Constructors dectructors
 	MainMenu();
