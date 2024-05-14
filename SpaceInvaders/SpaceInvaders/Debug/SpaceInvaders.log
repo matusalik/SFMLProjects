@@ -1,7 +1,32 @@
-﻿  Game.cpp
-  HelpPanel.cpp
-C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\HelpPanel.cpp(17,41): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
-C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\HelpPanel.cpp(17,32): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
-  SpaceInvaders.cpp
-  Generowanie kodu...
-  SpaceInvaders.vcxproj -> C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\Debug\SpaceInvaders.exe
+﻿  MainMenu.cpp
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(48,70): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+          with
+          [
+              T=int
+          ]
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(48,50): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+          with
+          [
+              T=int
+          ]
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(100,72): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+          with
+          [
+              T=int
+          ]
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(100,52): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+          with
+          [
+              T=int
+          ]
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(108,72): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+          with
+          [
+              T=int
+          ]
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(108,52): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+          with
+          [
+              T=int
+          ]
+  SpaceInvaders.vcxproj -> C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\Debug\SpaceInvaders.exe

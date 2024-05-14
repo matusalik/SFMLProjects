@@ -5,12 +5,15 @@
 #include<SFML/Window.hpp>
 #include<SFML/Audio.hpp>
 #include<SFML/Network.hpp>
-class MainMenu
+#include"Panel.h"
+class MainMenu : public Panel
 {
 private:
+	//Game State Enum
+	GameState state;
+	
 	//Variables
 	bool isGuestChecked = false;
-	int gameState;
 
 	//Events
 	sf::Event ev;
@@ -57,7 +60,7 @@ public:
 	void draw(sf::RenderWindow*& window);
 	void pollEvents(sf::RenderWindow*& window);
 	void update(sf::RenderWindow* window);
-	int returnGameState();
+	GameState returnGameState();
 
 	//Constructors dectructors
 	MainMenu();

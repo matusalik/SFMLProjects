@@ -7,19 +7,21 @@
 #include<SFML/Network.hpp>
 #include"MainMenu.h"
 #include"HelpPanel.h"
-//Enum game state
-enum class GameState {
-	MAIN_MENU,
-	HELP_PANEL
-};
+#include"Panel.h"
+#include"GameState.h"
 
 class Game
 {
 private:
+	//Sprite
+	sf::Sprite mainMenuBackgroundSprite;
+	
+	//Textures
+	sf::Texture mainMenuBackgroundTexture;
+	
 	//Panels
-	MainMenu mainMenu;
-	HelpPanel helpPanel;
-
+	Panel* mainMenu;
+	Panel* helpPanel;
 
 	//Enum State
 	GameState state;
@@ -33,6 +35,9 @@ private:
 	sf::Vector2i mousePosWindow;
 
 	//Private functions
+	void initSprites();
+	void initTextures();
+	void initPanels();
 	void initVariables();
 	void initWindow();
 	void initEnum();

@@ -5,9 +5,16 @@
 #include<SFML/Window.hpp>
 #include<SFML/Audio.hpp>
 #include<SFML/Network.hpp>
-class HelpPanel
+#include"Panel.h"
+class HelpPanel : public Panel
 {
 private:
+	//Events
+	sf::Event ev;
+	
+	//Game State Enum
+	GameState state;
+
 	//Buttons
 	sf::RectangleShape button1;
 
@@ -15,11 +22,14 @@ private:
 	void initButtons();
 
 	//Variables
-	int a = 3;
+	
+
 public:
 	HelpPanel();
 	~HelpPanel();
 	void draw(sf::RenderWindow*& window);
-	void update();
+	void update(sf::RenderWindow* window);
+	void pollEvents(sf::RenderWindow*& window);
+	GameState returnGameState();
 };
 

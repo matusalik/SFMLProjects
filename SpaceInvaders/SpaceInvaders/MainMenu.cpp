@@ -46,12 +46,18 @@ void MainMenu::initText() {
 	this->MainMenuTitlePos = { 120, 50 };
 	this->MainMenuTitle.setFont(this->MainMenuFont);
 	this->MainMenuTitle.setPosition(MainMenuTitlePos.x, MainMenuTitlePos.y);
+	this->MainMenuTitle.setFillColor(sf::Color(100, 255, 43));
 	this->MainMenuTitle.setString("Space Invaders");
 	this->MainMenuTitle.setCharacterSize(this->mainMenuCharacterSize);
+	this->MainMenuTitle.setOutlineColor(sf::Color::Black);
+	this->MainMenuTitle.setOutlineThickness(5);
 	this->MainMenuNick.setFont(this->MainMenuFont);
 	this->MainMenuNick.setPosition(220.f, 150.f);
+	this->MainMenuNick.setFillColor(sf::Color(100, 255, 43));
 	this->MainMenuNick.setString("Enter your nickname");
 	this->MainMenuNick.setCharacterSize(19);
+	this->MainMenuNick.setOutlineColor(sf::Color::Black);
+	this->MainMenuNick.setOutlineThickness(5);
 	this->Nick.setFont(this->MainMenuFont);
 	this->Nick.setPosition(250.f, 213.f);
 	this->Nick.setFillColor(sf::Color::Black);
@@ -86,7 +92,6 @@ void MainMenu::initVariables() {
 	this->mainMenuHowOftenResizeCounter = 0;
 	this->charSizeState = true;
 	this->isNickTextBoxClicked = false;
-	this->gameState = 0;
 }
 void MainMenu::updateMainMenuCharSize() {
 	if (this->mainMenuHowOftenResizeCounter % 4 == 0) {
@@ -109,9 +114,6 @@ void MainMenu::updateMainMenuCharSize() {
 		mainMenuHowOftenResizeCounter = 0;
 	}
 	mainMenuHowOftenResizeCounter++;
-}
-int MainMenu::returnGameState() {
-	return this->gameState;
 }
 void MainMenu::draw(sf::RenderWindow*& window) {
 	window->draw(this->MainMenuTitle);
@@ -136,7 +138,7 @@ void MainMenu::pollEvents(sf::RenderWindow*& window) {
 			break;
 		case sf::Event::MouseButtonPressed:
 			if (mousePosWindow.x >= 257 && mousePosWindow.x <= 537 && mousePosWindow.y >= 550 && mousePosWindow.y <= 630) {
-				this->gameState = 1;
+				this->state = GameState::HELP_PANEL;
 			}
 			if (mousePosWindow.x >= 252 && mousePosWindow.x <= 282 && mousePosWindow.y >= 340 && mousePosWindow.y <= 370) {
 				if (this->tick.getString() == "") {
@@ -219,4 +221,7 @@ void MainMenu::update(sf::RenderWindow* window) {
 }
 void MainMenu::updateMousePosWindow(sf::RenderWindow* window) {
 	this->mousePosWindow = sf::Mouse::getPosition(*window);
+}
+GameState MainMenu::returnGameState() {
+	return this->state;
 }

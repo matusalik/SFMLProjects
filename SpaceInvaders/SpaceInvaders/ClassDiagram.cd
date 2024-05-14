@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Game" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAIAAAAAAKECAAABAAAAiAEAAcAAAgAAAUAAA=</HashCode>
+      <FileName>Game.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HelpPanel" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <InheritanceLine Type="Panel">
+      <InheritanceModifierLabel ManuallyPlaced="true">
+        <Position X="-0.419" Y="-0.213" />
+      </InheritanceModifierLabel>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAIAACABAACIEAAkAAAAAAAEAAA=</HashCode>
+      <FileName>HelpPanel.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainMenu" Collapsed="true">
+    <Position X="1.25" Y="2.5" Width="1.5" />
+    <InheritanceLine Type="Panel">
+      <InheritanceModifierLabel ManuallyPlaced="true">
+        <Position X="-0.473" Y="-0.273" />
+      </InheritanceModifierLabel>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AwBIAAAAsAAiAACAoiIJgCAwABAgGBIEIKAgAABEAAA=</HashCode>
+      <FileName>MainMenu.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Panel" Collapsed="true">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAACAAAAAAEAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Panel.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="GameState" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>GameState.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
