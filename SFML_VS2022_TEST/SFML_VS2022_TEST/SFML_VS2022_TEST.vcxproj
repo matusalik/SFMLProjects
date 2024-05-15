@@ -134,7 +134,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="HelpPanel.cpp" />
+    <ClCompile Include="Leaderboard.cpp" />
+    <ClCompile Include="MainMenu.cpp" />
+    <ClCompile Include="Panel.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="SFML_VS2022_TEST.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameState.h" />
+    <ClInclude Include="HelpPanel.h" />
+    <ClInclude Include="Leaderboard.h" />
+    <ClInclude Include="MainMenu.h" />
+    <ClInclude Include="Panel.h" />
+    <ClInclude Include="Player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
