@@ -148,6 +148,9 @@ void MainMenu::pollEvents(sf::RenderWindow*& window) {
 			window->close();
 			break;
 		case sf::Event::MouseButtonPressed:
+			if (mousePosWindow.x >= 257 && mousePosWindow.x <= 537 && mousePosWindow.y >= 410 && mousePosWindow.y <= 490) {
+				this->state = GameState::GAME_PLAY;
+			}
 			if (mousePosWindow.x >= 257 && mousePosWindow.x <= 537 && mousePosWindow.y >= 550 && mousePosWindow.y <= 630) {
 				this->state = GameState::HELP_PANEL;
 			}

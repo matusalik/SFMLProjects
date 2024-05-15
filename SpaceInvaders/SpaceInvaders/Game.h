@@ -9,11 +9,13 @@
 #include"HelpPanel.h"
 #include"Panel.h"
 #include"GameState.h"
+#include"GamePlay.h"
 
 class Game
 {
 private:
 	//Panels
+	Panel* gamePlay;
 	Panel* mainMenu;
 	Panel* helpPanel;
 

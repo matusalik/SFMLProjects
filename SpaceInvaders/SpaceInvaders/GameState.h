@@ -2,5 +2,6 @@
 //Enum game state
 enum class GameState {
 	MAIN_MENU,
-	HELP_PANEL
+	HELP_PANEL,
+	GAME_PLAY
 };
