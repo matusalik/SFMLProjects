@@ -6,9 +6,13 @@
 #include<SFML/Audio.hpp>
 #include<SFML/Network.hpp>
 #include"Panel.h"
+#include"Leaderboard.h"
 class MainMenu : public Panel
 {
 private:
+	//Leaderboard
+	Leaderboard leaderBoard;
+
 	//Game State Enum
 	GameState state;
 	
