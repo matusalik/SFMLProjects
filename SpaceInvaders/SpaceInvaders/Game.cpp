@@ -1,13 +1,5 @@
 ﻿#include "Game.h"
 //Private functions
-void Game::initTextures() {
-	if (!this->mainMenuBackgroundTexture.loadFromFile("backgrounds/MainMenuBackground.png")) {
-		std::cout << "Couldn't load MainMenuBackground!" << std::endl;
-	}
-}
-void Game::initSprites() {
-	this->mainMenuBackgroundSprite.setTexture(this->mainMenuBackgroundTexture);
-}
 void Game::initPanels() {
 	mainMenu = new MainMenu;
 	helpPanel = new HelpPanel;
@@ -33,8 +25,6 @@ Game::Game() {
 	this->initEnum();
 	this->initPanels();
 	this->initVariables();
-	this->initTextures();
-	this->initSprites();
 	this->initWindow();
 }
 Game::~Game() {
@@ -72,7 +62,6 @@ void Game::update(){
 void Game::render() {
 	if (this->state == GameState::MAIN_MENU) {
 		this->window->clear();
-		this->window->draw(this->mainMenuBackgroundSprite);
 		this->mainMenu->draw(this->window);
 		this->window->display();
 	}

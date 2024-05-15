@@ -10,6 +10,12 @@
 class MainMenu : public Panel
 {
 private:
+	//Sprite
+	sf::Sprite mainMenuBackgroundSprite;
+
+	//Textures
+	sf::Texture mainMenuBackgroundTexture;
+
 	//Leaderboard
 	Leaderboard leaderBoard;
 
@@ -23,6 +29,8 @@ private:
 	sf::Event ev;
 
 	//Private functions
+	void initSprites();
+	void initTextures();
 	void initButton();
 	void initText();
 	void initFont();

@@ -1,6 +1,6 @@
 #pragma once
-#include<vector>
-#include<iostream>
+#include <vector>
+#include <iostream>
 #include <fstream>
 #include <sstream>
 #include"Player.h"

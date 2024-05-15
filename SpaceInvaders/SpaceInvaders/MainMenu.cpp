@@ -1,5 +1,7 @@
 #include "MainMenu.h"
 MainMenu::MainMenu() {
+	this->initTextures();
+	this->initSprites();
 	this->initVariables();
 	this->initFont();
 	this->initButton();
@@ -8,6 +10,14 @@ MainMenu::MainMenu() {
 }
 MainMenu::~MainMenu() {
 
+}
+void MainMenu::initTextures() {
+	if (!this->mainMenuBackgroundTexture.loadFromFile("backgrounds/MainMenuBackground.png")) {
+		std::cout << "Couldn't load MainMenuBackground!" << std::endl;
+	}
+}
+void MainMenu::initSprites() {
+	this->mainMenuBackgroundSprite.setTexture(this->mainMenuBackgroundTexture);
 }
 void MainMenu::initTextBoxes() {
 	this->nickTextBox.setPosition(247.f, 200.f);
@@ -116,6 +126,7 @@ void MainMenu::updateMainMenuCharSize() {
 	mainMenuHowOftenResizeCounter++;
 }
 void MainMenu::draw(sf::RenderWindow*& window) {
+	window->draw(this->mainMenuBackgroundSprite);
 	window->draw(this->MainMenuTitle);
 	window->draw(this->MainMenuNick);
 	window->draw(this->nickTextBox);

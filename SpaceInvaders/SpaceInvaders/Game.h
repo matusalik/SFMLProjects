@@ -13,12 +13,6 @@
 class Game
 {
 private:
-	//Sprite
-	sf::Sprite mainMenuBackgroundSprite;
-	
-	//Textures
-	sf::Texture mainMenuBackgroundTexture;
-	
 	//Panels
 	Panel* mainMenu;
 	Panel* helpPanel;
@@ -35,8 +29,6 @@ private:
 	sf::Vector2i mousePosWindow;
 
 	//Private functions
-	void initSprites();
-	void initTextures();
 	void initPanels();
 	void initVariables();
 	void initWindow();
