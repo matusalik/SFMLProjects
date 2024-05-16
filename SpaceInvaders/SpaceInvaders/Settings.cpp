@@ -44,9 +44,17 @@ void Settings::initText() {
 	this->exitButtonText.setFillColor(sf::Color::Black);
 	this->exitButtonText.setOutlineColor(sf::Color(100, 255, 43));
 	this->tickEasy.setFont(this->settingsFont);
-	this->tickEasy.setPosition(252, 250);
-	this->tickEasy.setString("X");
+	this->tickEasy.setPosition(258, 257);
+	this->tickEasy.setString("");
 	this->tickEasy.setFillColor(sf::Color::Black);
+	this->tickNormal.setFont(this->settingsFont);
+	this->tickNormal.setPosition(258, 387);
+	this->tickNormal.setString("");
+	this->tickNormal.setFillColor(sf::Color::Black);
+	this->tickHard.setFont(this->settingsFont);
+	this->tickHard.setPosition(258, 517);
+	this->tickHard.setString("");
+	this->tickHard.setFillColor(sf::Color::Black);
 }
 void Settings::initTextures() {
 	if (!this->settingsBackgroundTexture.loadFromFile("backgrounds/SettingsBackground.png")) {
@@ -94,6 +102,8 @@ void Settings::draw(sf::RenderWindow*& window){
 	window->draw(this->hardCheckboxText);
 	window->draw(this->exitButtonText);
 	window->draw(this->tickEasy);
+	window->draw(this->tickNormal);
+	window->draw(this->tickHard);
 }
 void Settings::pollEvents(sf::RenderWindow*& window){
 	while (window->pollEvent(this->ev)) {
@@ -105,12 +115,39 @@ void Settings::pollEvents(sf::RenderWindow*& window){
 			if (this->mousePosWindow.x >= 257 && this->mousePosWindow.x <= 537 && this->mousePosWindow.y >= 670 && this->mousePosWindow.y <= 750) {
 				this->state = GameState::MAIN_MENU;
 			}
+			if (this->mousePosWindow.x >= 252 && mousePosWindow.x <= 292 && this->mousePosWindow.y >= 250 && mousePosWindow.y <= 290 && this->difficulty != GameDifficulty::EASY) {
+				this->difficulty = GameDifficulty::EASY;
+			}
+			if (this->mousePosWindow.x >= 252 && mousePosWindow.x <= 292 && this->mousePosWindow.y >= 380 && mousePosWindow.y <= 420 && this->difficulty != GameDifficulty::NORMAL) {
+				this->difficulty = GameDifficulty::NORMAL;
+			}
+			if (this->mousePosWindow.x >= 252 && mousePosWindow.x <= 292 && this->mousePosWindow.y >= 510 && mousePosWindow.y <= 550 && this->difficulty != GameDifficulty::HARD) {
+				this->difficulty = GameDifficulty::HARD;
+			}
 			break;
 		}
 	}
 }
 void Settings::update(sf::RenderWindow* window){
 	this->updateMousePosWindow(window);
+	if (this->difficulty == GameDifficulty::EASY) {
+		this->tickEasy.setString("X");
+	}
+	else {
+		this->tickEasy.setString("");
+	}
+	if (this->difficulty == GameDifficulty::NORMAL) {
+		this->tickNormal.setString("X");
+	}
+	else {
+		this->tickNormal.setString("");
+	}
+	if (this->difficulty == GameDifficulty::HARD) {
+		this->tickHard.setString("X");
+	}
+	else {
+		this->tickHard.setString("");
+	}
 	if (this->mousePosWindow.x >= 257 && this->mousePosWindow.x <= 537 && this->mousePosWindow.y >= 670 && this->mousePosWindow.y <= 750) {
 		this->exitButtonText.setOutlineThickness(5.f);
 	}
@@ -147,6 +184,9 @@ void Settings::updateMousePosWindow(sf::RenderWindow* window){
 }
 GameState Settings::returnGameState() {
 	return this->state;
+}
+GameDifficulty Settings::getDifficulty() {
+	return this->difficulty;
 }
 void Settings::setState(GameState sentState) {
 	this->state = sentState;

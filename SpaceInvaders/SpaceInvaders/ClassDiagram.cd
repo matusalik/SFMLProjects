@@ -3,7 +3,7 @@
   <Class Name="Game" Collapsed="true">
     <Position X="4.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgAAAAAAIAAAAAAKECAAABAAAAiAEAAcAAAgAAAUAAA=</HashCode>
+      <HashCode>AgAAAAABIAAAAAAKECABABAAAAiAEAAcABAgAAAUAAA=</HashCode>
       <FileName>Game.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -34,7 +34,7 @@
   <Class Name="Panel" Collapsed="true">
     <Position X="4.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAIAACAAAAAAEAAAAAAAAAAEAAQ=</HashCode>
+      <HashCode>AAAAAAAAIAAAAAAAAAIAACAAAAAAEAAAAAAAAAAEAAQ=</HashCode>
       <FileName>Panel.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -46,7 +46,7 @@
       </InheritanceModifierLabel>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAIAAAAAAAIAACAAAAAAEAAEAAAAAAAEAAQ=</HashCode>
+      <HashCode>AAAAAAAAIAIAAAAAAAIAACAAAAAAEAAEAAAgAAAEAAQ=</HashCode>
       <FileName>GamePlay.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -72,7 +72,7 @@
       </InheritanceModifierLabel>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAIAACAAAAAAEAAAAAAAAAAEAAQ=</HashCode>
+      <HashCode>AgAAAAAAIAAAAAAAAAIBACAAAAAAEAAUAAAgAAAEAAQ=</HashCode>
       <FileName>LeaderboardPanel.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -84,7 +84,7 @@
       </InheritanceModifierLabel>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAIAACAAAAAAEAAAAAAAAAAEAAQ=</HashCode>
+      <HashCode>AgAIAQABsAAAEQgQIAIAAiABAAAQkCIUoAAgAABEAAc=</HashCode>
       <FileName>Settings.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -93,6 +93,13 @@
     <TypeIdentifier>
       <HashCode>ACAAAIAAAAAAAAAAAAAAAAAAACgAAAAAAAAQAAAAAAA=</HashCode>
       <FileName>GameState.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GameDifficulty" Collapsed="true">
+    <Position X="13.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAIAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameDifficulty.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />

@@ -3,6 +3,7 @@
 #include<SFML/System.hpp>
 #include<SFML/Window.hpp>
 #include"GameState.h"
+#include"GameDifficulty.h"
 class Panel
 {
 public:

@@ -23,7 +23,10 @@ private:
 	Panel* settings;
 	Panel* leaderboardPanel;
 
-	//Enum State
+	//Game Difficulty Enum
+	GameDifficulty difficulty;
+
+	//Game State Enum
 	GameState state;
 
 	//Window
