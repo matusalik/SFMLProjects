@@ -17,7 +17,7 @@ void Game::initWindow() {
 	this->window->setFramerateLimit(144);
 }
 void Game::initEnum() {
-	this->state = GameState::SETTINGS;
+	this->state = GameState::MAIN_MENU;
 }
 void Game::updateMousePosWindow() {
 	mousePosWindow = sf::Mouse::getPosition(*this->window);

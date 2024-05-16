@@ -1,2 +1,6 @@
-﻿  SpaceInvaders.cpp
-  SpaceInvaders.vcxproj -> C:\Users\mateu\OneDrive\Pulpit\SpaceInvaders\Debug\SpaceInvaders.exe
+﻿  Game.cpp
+  GameDifficulty.h
+  Leaderboard.cpp
+  Player.cpp
+  Generowanie kodu...
+  SpaceInvaders.vcxproj -> C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\Debug\SpaceInvaders.exe
