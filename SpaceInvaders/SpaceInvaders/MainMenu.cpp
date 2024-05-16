@@ -48,7 +48,7 @@ void MainMenu::initTextBoxes() {
 void MainMenu::initButton() {
 	this->playButton.setPosition(257.f, 420.f);
 	this->playButton.setSize(sf::Vector2f(280.f, 80.f));
-	this->playButton.setFillColor(sf::Color(138, 138, 138));
+	this->playButton.setFillColor(sf::Color(138.f, 138.f, 138.f));
 	this->playButton.setOutlineColor(sf::Color(105, 105, 105));
 	this->playButton.setOutlineThickness(10.f);
 	this->helpButton.setPosition(257.f, 560.f);
@@ -182,6 +182,12 @@ void MainMenu::pollEvents(sf::RenderWindow*& window) {
 			window->close();
 			break;
 		case sf::Event::MouseButtonPressed:
+			if (mousePosWindow.x >= 730 && mousePosWindow.x <= 780 && mousePosWindow.y >= 730 && mousePosWindow.y <= 780) {
+				this->state = GameState::SETTINGS;
+			}
+			if (mousePosWindow.x >= 730 && mousePosWindow.x <= 780 && mousePosWindow.y >= 650 && mousePosWindow.y <= 700) {
+				this->state = GameState::LEADERBOARD;
+			}
 			if (mousePosWindow.x >= 257 && mousePosWindow.x <= 537 && mousePosWindow.y >= 420 && mousePosWindow.y <= 500) {
 				this->state = GameState::GAME_PLAY;
 			}

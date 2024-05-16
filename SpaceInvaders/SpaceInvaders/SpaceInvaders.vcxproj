@@ -151,19 +151,24 @@
     <ClCompile Include="GamePlay.cpp" />
     <ClCompile Include="HelpPanel.cpp" />
     <ClCompile Include="Leaderboard.cpp" />
+    <ClCompile Include="LeaderboardPanel.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Settings.cpp" />
     <ClCompile Include="SpaceInvaders.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameDifficulty.h" />
     <ClInclude Include="GamePlay.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="HelpPanel.h" />
     <ClInclude Include="Leaderboard.h" />
+    <ClInclude Include="LeaderboardPanel.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Panel.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Settings.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

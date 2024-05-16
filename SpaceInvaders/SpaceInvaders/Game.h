@@ -10,6 +10,8 @@
 #include"Panel.h"
 #include"GameState.h"
 #include"GamePlay.h"
+#include"Settings.h"
+#include"LeaderboardPanel.h"
 
 class Game
 {
@@ -18,6 +20,8 @@ private:
 	Panel* gamePlay;
 	Panel* mainMenu;
 	Panel* helpPanel;
+	Panel* settings;
+	Panel* leaderboardPanel;
 
 	//Enum State
 	GameState state;

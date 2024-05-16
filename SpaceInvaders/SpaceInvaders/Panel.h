@@ -11,5 +11,6 @@ public:
 	virtual void pollEvents(sf::RenderWindow*& window) = 0;
 	virtual GameState returnGameState() = 0;
 	virtual void setState(GameState sentState) = 0;
+	virtual void updateMousePosWindow(sf::RenderWindow* window) = 0;
 };
 

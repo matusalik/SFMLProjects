@@ -1,9 +1,11 @@
 ﻿#include "Game.h"
 //Private functions
 void Game::initPanels() {
-	mainMenu = new MainMenu;
-	helpPanel = new HelpPanel;
-	gamePlay = new GamePlay;
+	this->mainMenu = new MainMenu;
+	this->helpPanel = new HelpPanel;
+	this->gamePlay = new GamePlay;
+	this->settings = new Settings;
+	this->leaderboardPanel = new LeaderboardPanel;
 }
 void Game::initVariables() {
 	this->window = nullptr;
@@ -15,7 +17,7 @@ void Game::initWindow() {
 	this->window->setFramerateLimit(144);
 }
 void Game::initEnum() {
-	this->state = GameState::MAIN_MENU;
+	this->state = GameState::SETTINGS;
 }
 void Game::updateMousePosWindow() {
 	mousePosWindow = sf::Mouse::getPosition(*this->window);
@@ -50,6 +52,14 @@ void Game::pollEvents() {
 			this->state = GameState::GAME_PLAY;
 			this->mainMenu->setState(GameState::MAIN_MENU);
 		}
+		if (this->mainMenu->returnGameState() == GameState::SETTINGS) {
+			this->state = GameState::SETTINGS;
+			this->mainMenu->setState(GameState::MAIN_MENU);
+		}
+		if (this->mainMenu->returnGameState() == GameState::LEADERBOARD) {
+			this->state = GameState::LEADERBOARD;
+			this->mainMenu->setState(GameState::MAIN_MENU);
+		}
 	}
 	if (this->state == GameState::HELP_PANEL) {
 		this->helpPanel->pollEvents(this->window);
@@ -57,6 +67,16 @@ void Game::pollEvents() {
 			this->state = GameState::MAIN_MENU;
 			this->helpPanel->setState(GameState::HELP_PANEL);
 		}
+	}
+	if (this->state == GameState::SETTINGS) {
+		this->settings->pollEvents(this->window);
+		if (this->settings->returnGameState() == GameState::MAIN_MENU) {
+			this->state = GameState::MAIN_MENU;
+			this->settings->setState(GameState::SETTINGS);
+		}
+	}
+	if (this->state == GameState::LEADERBOARD) {
+		this->leaderboardPanel->pollEvents(this->window);
 	}
 	if (this->state == GameState::GAME_PLAY) {
 		this->gamePlay->pollEvents(this->window);
@@ -70,6 +90,12 @@ void Game::update(){
 	}
 	if (this->state == GameState::HELP_PANEL) {
 		this->helpPanel->update(this->window);
+	}
+	if (this->state == GameState::SETTINGS) {
+		this->settings->update(this->window);
+	}
+	if (this->state == GameState::LEADERBOARD) {
+		this->leaderboardPanel->update(this->window);
 	}
 	if (this->state == GameState::GAME_PLAY) {
 		this->gamePlay->update(this->window);
@@ -85,6 +111,12 @@ void Game::render() {
 	}
 	if (this->state == GameState::GAME_PLAY) {
 		this->gamePlay->draw(this->window);
+	}
+	if (this->state == GameState::SETTINGS) {
+		this->settings->draw(this->window);
+	}
+	if (this->state == GameState::LEADERBOARD) {
+		this->leaderboardPanel->draw(this->window);
 	}
 	this->window->display();
 }

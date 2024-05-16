@@ -17,3 +17,6 @@ GameState GamePlay::returnGameState(){
 void GamePlay::setState(GameState sentState) {
 	this->state = sentState;
 }
+void GamePlay::updateMousePosWindow(sf::RenderWindow* window) {
+	this->mousePosWindow = sf::Mouse::getPosition(*window);
+}

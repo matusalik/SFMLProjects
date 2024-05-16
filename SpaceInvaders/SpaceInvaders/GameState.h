@@ -3,5 +3,7 @@
 enum class GameState {
 	MAIN_MENU,
 	HELP_PANEL,
-	GAME_PLAY
+	GAME_PLAY,
+	SETTINGS,
+	LEADERBOARD
 };
