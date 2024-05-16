@@ -12,6 +12,9 @@ void LeaderboardPanel::initButtons(){
 void LeaderboardPanel::initText() {
 
 }
+void LeaderboardPanel::initFont() {
+
+}
 void LeaderboardPanel::draw(sf::RenderWindow*& window) {
 
 }

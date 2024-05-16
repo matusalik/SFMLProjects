@@ -16,6 +16,7 @@ private:
 	void initEnum();
 	void initButtons();
 	void initText();
+	void initFont();
 
 public:
 	void draw(sf::RenderWindow*& window);
