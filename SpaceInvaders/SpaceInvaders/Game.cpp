@@ -1,4 +1,4 @@
-﻿#include "Game.h"
+#include "Game.h"
 //Private functions
 void Game::initPanels() {
 	this->mainMenu = new MainMenu;
@@ -82,7 +82,7 @@ void Game::pollEvents() {
 		this->gamePlay->pollEvents(this->window);
 	}
 }
-void Game::update(){
+void Game::update() {
 	this->updateMousePosWindow();
 	this->pollEvents();
 	if (this->state == GameState::MAIN_MENU) {

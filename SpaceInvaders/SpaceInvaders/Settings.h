@@ -16,7 +16,7 @@ private:
 
 	//Game difficulty enum
 	GameDifficulty difficulty;
-	
+
 	//Mouse Position
 	sf::Vector2i mousePosWindow;
 

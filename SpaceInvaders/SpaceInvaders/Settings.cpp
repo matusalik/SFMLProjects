@@ -1,6 +1,6 @@
 #include "Settings.h"
 
-Settings::Settings(){
+Settings::Settings() {
 	this->initEnum();
 	this->initFont();
 	this->initTextures();
@@ -61,7 +61,7 @@ void Settings::initTextures() {
 		std::cout << "Couldn't load SettingsBackground!" << std::endl;
 	}
 }
-void Settings::initSprites(){
+void Settings::initSprites() {
 	this->settingsBackgroundSprite.setTexture(this->settingsBackgroundTexture);
 }
 void Settings::initEnum() {
@@ -90,7 +90,7 @@ void Settings::initButtons() {
 	this->exitButton.setOutlineColor(sf::Color(105, 105, 105));
 	this->exitButton.setOutlineThickness(10.f);
 }
-void Settings::draw(sf::RenderWindow*& window){
+void Settings::draw(sf::RenderWindow*& window) {
 	window->draw(this->settingsBackgroundSprite);
 	window->draw(this->easyCheckBox);
 	window->draw(this->normalCheckBox);
@@ -105,7 +105,7 @@ void Settings::draw(sf::RenderWindow*& window){
 	window->draw(this->tickNormal);
 	window->draw(this->tickHard);
 }
-void Settings::pollEvents(sf::RenderWindow*& window){
+void Settings::pollEvents(sf::RenderWindow*& window) {
 	while (window->pollEvent(this->ev)) {
 		switch (this->ev.type) {
 		case sf::Event::Closed:
@@ -128,7 +128,7 @@ void Settings::pollEvents(sf::RenderWindow*& window){
 		}
 	}
 }
-void Settings::update(sf::RenderWindow* window){
+void Settings::update(sf::RenderWindow* window) {
 	this->updateMousePosWindow(window);
 	if (this->difficulty == GameDifficulty::EASY) {
 		this->tickEasy.setString("X");
@@ -179,7 +179,7 @@ void Settings::update(sf::RenderWindow* window){
 		this->easyCheckBox.setOutlineColor(sf::Color(105, 105, 105));
 	}
 }
-void Settings::updateMousePosWindow(sf::RenderWindow* window){
+void Settings::updateMousePosWindow(sf::RenderWindow* window) {
 	this->mousePosWindow = sf::Mouse::getPosition(*window);
 }
 GameState Settings::returnGameState() {
