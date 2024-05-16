@@ -14,6 +14,7 @@ private:
 
 	//Private functions
 	void initEnum();
+	void initButtons();
 
 public:
 	void draw(sf::RenderWindow*& window);

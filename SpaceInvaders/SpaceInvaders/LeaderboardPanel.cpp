@@ -6,6 +6,9 @@ LeaderboardPanel::LeaderboardPanel() {
 void LeaderboardPanel::initEnum() {
 	this->state = GameState::LEADERBOARD;
 }
+void LeaderboardPanel::initButtons(){
+
+}
 void LeaderboardPanel::draw(sf::RenderWindow*& window) {
 
 }
