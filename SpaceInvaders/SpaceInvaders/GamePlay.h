@@ -7,10 +7,11 @@ private:
 	//Game State
 	GameState state;
 public:
-	virtual void draw(sf::RenderWindow*& window);
-	virtual void update(sf::RenderWindow* window);
-	virtual void pollEvents(sf::RenderWindow*& window);
-	virtual GameState returnGameState();
+	void draw(sf::RenderWindow*& window);
+	void update(sf::RenderWindow* window);
+	void pollEvents(sf::RenderWindow*& window);
+	GameState returnGameState();
+	void setState(GameState sentState);
 	GamePlay();
 };
 

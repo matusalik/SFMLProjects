@@ -1,5 +1,6 @@
 #include "MainMenu.h"
 MainMenu::MainMenu() {
+	this->initEnum();
 	this->initTextures();
 	this->initSprites();
 	this->initVariables();
@@ -10,6 +11,9 @@ MainMenu::MainMenu() {
 }
 MainMenu::~MainMenu() {
 
+}
+void MainMenu::initEnum() {
+	this->state = GameState::MAIN_MENU;
 }
 void MainMenu::initTextures() {
 	if (!this->mainMenuBackgroundTexture.loadFromFile("backgrounds/MainMenuBackground.png")) {
@@ -154,6 +158,9 @@ void MainMenu::pollEvents(sf::RenderWindow*& window) {
 			if (mousePosWindow.x >= 257 && mousePosWindow.x <= 537 && mousePosWindow.y >= 550 && mousePosWindow.y <= 630) {
 				this->state = GameState::HELP_PANEL;
 			}
+			if (mousePosWindow.x >= 257 && mousePosWindow.x <= 537 && mousePosWindow.y >= 690 && mousePosWindow.y <= 770) {
+				window->close();
+			}
 			if (mousePosWindow.x >= 252 && mousePosWindow.x <= 282 && mousePosWindow.y >= 340 && mousePosWindow.y <= 370) {
 				if (this->tick.getString() == "") {
 					this->tick.setString("X");
@@ -238,4 +245,7 @@ void MainMenu::updateMousePosWindow(sf::RenderWindow* window) {
 }
 GameState MainMenu::returnGameState() {
 	return this->state;
+}
+void MainMenu::setState(GameState sentState) {
+	this->state = sentState;
 }

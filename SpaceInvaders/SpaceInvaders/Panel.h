@@ -10,5 +10,6 @@ public:
 	virtual void update(sf::RenderWindow* window) = 0;
 	virtual void pollEvents(sf::RenderWindow*& window) = 0;
 	virtual GameState returnGameState() = 0;
+	virtual void setState(GameState sentState) = 0;
 };
 

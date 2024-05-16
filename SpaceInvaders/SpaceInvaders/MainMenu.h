@@ -24,11 +24,15 @@ private:
 	
 	//Variables
 	bool isGuestChecked = false;
+	int mainMenuCharacterSize;
+	int mainMenuHowOftenResizeCounter;
+	bool charSizeState;
 
 	//Events
 	sf::Event ev;
 
 	//Private functions
+	void initEnum();
 	void initSprites();
 	void initTextures();
 	void initButton();
@@ -60,9 +64,6 @@ private:
 	std::string NickStr;
 	sf::Vector2i MainMenuTitlePos;
 	sf::Font MainMenuFont;
-	int mainMenuCharacterSize;
-	int mainMenuHowOftenResizeCounter;
-	bool charSizeState;
 
 	//Mose Position
 	sf::Vector2i mousePosWindow;
@@ -73,6 +74,7 @@ public:
 	void pollEvents(sf::RenderWindow*& window);
 	void update(sf::RenderWindow* window);
 	GameState returnGameState();
+	void setState(GameState sentState);
 
 	//Constructors dectructors
 	MainMenu();

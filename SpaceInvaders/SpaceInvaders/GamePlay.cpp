@@ -14,3 +14,6 @@ void GamePlay::pollEvents(sf::RenderWindow*& window){
 GameState GamePlay::returnGameState(){
 	return this->state;
 }
+void GamePlay::setState(GameState sentState) {
+	this->state = sentState;
+}

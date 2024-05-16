@@ -15,7 +15,7 @@ void Game::initWindow() {
 	this->window->setFramerateLimit(144);
 }
 void Game::initEnum() {
-	this->state = GameState::HELP_PANEL;
+	this->state = GameState::MAIN_MENU;
 }
 void Game::updateMousePosWindow() {
 	mousePosWindow = sf::Mouse::getPosition(*this->window);
@@ -42,9 +42,21 @@ void Game::pollEvents() {
 	//Event polling
 	if (this->state == GameState::MAIN_MENU) {
 		this->mainMenu->pollEvents(this->window);
+		if (this->mainMenu->returnGameState() == GameState::HELP_PANEL) {
+			this->state = GameState::HELP_PANEL;
+			this->mainMenu->setState(GameState::MAIN_MENU);
+		}
+		if (this->mainMenu->returnGameState() == GameState::GAME_PLAY) {
+			this->state = GameState::GAME_PLAY;
+			this->mainMenu->setState(GameState::MAIN_MENU);
+		}
 	}
 	if (this->state == GameState::HELP_PANEL) {
 		this->helpPanel->pollEvents(this->window);
+		if (this->helpPanel->returnGameState() == GameState::MAIN_MENU) {
+			this->state = GameState::MAIN_MENU;
+			this->helpPanel->setState(GameState::HELP_PANEL);
+		}
 	}
 	if (this->state == GameState::GAME_PLAY) {
 		this->gamePlay->pollEvents(this->window);
@@ -55,12 +67,6 @@ void Game::update(){
 	this->pollEvents();
 	if (this->state == GameState::MAIN_MENU) {
 		this->mainMenu->update(this->window);
-		if (this->mainMenu->returnGameState() == GameState::HELP_PANEL) {
-			this->state = GameState::HELP_PANEL;
-		}
-		if (this->mainMenu->returnGameState() == GameState::GAME_PLAY) {
-			this->state = GameState::GAME_PLAY;
-		}
 	}
 	if (this->state == GameState::HELP_PANEL) {
 		this->helpPanel->update(this->window);

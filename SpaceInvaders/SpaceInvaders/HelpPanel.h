@@ -9,6 +9,15 @@
 class HelpPanel : public Panel
 {
 private:
+	//Variables
+	std::string helpString;
+
+	//Sprite
+	sf::Sprite helpPanelBackgroundSprite;
+
+	//Textures
+	sf::Texture helpPanelBackgroundTexture;
+
 	//Fonts
 	sf::Font helpPanelFont;
 
@@ -23,8 +32,13 @@ private:
 
 	//Text
 	sf::Text exitText;
+	sf::Text helpText;
 
 	//Private Functions
+	void initVariables();
+	void initEnum();
+	void initTextures();
+	void initSprites();
 	void initButtons();
 	void initText();
 	void initFonts();
@@ -40,6 +54,7 @@ public:
 	void draw(sf::RenderWindow*& window);
 	void update(sf::RenderWindow* window);
 	void pollEvents(sf::RenderWindow*& window);
+	void setState(GameState sentState);
 	GameState returnGameState();
 };
 

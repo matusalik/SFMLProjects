@@ -2,7 +2,6 @@
 Leaderboard::Leaderboard() {
 	std::ifstream file("Data/database.txt");
 	if (file.is_open()) {
-		std::cout << "Found file!" << std::endl;
 		std::string line;
 		while (std::getline(file, line)) {
 			std::istringstream iss(line);
