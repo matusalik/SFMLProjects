@@ -1,0 +1,22 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "Debug\\GameDifficulty.h.obj",
+            "outputs": [
+                "C:\\Users\\mateu\\OneDrive\\Pulpit\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\Debug\\vc143.pdb",
+                "Debug\\",
+                "C:\\Users\\mateu\\OneDrive\\Pulpit\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\Debug\\GameDifficulty.h.ifc"
+            ],
+            "provides": [
+                {
+                    "logical-name": "GameDifficulty.h",
+                    "source-path": "c:\\users\\mateu\\onedrive\\pulpit\\sfmlprojects\\spaceinvaders\\spaceinvaders\\gamedifficulty.h",
+                    "lookup-method": "absolute"
+                }
+            ],
+            "requires": []
+        }
+    ]
+}
