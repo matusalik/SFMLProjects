@@ -1,12 +1,360 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SFMLProjects\\SpaceInvaders\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\SpaceInvaders.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\SpaceInvaders.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\Settings.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\Settings.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\MainMenu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\MainMenu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\LeaderboardPanel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\LeaderboardPanel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\Leaderboard.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\Leaderboard.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\HelpPanel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\HelpPanel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\GamePlay.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\GamePlay.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\Settings.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\Settings.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\Panel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\Panel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\MainMenu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\MainMenu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\LeaderboardPanel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\LeaderboardPanel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\Leaderboard.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\Leaderboard.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\HelpPanel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\HelpPanel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\GameState.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\GameState.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\GamePlay.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\GamePlay.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\GameDifficulty.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\GameDifficulty.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Settings.cpp",
+              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\Settings.cpp",
+              "RelativeDocumentMoniker": "SpaceInvaders\\Settings.cpp",
+              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\Settings.cpp",
+              "RelativeToolTip": "SpaceInvaders\\Settings.cpp",
+              "ViewState": "AQIAAJ4AAAAAAAAAAAAowMEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-16T21:15:41.616Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Player.cpp",
+              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\Player.cpp",
+              "RelativeDocumentMoniker": "SpaceInvaders\\Player.cpp",
+              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\Player.cpp",
+              "RelativeToolTip": "SpaceInvaders\\Player.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-16T21:15:36.969Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainMenu.cpp",
+              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\MainMenu.cpp",
+              "RelativeDocumentMoniker": "SpaceInvaders\\MainMenu.cpp",
+              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\MainMenu.cpp",
+              "RelativeToolTip": "SpaceInvaders\\MainMenu.cpp",
+              "ViewState": "AQIAAAcBAAAAAAAAAAAowCoBAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-16T21:15:33.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SpaceInvaders.cpp",
+              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\SpaceInvaders.cpp",
+              "RelativeDocumentMoniker": "SpaceInvaders\\SpaceInvaders.cpp",
+              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\SpaceInvaders.cpp",
+              "RelativeToolTip": "SpaceInvaders\\SpaceInvaders.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-16T21:05:27.152Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LeaderboardPanel.cpp",
+              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\LeaderboardPanel.cpp",
+              "RelativeDocumentMoniker": "SpaceInvaders\\LeaderboardPanel.cpp",
+              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\LeaderboardPanel.cpp",
+              "RelativeToolTip": "SpaceInvaders\\LeaderboardPanel.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-16T21:15:29.104Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Leaderboard.cpp",
+              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\Leaderboard.cpp",
+              "RelativeDocumentMoniker": "SpaceInvaders\\Leaderboard.cpp",
+              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\Leaderboard.cpp",
+              "RelativeToolTip": "SpaceInvaders\\Leaderboard.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-16T21:15:25.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HelpPanel.cpp",
+              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\HelpPanel.cpp",
+              "RelativeDocumentMoniker": "SpaceInvaders\\HelpPanel.cpp",
+              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\HelpPanel.cpp",
+              "RelativeToolTip": "SpaceInvaders\\HelpPanel.cpp",
+              "ViewState": "AQIAADgAAAAAAAAAAAAowFsAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-16T21:15:20.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GamePlay.cpp",
+              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\GamePlay.cpp",
+              "RelativeDocumentMoniker": "SpaceInvaders\\GamePlay.cpp",
+              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\GamePlay.cpp",
+              "RelativeToolTip": "SpaceInvaders\\GamePlay.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-16T21:15:12.396Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Game.cpp",
+              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\Game.cpp",
+              "RelativeDocumentMoniker": "SpaceInvaders\\Game.cpp",
+              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\Game.cpp",
+              "RelativeToolTip": "SpaceInvaders\\Game.cpp",
+              "ViewState": "AQIAAFYAAAAAAAAAAAAowHkAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-16T21:15:10.061Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "LeaderboardPanel.h",
+              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\LeaderboardPanel.h",
+              "RelativeDocumentMoniker": "SpaceInvaders\\LeaderboardPanel.h",
+              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\LeaderboardPanel.h",
+              "RelativeToolTip": "SpaceInvaders\\LeaderboardPanel.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-16T21:13:28.327Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MainMenu.h",
+              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\MainMenu.h",
+              "RelativeDocumentMoniker": "SpaceInvaders\\MainMenu.h",
+              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\MainMenu.h",
+              "RelativeToolTip": "SpaceInvaders\\MainMenu.h",
+              "ViewState": "AQIAADgAAAAAAAAAAAAowFsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-16T21:13:37.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Panel.h",
+              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\Panel.h",
+              "RelativeDocumentMoniker": "SpaceInvaders\\Panel.h",
+              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\Panel.h",
+              "RelativeToolTip": "SpaceInvaders\\Panel.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-16T21:13:49.734Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Player.h",
+              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\Player.h",
+              "RelativeDocumentMoniker": "SpaceInvaders\\Player.h",
+              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\Player.h",
+              "RelativeToolTip": "SpaceInvaders\\Player.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-16T21:14:01.387Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Settings.h",
+              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\Settings.h",
+              "RelativeDocumentMoniker": "SpaceInvaders\\Settings.h",
+              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\Settings.h",
+              "RelativeToolTip": "SpaceInvaders\\Settings.h",
+              "ViewState": "AQIAABsAAAAAAAAAAAAowD4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-16T21:14:13.759Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Leaderboard.h",
+              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\Leaderboard.h",
+              "RelativeDocumentMoniker": "SpaceInvaders\\Leaderboard.h",
+              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\Leaderboard.h",
+              "RelativeToolTip": "SpaceInvaders\\Leaderboard.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-16T21:13:16.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "HelpPanel.h",
+              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\HelpPanel.h",
+              "RelativeDocumentMoniker": "SpaceInvaders\\HelpPanel.h",
+              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\HelpPanel.h",
+              "RelativeToolTip": "SpaceInvaders\\HelpPanel.h",
+              "ViewState": "AQIAABkAAAAAAAAAAAAowDwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-16T21:13:01.818Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "GameState.h",
+              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\GameState.h",
+              "RelativeDocumentMoniker": "SpaceInvaders\\GameState.h",
+              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\GameState.h",
+              "RelativeToolTip": "SpaceInvaders\\GameState.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-16T21:12:50.009Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "GamePlay.h",
+              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\GamePlay.h",
+              "RelativeDocumentMoniker": "SpaceInvaders\\GamePlay.h",
+              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\GamePlay.h",
+              "RelativeToolTip": "SpaceInvaders\\GamePlay.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-16T21:12:39.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "GameDifficulty.h",
+              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\GameDifficulty.h",
+              "RelativeDocumentMoniker": "SpaceInvaders\\GameDifficulty.h",
+              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\GameDifficulty.h",
+              "RelativeToolTip": "SpaceInvaders\\GameDifficulty.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-16T21:12:11.969Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Game.h",
+              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\Game.h",
+              "RelativeDocumentMoniker": "SpaceInvaders\\Game.h",
+              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SpaceInvaders\\SpaceInvaders\\Game.h",
+              "RelativeToolTip": "SpaceInvaders\\Game.h",
+              "ViewState": "AQIAABgAAAAAAAAAAAAowDsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-16T21:12:01.294Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

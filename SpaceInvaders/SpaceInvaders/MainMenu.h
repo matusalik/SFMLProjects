@@ -27,7 +27,7 @@ private:
 
 	//Game State Enum
 	GameState state;
-	
+
 	//Variables
 	bool isGuestChecked = false;
 	int mainMenuCharacterSize;

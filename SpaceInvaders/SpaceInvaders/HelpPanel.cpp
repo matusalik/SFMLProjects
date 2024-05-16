@@ -12,7 +12,7 @@ HelpPanel::~HelpPanel() {
 
 }
 void HelpPanel::initVariables() {
-	this->helpString = "   Your mission is to \nprotect yourself against\naliens coming from north,\n  east, south and west.\n       Controlls: \n    W - Shoot North\n    A - Shoot West\n    S - Shoot South\n    D - Shoot East\n    ESC - Pause";		
+	this->helpString = "   Your mission is to \nprotect yourself against\naliens coming from north,\n  east, south and west.\n       Controlls: \n    W - Shoot North\n    A - Shoot West\n    S - Shoot South\n    D - Shoot East\n    ESC - Pause";
 }
 void HelpPanel::initEnum() {
 	this->state = GameState::HELP_PANEL;
@@ -43,7 +43,7 @@ void HelpPanel::initText() {
 	this->helpText.setLineSpacing(2.f);
 	this->helpText.setString(this->helpString);
 	this->helpText.setFillColor(sf::Color::Black);
-	
+
 }
 void HelpPanel::initFonts() {
 	if (!this->helpPanelFont.loadFromFile("fonts/PressStart2P-vaV7.ttf")) {

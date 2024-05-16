@@ -23,7 +23,7 @@ private:
 
 	//Events
 	sf::Event ev;
-	
+
 	//Game State Enum
 	GameState state;
 
@@ -46,7 +46,7 @@ private:
 
 	//Mose Position
 	sf::Vector2i mousePosWindow;
-	
+
 
 public:
 	HelpPanel();
