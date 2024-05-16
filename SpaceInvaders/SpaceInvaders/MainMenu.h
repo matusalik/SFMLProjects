@@ -12,9 +12,15 @@ class MainMenu : public Panel
 private:
 	//Sprite
 	sf::Sprite mainMenuBackgroundSprite;
+	sf::Sprite settingsButtonSprite;
+	sf::Sprite leaderboardsButtonSprite;
 
 	//Textures
 	sf::Texture mainMenuBackgroundTexture;
+	sf::Texture settingsButtonTexture;
+	sf::Texture settingsButtonTextureOutline;
+	sf::Texture leaderboardsButtonTexture;
+	sf::Texture leaderboardsButtonTextureOutline;
 
 	//Leaderboard
 	Leaderboard leaderBoard;
@@ -47,6 +53,8 @@ private:
 	sf::RectangleShape helpButton;
 	sf::RectangleShape exitButton;
 	sf::RectangleShape guestCheckBox;
+	sf::RectangleShape settingsButon;
+	sf::RectangleShape leaderboardButton;
 
 	//Text boxes
 	sf::RectangleShape nickTextBox;

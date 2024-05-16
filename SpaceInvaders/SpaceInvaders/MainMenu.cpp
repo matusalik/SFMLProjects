@@ -19,9 +19,25 @@ void MainMenu::initTextures() {
 	if (!this->mainMenuBackgroundTexture.loadFromFile("backgrounds/MainMenuBackground.png")) {
 		std::cout << "Couldn't load MainMenuBackground!" << std::endl;
 	}
+	if (!this->leaderboardsButtonTexture.loadFromFile("sprites/LeaderboardButtonSprite.png")) {
+		std::cout << "Couldn't load LeaderboardButtonSprite!" << std::endl;
+	}
+	if (!this->leaderboardsButtonTextureOutline.loadFromFile("sprites/LeaderboardButtonSpriteOutline.png")) {
+		std::cout << "Couldn't load LeaderboardButtonSpriteOutline!" << std::endl;
+	}
+	if (!this->settingsButtonTexture.loadFromFile("sprites/SettingsButtonSprite.png")) {
+		std::cout << "Couldn't load SettingsButtonSprite!" << std::endl;
+	}
+	if (!this->settingsButtonTextureOutline.loadFromFile("sprites/SettingsButtonSpriteOutline.png")) {
+		std::cout << "Couldn't load SettingsButtonSpriteOutline!" << std::endl;
+	}
 }
 void MainMenu::initSprites() {
 	this->mainMenuBackgroundSprite.setTexture(this->mainMenuBackgroundTexture);
+	this->leaderboardsButtonSprite.setTexture(this->leaderboardsButtonTexture);
+	this->leaderboardsButtonSprite.setPosition(730.f, 650.f);
+	this->settingsButtonSprite.setTexture(this->settingsButtonTexture);
+	this->settingsButtonSprite.setPosition(730.f, 730.f);
 }
 void MainMenu::initTextBoxes() {
 	this->nickTextBox.setPosition(247.f, 200.f);
@@ -30,17 +46,17 @@ void MainMenu::initTextBoxes() {
 	this->nickTextBox.setOutlineColor(sf::Color(100, 255, 43));
 }
 void MainMenu::initButton() {
-	this->playButton.setPosition(257.f, 410.f);
+	this->playButton.setPosition(257.f, 420.f);
 	this->playButton.setSize(sf::Vector2f(280.f, 80.f));
 	this->playButton.setFillColor(sf::Color(138, 138, 138));
 	this->playButton.setOutlineColor(sf::Color(105, 105, 105));
 	this->playButton.setOutlineThickness(10.f);
-	this->helpButton.setPosition(257.f, 550.f);
+	this->helpButton.setPosition(257.f, 560.f);
 	this->helpButton.setSize(sf::Vector2f(280.f, 80.f));
 	this->helpButton.setFillColor(sf::Color(138, 138, 138));
 	this->helpButton.setOutlineColor(sf::Color(105, 105, 105));
 	this->helpButton.setOutlineThickness(10.f);
-	this->exitButton.setPosition(257.f, 690.f);
+	this->exitButton.setPosition(257.f, 700.f);
 	this->exitButton.setSize(sf::Vector2f(280.f, 80.f));
 	this->exitButton.setFillColor(sf::Color(138, 138, 138));
 	this->exitButton.setOutlineColor(sf::Color(105, 105, 105));
@@ -50,6 +66,16 @@ void MainMenu::initButton() {
 	this->guestCheckBox.setFillColor(sf::Color(138, 138, 138));
 	this->guestCheckBox.setOutlineColor(sf::Color(105, 105, 105));
 	this->guestCheckBox.setOutlineThickness(5.f);
+	this->settingsButon.setPosition(730.f, 730.f);
+	this->settingsButon.setSize(sf::Vector2f(50.f, 50.f));
+	this->settingsButon.setFillColor(sf::Color(138, 138, 138));
+	this->settingsButon.setOutlineColor(sf::Color(105, 105, 105));
+	this->settingsButon.setOutlineThickness(10.f);
+	this->leaderboardButton.setPosition(730.f, 650.f);
+	this->leaderboardButton.setSize(sf::Vector2f(50.f, 50.f));
+	this->leaderboardButton.setFillColor(sf::Color(138, 138, 138));
+	this->leaderboardButton.setOutlineColor(sf::Color(105, 105, 105));
+	this->leaderboardButton.setOutlineThickness(10.f);
 }
 void MainMenu::initFont() {
 	if (!this->MainMenuFont.loadFromFile("fonts/PressStart2P-vaV7.ttf")) {
@@ -76,17 +102,17 @@ void MainMenu::initText() {
 	this->Nick.setPosition(250.f, 213.f);
 	this->Nick.setFillColor(sf::Color::Black);
 	this->playButtonText.setFont(this->MainMenuFont);
-	this->playButtonText.setPosition(340.f, 440.f);
+	this->playButtonText.setPosition(340.f, 450.f);
 	this->playButtonText.setString("PLAY");
 	this->playButtonText.setFillColor(sf::Color::Black);
 	this->playButtonText.setOutlineColor(sf::Color(100, 255, 43));
 	this->helpButtonText.setFont(this->MainMenuFont);
-	this->helpButtonText.setPosition(340.f, 580.f);
+	this->helpButtonText.setPosition(340.f, 590.f);
 	this->helpButtonText.setString("HELP");
 	this->helpButtonText.setFillColor(sf::Color::Black);
 	this->helpButtonText.setOutlineColor(sf::Color(100, 255, 43));
 	this->exitButtonText.setFont(this->MainMenuFont);
-	this->exitButtonText.setPosition(340.f, 720.f);
+	this->exitButtonText.setPosition(340.f, 730.f);
 	this->exitButtonText.setString("EXIT");
 	this->exitButtonText.setFillColor(sf::Color::Black);
 	this->exitButtonText.setOutlineColor(sf::Color(100, 255, 43));
@@ -138,9 +164,13 @@ void MainMenu::draw(sf::RenderWindow*& window) {
 	window->draw(this->playButton);
 	window->draw(this->helpButton);
 	window->draw(this->exitButton);
+	window->draw(this->settingsButon);
+	window->draw(this->leaderboardButton);
 	window->draw(this->playButtonText);
 	window->draw(this->helpButtonText);
 	window->draw(this->exitButtonText);
+	window->draw(this->leaderboardsButtonSprite);
+	window->draw(this->settingsButtonSprite);
 	window->draw(this->guestCheckBox);
 	window->draw(this->playAsAGuest);
 	window->draw(this->tick);
@@ -152,13 +182,13 @@ void MainMenu::pollEvents(sf::RenderWindow*& window) {
 			window->close();
 			break;
 		case sf::Event::MouseButtonPressed:
-			if (mousePosWindow.x >= 257 && mousePosWindow.x <= 537 && mousePosWindow.y >= 410 && mousePosWindow.y <= 490) {
+			if (mousePosWindow.x >= 257 && mousePosWindow.x <= 537 && mousePosWindow.y >= 420 && mousePosWindow.y <= 500) {
 				this->state = GameState::GAME_PLAY;
 			}
-			if (mousePosWindow.x >= 257 && mousePosWindow.x <= 537 && mousePosWindow.y >= 550 && mousePosWindow.y <= 630) {
+			if (mousePosWindow.x >= 257 && mousePosWindow.x <= 537 && mousePosWindow.y >= 560 && mousePosWindow.y <= 640) {
 				this->state = GameState::HELP_PANEL;
 			}
-			if (mousePosWindow.x >= 257 && mousePosWindow.x <= 537 && mousePosWindow.y >= 690 && mousePosWindow.y <= 770) {
+			if (mousePosWindow.x >= 257 && mousePosWindow.x <= 537 && mousePosWindow.y >= 700 && mousePosWindow.y <= 780) {
 				window->close();
 			}
 			if (mousePosWindow.x >= 252 && mousePosWindow.x <= 282 && mousePosWindow.y >= 340 && mousePosWindow.y <= 370) {
@@ -207,6 +237,18 @@ void MainMenu::pollEvents(sf::RenderWindow*& window) {
 void MainMenu::update(sf::RenderWindow* window) {
 	this->updateMainMenuCharSize();
 	this->updateMousePosWindow(window);
+	if (mousePosWindow.x >= 730 && mousePosWindow.x <= 780 && mousePosWindow.y >= 650 && mousePosWindow.y <= 700) {
+		this->leaderboardsButtonSprite.setTexture(this->leaderboardsButtonTextureOutline);
+	}
+	else {
+		this->leaderboardsButtonSprite.setTexture(this->leaderboardsButtonTexture);
+	}
+	if (mousePosWindow.x >= 730 && mousePosWindow.x <= 780 && mousePosWindow.y >= 730 && mousePosWindow.y <= 780) {
+		this->settingsButtonSprite.setTexture(this->settingsButtonTextureOutline);
+	}
+	else {
+		this->settingsButtonSprite.setTexture(this->settingsButtonTexture);
+	}
 	if (mousePosWindow.x >= 252 && mousePosWindow.x <= 282 && mousePosWindow.y >= 340 && mousePosWindow.y <= 370) {
 		this->guestCheckBox.setFillColor(sf::Color(112, 112, 112));
 		this->guestCheckBox.setOutlineColor(sf::Color(79, 79, 79));
@@ -215,19 +257,19 @@ void MainMenu::update(sf::RenderWindow* window) {
 		this->guestCheckBox.setFillColor(sf::Color(138, 138, 138));
 		this->guestCheckBox.setOutlineColor(sf::Color(105, 105, 105));
 	}
-	if (mousePosWindow.x >= 257 && mousePosWindow.x <= 537 && mousePosWindow.y >= 690 && mousePosWindow.y <= 770) {
+	if (mousePosWindow.x >= 257 && mousePosWindow.x <= 537 && mousePosWindow.y >= 700 && mousePosWindow.y <= 780) {
 		this->exitButtonText.setOutlineThickness(3.f);
 	}
 	else {
 		this->exitButtonText.setOutlineThickness(0.f);
 	}
-	if (mousePosWindow.x >= 257 && mousePosWindow.x <= 537 && mousePosWindow.y >= 550 && mousePosWindow.y <= 630) {
+	if (mousePosWindow.x >= 257 && mousePosWindow.x <= 537 && mousePosWindow.y >= 560 && mousePosWindow.y <= 640) {
 		this->helpButtonText.setOutlineThickness(3.f);
 	}
 	else {
 		this->helpButtonText.setOutlineThickness(0.f);
 	}
-	if (mousePosWindow.x >= 257 && mousePosWindow.x <= 537 && mousePosWindow.y >= 410 && mousePosWindow.y <= 490) {
+	if (mousePosWindow.x >= 257 && mousePosWindow.x <= 537 && mousePosWindow.y >= 420 && mousePosWindow.y <= 500) {
 		this->playButtonText.setOutlineThickness(3.f);
 	}
 	else {
