@@ -9,6 +9,9 @@ void LeaderboardPanel::initEnum() {
 void LeaderboardPanel::initButtons(){
 
 }
+void LeaderboardPanel::initText() {
+
+}
 void LeaderboardPanel::draw(sf::RenderWindow*& window) {
 
 }

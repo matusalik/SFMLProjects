@@ -36,7 +36,7 @@
               "RelativeDocumentMoniker": "SpaceInvaders\\LeaderboardPanel.cpp",
               "ToolTip": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\LeaderboardPanel.cpp",
               "RelativeToolTip": "SpaceInvaders\\LeaderboardPanel.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-16T21:32:35.045Z",
               "EditorCaption": ""
@@ -49,7 +49,7 @@
               "RelativeDocumentMoniker": "SpaceInvaders\\LeaderboardPanel.h",
               "ToolTip": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\LeaderboardPanel.h",
               "RelativeToolTip": "SpaceInvaders\\LeaderboardPanel.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAUAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-05-16T21:32:16.601Z",
               "EditorCaption": ""
@@ -64,8 +64,7 @@
               "RelativeToolTip": "SpaceInvaders\\Leaderboard.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-16T21:32:13.265Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-16T21:32:13.265Z"
             },
             {
               "$type": "Document",
@@ -77,8 +76,7 @@
               "RelativeToolTip": "SpaceInvaders\\Game.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-16T21:15:10.061Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-16T21:15:10.061Z"
             }
           ]
         }
