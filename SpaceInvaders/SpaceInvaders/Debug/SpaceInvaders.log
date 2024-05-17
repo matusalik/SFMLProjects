@@ -1,3 +1,40 @@
 ﻿  Trwa skanowanie źródeł pod kątem zależności modułów...
-  Leaderboard.cpp
+  Game.cpp
+  MainMenu.cpp
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(51,56): warning C4244: "argument": konwersja z "float" do "sf::Uint8", możliwa utrata danych
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(51,49): warning C4244: "argument": konwersja z "float" do "sf::Uint8", możliwa utrata danych
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(51,42): warning C4244: "argument": konwersja z "float" do "sf::Uint8", możliwa utrata danych
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(88,70): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(88,70): warning C4244:         with
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(88,70): warning C4244:         [
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(88,70): warning C4244:             T=int
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(88,70): warning C4244:         ]
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(88,50): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(88,50): warning C4244:         with
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(88,50): warning C4244:         [
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(88,50): warning C4244:             T=int
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(88,50): warning C4244:         ]
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(107,44): warning C4244: "argument": konwersja z "float" do "unsigned int", możliwa utrata danych
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(151,72): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(151,72): warning C4244:         with
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(151,72): warning C4244:         [
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(151,72): warning C4244:             T=int
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(151,72): warning C4244:         ]
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(151,52): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(151,52): warning C4244:         with
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(151,52): warning C4244:         [
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(151,52): warning C4244:             T=int
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(151,52): warning C4244:         ]
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(159,72): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(159,72): warning C4244:         with
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(159,72): warning C4244:         [
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(159,72): warning C4244:             T=int
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(159,72): warning C4244:         ]
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(159,52): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(159,52): warning C4244:         with
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(159,52): warning C4244:         [
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(159,52): warning C4244:             T=int
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(159,52): warning C4244:         ]
+  SpaceInvaders.cpp
+  Generowanie kodu...
   SpaceInvaders.vcxproj -> C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\Debug\SpaceInvaders.exe

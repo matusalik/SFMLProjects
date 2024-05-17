@@ -101,6 +101,13 @@ void MainMenu::initText() {
 	this->Nick.setFont(this->MainMenuFont);
 	this->Nick.setPosition(250.f, 213.f);
 	this->Nick.setFillColor(sf::Color::Black);
+	this->nickValidationInfo.setFont(this->MainMenuFont);
+	this->nickValidationInfo.setPosition(247.f, 260.f);
+	this->nickValidationInfo.setFillColor(sf::Color(100, 255, 43));
+	this->nickValidationInfo.setCharacterSize(14.f);
+	this->nickValidationInfo.setString("Maximum 10 characters");
+	this->nickValidationInfo.setOutlineColor(sf::Color::Black);
+	this->nickValidationInfo.setOutlineThickness(5);
 	this->playButtonText.setFont(this->MainMenuFont);
 	this->playButtonText.setPosition(340.f, 450.f);
 	this->playButtonText.setString("PLAY");
@@ -133,6 +140,10 @@ void MainMenu::initVariables() {
 	this->charSizeState = true;
 	this->isNickTextBoxClicked = false;
 }
+void MainMenu::isNickValid() {
+	std::string temp = this->Nick.getString();
+	std::cout << temp << std::endl;
+}
 void MainMenu::updateMainMenuCharSize() {
 	if (this->mainMenuHowOftenResizeCounter % 4 == 0) {
 		if (this->charSizeState) {
@@ -161,6 +172,7 @@ void MainMenu::draw(sf::RenderWindow*& window) {
 	window->draw(this->MainMenuNick);
 	window->draw(this->nickTextBox);
 	window->draw(this->Nick);
+	window->draw(this->nickValidationInfo);
 	window->draw(this->playButton);
 	window->draw(this->helpButton);
 	window->draw(this->exitButton);
@@ -243,6 +255,7 @@ void MainMenu::pollEvents(sf::RenderWindow*& window) {
 void MainMenu::update(sf::RenderWindow* window) {
 	this->updateMainMenuCharSize();
 	this->updateMousePosWindow(window);
+	this->isNickValid();
 	if (mousePosWindow.x >= 730 && mousePosWindow.x <= 780 && mousePosWindow.y >= 650 && mousePosWindow.y <= 700) {
 		this->leaderboardsButtonSprite.setTexture(this->leaderboardsButtonTextureOutline);
 	}

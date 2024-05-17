@@ -46,6 +46,7 @@ private:
 	void initFont();
 	void initTextBoxes();
 	void initVariables();
+	void isNickValid();
 	void updateMousePosWindow(sf::RenderWindow* window);
 
 	//Buttons
@@ -69,6 +70,7 @@ private:
 	sf::Text exitButtonText;
 	sf::Text playAsAGuest;
 	sf::Text tick;
+	sf::Text nickValidationInfo;
 	std::string NickStr;
 	sf::Vector2i MainMenuTitlePos;
 	sf::Font MainMenuFont;
