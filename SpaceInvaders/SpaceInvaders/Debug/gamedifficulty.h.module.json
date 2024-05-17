@@ -5,14 +5,14 @@
         {
             "primary-output": "Debug\\GameDifficulty.h.obj",
             "outputs": [
-                "C:\\Users\\mateu\\OneDrive\\Pulpit\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\Debug\\vc143.pdb",
+                "C:\\Users\\admin\\Desktop\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\Debug\\vc143.pdb",
                 "Debug\\",
-                "C:\\Users\\mateu\\OneDrive\\Pulpit\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\Debug\\GameDifficulty.h.ifc"
+                "C:\\Users\\admin\\Desktop\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\Debug\\GameDifficulty.h.ifc"
             ],
             "provides": [
                 {
                     "logical-name": "GameDifficulty.h",
-                    "source-path": "c:\\users\\mateu\\onedrive\\pulpit\\sfmlprojects\\spaceinvaders\\spaceinvaders\\gamedifficulty.h",
+                    "source-path": "c:\\users\\admin\\desktop\\sfmlprojects\\spaceinvaders\\spaceinvaders\\gamedifficulty.h",
                     "lookup-method": "absolute"
                 }
             ],
