@@ -142,7 +142,6 @@ void MainMenu::initVariables() {
 }
 void MainMenu::isNickValid() {
 	std::string temp = this->Nick.getString();
-	std::cout << temp << std::endl;
 }
 void MainMenu::updateMainMenuCharSize() {
 	if (this->mainMenuHowOftenResizeCounter % 4 == 0) {

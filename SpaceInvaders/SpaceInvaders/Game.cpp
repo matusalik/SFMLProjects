@@ -77,6 +77,10 @@ void Game::pollEvents() {
 	}
 	if (this->state == GameState::LEADERBOARD) {
 		this->leaderboardPanel->pollEvents(this->window);
+		if (this->leaderboardPanel->returnGameState() == GameState::MAIN_MENU) {
+			this->state = GameState::MAIN_MENU;
+			this->leaderboardPanel->setState(GameState::LEADERBOARD);
+		}
 	}
 	if (this->state == GameState::GAME_PLAY) {
 		this->gamePlay->pollEvents(this->window);

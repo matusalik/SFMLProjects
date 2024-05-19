@@ -24,10 +24,6 @@ Leaderboard::Leaderboard() {
 	else {
 		std::cout << "Couldn't find the database file!" << std::endl;
 	}
-	for (auto &i : this->database) {
-		std::cout << i.getNick() << " ";
-		std::cout << i.getScore() << std::endl;
-	}
 }
 std::filesystem::path Leaderboard::findFile(const std::string& name) {
 	std::filesystem::path mainpath;

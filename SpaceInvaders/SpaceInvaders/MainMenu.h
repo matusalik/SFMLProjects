@@ -22,9 +22,6 @@ private:
 	sf::Texture leaderboardsButtonTexture;
 	sf::Texture leaderboardsButtonTextureOutline;
 
-	//Leaderboard
-	Leaderboard leaderBoard;
-
 	//Game State Enum
 	GameState state;
 
