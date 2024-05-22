@@ -1,3 +1,7 @@
 ﻿  Trwa skanowanie źródeł pod kątem zależności modułów...
-  LeaderboardPanel.cpp
-  SpaceInvaders.vcxproj -> C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\Debug\SpaceInvaders.exe
+  BasicEnemy.cpp
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\BasicEnemy.cpp(35,40): warning C4244: "argument": konwersja z "const int" do "float", możliwa utrata danych
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\BasicEnemy.cpp(35,37): warning C4244: "argument": konwersja z "const int" do "float", możliwa utrata danych
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\BasicEnemy.cpp(38,40): warning C4244: "argument": konwersja z "const int" do "float", możliwa utrata danych
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\BasicEnemy.cpp(38,37): warning C4244: "argument": konwersja z "const int" do "float", możliwa utrata danych
+  SpaceInvaders.vcxproj -> C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\Debug\SpaceInvaders.exe

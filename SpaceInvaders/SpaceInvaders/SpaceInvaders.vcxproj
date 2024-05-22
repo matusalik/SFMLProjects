@@ -135,6 +135,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BasicEnemy.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameDifficulty.h" />
     <ClCompile Include="GamePlay.cpp" />
@@ -147,6 +148,9 @@
     <ClCompile Include="SpaceInvaders.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BasicEnemy.h" />
+    <ClInclude Include="Direction.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GamePlay.h" />
     <ClInclude Include="GameState.h" />
