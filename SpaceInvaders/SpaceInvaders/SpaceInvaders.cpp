@@ -2,6 +2,7 @@
 #include "Game.h"
 int main()
 {
+    std::srand(std::time(NULL));
     //Init Game engine
     Game game;
     //Game loop

@@ -1,5 +1,6 @@
 ﻿  Trwa skanowanie źródeł pod kątem zależności modułów...
   GamePlay.cpp
-  Settings.cpp
+  SpaceInvaders.cpp
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\SpaceInvaders.cpp(5,25): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
   Generowanie kodu...
-  SpaceInvaders.vcxproj -> C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\Debug\SpaceInvaders.exe
+  SpaceInvaders.vcxproj -> C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\Debug\SpaceInvaders.exe

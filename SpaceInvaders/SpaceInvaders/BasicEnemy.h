@@ -5,8 +5,8 @@ class BasicEnemy : public Enemy
 private:
 	//Variables
 	Direction direction;
-	int x;
-	int y;
+	float x;
+	float y;
 
 	//Sprite
 	sf::Sprite BasicEnemySprite;
@@ -15,10 +15,10 @@ private:
 	sf::Texture BasicEnemyTexture;
 	
 	//Private Functions
-	void initSprite(const int& x, const int& y);
+	void initSprite(const float& x, const float& y);
 	void initTexture();
 public:
-	BasicEnemy(const Direction& direction);
+	BasicEnemy(const Direction& sentDirection);
 	sf::Sprite getSprite();
 	Direction getDirection();
 	void move();

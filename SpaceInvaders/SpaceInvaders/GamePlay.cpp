@@ -27,12 +27,39 @@ void GamePlay::initEnum() {
 }
 void GamePlay::initVariables() {
 	this->isPaused = false;
+	switch (this->difficulty) {
+	case GameDifficulty::EASY:
+		this->maxEnemies = 3;
+		break;
+	case GameDifficulty::NORMAL:
+		this->maxEnemies = 5;
+		break;
+	case GameDifficulty::HARD:
+		this->maxEnemies = 7;
+		break;
+	}
 }
 void GamePlay::initEnemies() {
-	this->enemiesVector.push_back(std::move(this->e));
-	this->enemiesVector.push_back(std::move(this->w));
-	this->enemiesVector.push_back(std::move(this->s));
-	this->enemiesVector.push_back(std::move(this->n));
+	std::cout << this->maxEnemies<<std::endl;
+	for (int i = 0; i < this->maxEnemies; i++) {
+		int temp = rand() % 4;
+		if (temp == 0) {
+			std::unique_ptr<Enemy> tempE = std::make_unique<BasicEnemy>(Direction::EAST);
+			this->enemiesVector.push_back(std::move(tempE));
+		}
+		else if (temp == 1) {
+			std::unique_ptr<Enemy> tempE = std::make_unique<BasicEnemy>(Direction::NORTH);
+			this->enemiesVector.push_back(std::move(tempE));
+		}
+		else if (temp == 2) {
+			std::unique_ptr<Enemy> tempE = std::make_unique<BasicEnemy>(Direction::WEST);
+			this->enemiesVector.push_back(std::move(tempE));
+		}
+		else if (temp == 3) {
+			std::unique_ptr<Enemy> tempE = std::make_unique<BasicEnemy>(Direction::SOUTH);
+			this->enemiesVector.push_back(std::move(tempE));
+		}
+	}
 }
 void GamePlay::draw(sf::RenderWindow*& window) {
 	if (!this->isPaused) {
@@ -51,21 +78,61 @@ void GamePlay::draw(sf::RenderWindow*& window) {
 }
 void GamePlay::update(sf::RenderWindow* window) {
 	this->updateMousePosWindow(window);
-	switch (this->difficulty) {
-	case GameDifficulty::EASY:
-		std::cout << "EASY" << std::endl;
-		break;
-	case GameDifficulty::NORMAL:
-		std::cout << "NORMAL" << std::endl;
-		break;
-	case GameDifficulty::HARD:
-		std::cout << "HARD" << std::endl;
-		break;
-	}
 	if (!this->isPaused) {
-		for (const auto& i : this->enemiesVector) {
-			i.get()->move();
+		for (auto it = this->enemiesVector.begin(); it != this->enemiesVector.end(); ) {
+			(*it)->move();
+			bool shouldDelete = false;
+			switch ((*it)->getDirection()) {
+			case Direction::NORTH:
+				if ((*it)->getSprite().getPosition().y + 70 >= this->PlayerSprite.getPosition().y) {
+					shouldDelete = true;
+				}
+				break;
+			case Direction::EAST:
+				if ((*it)->getSprite().getPosition().x <= this->PlayerSprite.getPosition().x + 100) {
+					shouldDelete = true;
+				}
+				break;
+			case Direction::SOUTH:
+				if ((*it)->getSprite().getPosition().y <= this->PlayerSprite.getPosition().y + 100) {
+					shouldDelete = true;
+				}
+				break;
+			case Direction::WEST:
+				if ((*it)->getSprite().getPosition().x + 70 >= this->PlayerSprite.getPosition().x) {
+					shouldDelete = true;
+				}
+				break;
+			}
+			if (shouldDelete) {
+				std::cout << "Deleting enemy\n";
+				it = this->enemiesVector.erase(it);
+				std::cout << this->enemiesVector.size() << std::endl;
+				this->spawnNewEnemy();
+			}
+			else {
+				++it;
+			}
 		}
+	}
+}
+void GamePlay::spawnNewEnemy() {
+	int temp = rand() % 4;
+	if (temp == 0) {
+		std::unique_ptr<Enemy> tempE = std::make_unique<BasicEnemy>(Direction::EAST);
+		this->enemiesVector.push_back(std::move(tempE));
+	}
+	else if (temp == 1) {
+		std::unique_ptr<Enemy> tempE = std::make_unique<BasicEnemy>(Direction::NORTH);
+		this->enemiesVector.push_back(std::move(tempE));
+	}
+	else if (temp == 2) {
+		std::unique_ptr<Enemy> tempE = std::make_unique<BasicEnemy>(Direction::WEST);
+		this->enemiesVector.push_back(std::move(tempE));
+	}
+	else if (temp == 3) {
+		std::unique_ptr<Enemy> tempE = std::make_unique<BasicEnemy>(Direction::SOUTH);
+		this->enemiesVector.push_back(std::move(tempE));
 	}
 }
 void GamePlay::pollEvents(sf::RenderWindow*& window) {
