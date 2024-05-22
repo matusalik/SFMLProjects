@@ -7,8 +7,8 @@
 class Enemy 
 {
 public:
-	virtual void setPos(const int& x, const int& y) = 0;
 	virtual sf::Sprite getSprite() = 0;
 	virtual Direction getDirection() = 0;
+	virtual void move() = 0;
 };
 

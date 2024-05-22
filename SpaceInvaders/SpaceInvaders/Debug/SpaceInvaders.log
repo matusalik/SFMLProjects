@@ -1,7 +1,18 @@
 ﻿  Trwa skanowanie źródeł pod kątem zależności modułów...
   BasicEnemy.cpp
-C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\BasicEnemy.cpp(35,40): warning C4244: "argument": konwersja z "const int" do "float", możliwa utrata danych
-C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\BasicEnemy.cpp(35,37): warning C4244: "argument": konwersja z "const int" do "float", możliwa utrata danych
-C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\BasicEnemy.cpp(38,40): warning C4244: "argument": konwersja z "const int" do "float", możliwa utrata danych
-C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\BasicEnemy.cpp(38,37): warning C4244: "argument": konwersja z "const int" do "float", możliwa utrata danych
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\BasicEnemy.cpp(5,13): warning C4244: "=": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\BasicEnemy.cpp(6,13): warning C4244: "=": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\BasicEnemy.cpp(9,13): warning C4244: "=": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\BasicEnemy.cpp(10,13): warning C4244: "=": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\BasicEnemy.cpp(17,13): warning C4244: "=": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\BasicEnemy.cpp(18,13): warning C4244: "=": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\BasicEnemy.cpp(51,40): warning C4244: "argument": konwersja z "const int" do "float", możliwa utrata danych
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\BasicEnemy.cpp(51,37): warning C4244: "argument": konwersja z "const int" do "float", możliwa utrata danych
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\BasicEnemy.cpp(56,15): warning C4244: "=": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\BasicEnemy.cpp(59,15): warning C4244: "=": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\BasicEnemy.cpp(65,15): warning C4244: "=": konwersja z "float" do "int", możliwa utrata danych
+  Game.cpp
+  GamePlay.cpp
+  SpaceInvaders.cpp
+  Generowanie kodu...
   SpaceInvaders.vcxproj -> C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\Debug\SpaceInvaders.exe

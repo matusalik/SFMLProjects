@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\admin\\Desktop\\SFMLProjects\\SpaceInvaders\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\admin\\Desktop\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\BasicEnemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\BasicEnemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\admin\\Desktop\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\BasicEnemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\BasicEnemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\admin\\Desktop\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\GamePlay.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\GamePlay.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\admin\\Desktop\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\GamePlay.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\GamePlay.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\admin\\Desktop\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\admin\\Desktop\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\BasicEnemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\BasicEnemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\admin\\Desktop\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\GamePlay.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\GamePlay.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\admin\\Desktop\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\BasicEnemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\BasicEnemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,69 +30,69 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "BasicEnemy.cpp",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\BasicEnemy.cpp",
               "RelativeDocumentMoniker": "SpaceInvaders\\BasicEnemy.cpp",
               "ToolTip": "C:\\Users\\admin\\Desktop\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\BasicEnemy.cpp",
               "RelativeToolTip": "SpaceInvaders\\BasicEnemy.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACwAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADQAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-22T11:09:12.921Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "BasicEnemy.h",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\BasicEnemy.h",
               "RelativeDocumentMoniker": "SpaceInvaders\\BasicEnemy.h",
               "ToolTip": "C:\\Users\\admin\\Desktop\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\BasicEnemy.h",
               "RelativeToolTip": "SpaceInvaders\\BasicEnemy.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAApAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-05-22T11:04:41.394Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Enemy.h",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\Enemy.h",
               "RelativeDocumentMoniker": "SpaceInvaders\\Enemy.h",
               "ToolTip": "C:\\Users\\admin\\Desktop\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\Enemy.h",
               "RelativeToolTip": "SpaceInvaders\\Enemy.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAASAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-05-22T10:49:25.674Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "GamePlay.cpp",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\GamePlay.cpp",
               "RelativeDocumentMoniker": "SpaceInvaders\\GamePlay.cpp",
               "ToolTip": "C:\\Users\\admin\\Desktop\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\GamePlay.cpp",
               "RelativeToolTip": "SpaceInvaders\\GamePlay.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAlAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACYAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-22T10:09:43.517Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "GamePlay.h",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\GamePlay.h",
               "RelativeDocumentMoniker": "SpaceInvaders\\GamePlay.h",
               "ToolTip": "C:\\Users\\admin\\Desktop\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\GamePlay.h",
               "RelativeToolTip": "SpaceInvaders\\GamePlay.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-05-22T10:09:39.814Z",
               "EditorCaption": ""

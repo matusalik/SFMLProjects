@@ -5,6 +5,7 @@ GamePlay::GamePlay() {
 	this->initTextures();
 	this->initSprites();
 	this->initPlayer();
+	this->initEnemies();
 }
 void GamePlay::initPlayer() {
 	this->PlayerSprite.setPosition(350.f, 350.f);
@@ -27,11 +28,16 @@ void GamePlay::initEnum() {
 void GamePlay::initVariables() {
 	this->isPaused = false;
 }
+void GamePlay::initEnemies() {
+	this->enemiesVector.push_back(std::move(e));
+}
 void GamePlay::draw(sf::RenderWindow*& window) {
 	if (!this->isPaused) {
 		window->draw(this->GamePlayBackgroundSprite);
 		window->draw(this->PlayerSprite);
-		window->draw(this->e->getSprite());
+		for (const auto& i : this->enemiesVector) {
+			window->draw(i.get()->getSprite());
+		}
 	}
 	else if (this->isPaused) {
 		window->draw(this->GamePlayBackgroundSprite);

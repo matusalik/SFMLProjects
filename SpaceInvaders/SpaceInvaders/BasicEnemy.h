@@ -18,9 +18,9 @@ private:
 	void initSprite(const int& x, const int& y);
 	void initTexture();
 public:
-	BasicEnemy(const Direction& direction, const int& x, const int& y);
+	BasicEnemy(const Direction& direction);
 	sf::Sprite getSprite();
 	Direction getDirection();
-	void setPos(const int& x, const int& y);
+	void move();
 };
 

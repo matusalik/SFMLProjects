@@ -8,7 +8,8 @@ class GamePlay : public Panel
 {
 private:
 	//Enemies
-	Enemy* e = new BasicEnemy(Direction::EAST, 50, 50);
+	std::unique_ptr<Enemy> e = std::make_unique<BasicEnemy>(Direction::EAST);
+	std::vector<std::unique_ptr<Enemy>>enemiesVector;
 
 	//Textures
 	sf::Texture GamePlayBackgroundTexture;
@@ -31,6 +32,7 @@ private:
 	sf::Vector2i mousePosWindow;
 
 	//Private functions
+	void initEnemies();
 	void initPlayer();
 	void initVariables();
 	void initEnum();
