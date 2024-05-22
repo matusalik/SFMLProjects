@@ -49,6 +49,19 @@ void Game::pollEvents() {
 			this->mainMenu->setState(GameState::MAIN_MENU);
 		}
 		if (this->mainMenu->returnGameState() == GameState::GAME_PLAY) {
+			Settings* sett = dynamic_cast<Settings*>(this->settings);
+			if (sett) {
+				GamePlay* gp = dynamic_cast<GamePlay*>(this->gamePlay);
+				if (gp) {
+					gp->setDifficulty(sett->getDifficulty());
+				}
+				else {
+					std::cout << "Cast failed" << std::endl;
+				}
+			}
+			else {
+				std::cout << "Cast failed" << std::endl;
+			}
 			this->state = GameState::GAME_PLAY;
 			this->mainMenu->setState(GameState::MAIN_MENU);
 		}

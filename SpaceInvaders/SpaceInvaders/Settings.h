@@ -54,9 +54,9 @@ public:
 	void pollEvents(sf::RenderWindow*& window);
 	void update(sf::RenderWindow* window);
 	GameState returnGameState();
-	virtual GameDifficulty getDifficulty();
 	void setState(GameState sentState);
 	void updateMousePosWindow(sf::RenderWindow* window);
+	GameDifficulty getDifficulty();
 	Settings();
 };
 

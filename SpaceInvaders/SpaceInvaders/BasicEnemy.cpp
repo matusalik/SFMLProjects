@@ -53,18 +53,19 @@ void BasicEnemy::initSprite(const int& x, const int& y) {
 void BasicEnemy::move() {
 	switch (this->direction) {
 	case Direction::NORTH:
-		this->y = y + 5.f;
+		this->y = y + 1.f;
 		break;
 	case Direction::EAST:
-		this->x = x - 5.f;
+		this->x = x - 1.f;
 		break;
 	case Direction::SOUTH:
-		this->y = y - 5;;
+		this->y = y - 1;;
 		break;
 	case Direction::WEST:
-		this->x = x + 5.f;
+		this->x = x + 1.f;
 		break;
 	}
+	this->BasicEnemySprite.setPosition(this->y, this->x);
 }
 sf::Sprite BasicEnemy::getSprite() {
 	return this->BasicEnemySprite;

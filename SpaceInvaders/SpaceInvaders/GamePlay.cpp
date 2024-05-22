@@ -29,7 +29,10 @@ void GamePlay::initVariables() {
 	this->isPaused = false;
 }
 void GamePlay::initEnemies() {
-	this->enemiesVector.push_back(std::move(e));
+	this->enemiesVector.push_back(std::move(this->e));
+	this->enemiesVector.push_back(std::move(this->w));
+	this->enemiesVector.push_back(std::move(this->s));
+	this->enemiesVector.push_back(std::move(this->n));
 }
 void GamePlay::draw(sf::RenderWindow*& window) {
 	if (!this->isPaused) {
@@ -41,12 +44,28 @@ void GamePlay::draw(sf::RenderWindow*& window) {
 	}
 	else if (this->isPaused) {
 		window->draw(this->GamePlayBackgroundSprite);
+		for (const auto& i : this->enemiesVector) {
+			window->draw(i.get()->getSprite());
+		}
 	}
 }
 void GamePlay::update(sf::RenderWindow* window) {
 	this->updateMousePosWindow(window);
+	switch (this->difficulty) {
+	case GameDifficulty::EASY:
+		std::cout << "EASY" << std::endl;
+		break;
+	case GameDifficulty::NORMAL:
+		std::cout << "NORMAL" << std::endl;
+		break;
+	case GameDifficulty::HARD:
+		std::cout << "HARD" << std::endl;
+		break;
+	}
 	if (!this->isPaused) {
-
+		for (const auto& i : this->enemiesVector) {
+			i.get()->move();
+		}
 	}
 }
 void GamePlay::pollEvents(sf::RenderWindow*& window) {
@@ -72,4 +91,7 @@ void GamePlay::setState(GameState sentState) {
 }
 void GamePlay::updateMousePosWindow(sf::RenderWindow* window) {
 	this->mousePosWindow = sf::Mouse::getPosition(*window);
+}
+void GamePlay::setDifficulty(GameDifficulty sent) {
+	this->difficulty = sent;
 }

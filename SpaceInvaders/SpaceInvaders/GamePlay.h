@@ -9,6 +9,9 @@ class GamePlay : public Panel
 private:
 	//Enemies
 	std::unique_ptr<Enemy> e = std::make_unique<BasicEnemy>(Direction::EAST);
+	std::unique_ptr<Enemy> n = std::make_unique<BasicEnemy>(Direction::NORTH);
+	std::unique_ptr<Enemy> s = std::make_unique<BasicEnemy>(Direction::SOUTH);
+	std::unique_ptr<Enemy> w = std::make_unique<BasicEnemy>(Direction::WEST);
 	std::vector<std::unique_ptr<Enemy>>enemiesVector;
 
 	//Textures
@@ -28,6 +31,9 @@ private:
 	//Game State
 	GameState state;
 
+	//Game Difficulty
+	GameDifficulty difficulty;
+
 	//Mose Position
 	sf::Vector2i mousePosWindow;
 
@@ -46,6 +52,7 @@ public:
 	GameState returnGameState();
 	void setState(GameState sentState);
 	void updateMousePosWindow(sf::RenderWindow* window);
+	void setDifficulty(GameDifficulty sent);
 	GamePlay();
 };
 
