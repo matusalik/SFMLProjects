@@ -7,6 +7,7 @@ private:
 	Direction direction;
 	float x;
 	float y;
+	int health;
 
 	//Sprite
 	sf::Sprite BasicEnemySprite;

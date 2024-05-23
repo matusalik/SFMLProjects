@@ -1,6 +1,13 @@
 ﻿  Trwa skanowanie źródeł pod kątem zależności modułów...
-  GamePlay.cpp
-  SpaceInvaders.cpp
-C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\SpaceInvaders.cpp(5,25): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+  BasicEnemy.cpp
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\BasicEnemy.cpp(61,15): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\BasicEnemy.cpp(64,15): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\BasicEnemy.cpp(67,15): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\BasicEnemy.cpp(70,15): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
+  FastEnemy.cpp
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\FastEnemy.cpp(61,15): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\FastEnemy.cpp(64,15): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\FastEnemy.cpp(67,15): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\FastEnemy.cpp(70,15): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
   Generowanie kodu...
-  SpaceInvaders.vcxproj -> C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\Debug\SpaceInvaders.exe
+  SpaceInvaders.vcxproj -> C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\Debug\SpaceInvaders.exe

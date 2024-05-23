@@ -1,14 +1,17 @@
 #pragma once
 #include<iostream>
+#include<thread>
 #include"Panel.h"
 #include"GameState.h"
 #include"Enemy.h"
 #include"BasicEnemy.h"
+#include"FastEnemy.h"
 class GamePlay : public Panel
 {
 private:
 	//Enemies
 	std::vector<std::unique_ptr<Enemy>>enemiesVector;
+	std::vector<std::unique_ptr<Enemy>> newEnemiesVector;
 
 	//Textures
 	sf::Texture GamePlayBackgroundTexture;
@@ -51,6 +54,6 @@ public:
 	void setState(GameState sentState);
 	void updateMousePosWindow(sf::RenderWindow* window);
 	void setDifficulty(GameDifficulty sent);
-	GamePlay();
+	GamePlay(const GameDifficulty& sent);
 };
 

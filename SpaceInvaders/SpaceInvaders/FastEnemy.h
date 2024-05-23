@@ -1,0 +1,27 @@
+#pragma once
+#include"Enemy.h"
+class FastEnemy : public Enemy
+{
+private:
+	//Variables
+	Direction direction;
+	float x;
+	float y;
+	int health;
+
+	//Sprite
+	sf::Sprite FastEnemySprite;
+
+	//Teture
+	sf::Texture FastEnemyTexture;
+
+	//Private Functions
+	void initSprite(const float& x, const float& y);
+	void initTexture();
+public:
+	FastEnemy(const Direction& sentDirection);
+	sf::Sprite getSprite();
+	Direction getDirection();
+	void move();
+};
+

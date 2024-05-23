@@ -3,7 +3,7 @@
 void Game::initPanels() {
 	this->mainMenu = new MainMenu;
 	this->helpPanel = new HelpPanel;
-	this->gamePlay = new GamePlay;
+	//this->gamePlay = new GamePlay;
 	this->settings = new Settings;
 	this->leaderboardPanel = new LeaderboardPanel;
 }
@@ -51,17 +51,12 @@ void Game::pollEvents() {
 		if (this->mainMenu->returnGameState() == GameState::GAME_PLAY) {
 			Settings* sett = dynamic_cast<Settings*>(this->settings);
 			if (sett) {
-				GamePlay* gp = dynamic_cast<GamePlay*>(this->gamePlay);
-				if (gp) {
-					gp->setDifficulty(sett->getDifficulty());
-				}
-				else {
-					std::cout << "Cast failed" << std::endl;
-				}
+				this->difficulty = sett->getDifficulty();
 			}
 			else {
 				std::cout << "Cast failed" << std::endl;
 			}
+			this->gamePlay = new GamePlay(this->difficulty);
 			this->state = GameState::GAME_PLAY;
 			this->mainMenu->setState(GameState::MAIN_MENU);
 		}

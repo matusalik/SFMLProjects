@@ -58,16 +58,16 @@ void BasicEnemy::initSprite(const float& x, const float& y) {
 void BasicEnemy::move() {
 	switch (this->direction) {
 	case Direction::NORTH:
-		this->y = y + 1.f;
+		this->y = y + 1.5;
 		break;
 	case Direction::EAST:
-		this->x = x - 1.f;
+		this->x = x - 1.5;
 		break;
 	case Direction::SOUTH:
-		this->y = y - 1;;
+		this->y = y - 1.5;
 		break;
 	case Direction::WEST:
-		this->x = x + 1.f;
+		this->x = x + 1.5;
 		break;
 	}
 	this->BasicEnemySprite.setPosition(this->x, this->y);
