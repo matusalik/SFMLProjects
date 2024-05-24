@@ -55,6 +55,9 @@ void FastEnemy::initSprite(const float& x, const float& y) {
 	this->FastEnemySprite.setTexture(this->FastEnemyTexture);
 	this->FastEnemySprite.setPosition(x, y);
 }
+void FastEnemy::initVariables() {
+	this->health = 1;
+}
 void FastEnemy::move() {
 	switch (this->direction) {
 	case Direction::NORTH:

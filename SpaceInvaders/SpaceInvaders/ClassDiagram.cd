@@ -1,17 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Game" Collapsed="true">
-    <Position X="4.25" Y="0.5" Width="1.5" />
+  <Class Name="BasicEnemy" Collapsed="true">
+    <Position X="12" Y="2.25" Width="1.5" />
+    <InheritanceLine Type="Enemy">
+      <InheritanceModifierLabel ManuallyPlaced="true">
+        <Position X="-0.515" Y="-0.253" />
+      </InheritanceModifierLabel>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AgAAAAABIAAAAAAKECABABAAAAiAEAAcABAgAAAUAAA=</HashCode>
+      <HashCode>AABAAQgAAAAAIACAADAABAAAAAAQAAAAAABgIAAAAAg=</HashCode>
+      <FileName>BasicEnemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Enemy" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAACAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FastEnemy" Collapsed="true">
+    <Position X="10.25" Y="2.25" Width="1.5" />
+    <InheritanceLine Type="Enemy">
+      <InheritanceModifierLabel ManuallyPlaced="true">
+        <Position X="-0.453" Y="-0.263" />
+      </InheritanceModifierLabel>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAQgAAQAAIACgADAAAAAABAAQAAAAAABgAAAAAAg=</HashCode>
+      <FileName>FastEnemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Game" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAABIAAAAAAKECABABAAAAiAEAAcAAAgAAAUAAA=</HashCode>
       <FileName>Game.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="HelpPanel" Collapsed="true">
-    <Position X="6" Y="4.5" Width="1.5" />
+  <Class Name="GamePlay" Collapsed="true">
+    <Position X="5.75" Y="2.25" Width="1.5" />
     <InheritanceLine Type="Panel">
       <InheritanceModifierLabel ManuallyPlaced="true">
-        <Position X="-0.419" Y="-0.213" />
+        <Position X="-0.43" Y="-0.255" />
+      </InheritanceModifierLabel>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AggAAQABIAIAABAhBSIABCAAAAAAEAAUAAAgAASMIAY=</HashCode>
+      <FileName>GamePlay.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HelpPanel" Collapsed="true">
+    <Position X="4" Y="2.25" Width="1.5" />
+    <InheritanceLine Type="Panel">
+      <InheritanceModifierLabel ManuallyPlaced="true">
+        <Position X="-0.453" Y="-0.263" />
       </InheritanceModifierLabel>
     </InheritanceLine>
     <TypeIdentifier>
@@ -19,68 +62,56 @@
       <FileName>HelpPanel.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MainMenu" Collapsed="true">
-    <Position X="4.25" Y="4.5" Width="1.5" />
+  <Class Name="Leaderboard" Collapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAABAAAAAAABAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Leaderboard.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LeaderboardPanel" Collapsed="true">
+    <Position X="7.5" Y="2.25" Width="1.5" />
     <InheritanceLine Type="Panel">
       <InheritanceModifierLabel ManuallyPlaced="true">
-        <Position X="-0.525" Y="-0.242" />
+        <Position X="-0.492" Y="-0.484" />
       </InheritanceModifierLabel>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>CwBIARAAsAAiAACAomIJgCAwABAkGDIUKKCggAREABY=</HashCode>
+      <HashCode>AhAIAQAApAAAAAAgIAIBACABAAAAEAAWAAAgAAAEAAc=</HashCode>
+      <FileName>LeaderboardPanel.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainMenu" Collapsed="true">
+    <Position X="0.5" Y="2.25" Width="1.5" />
+    <InheritanceLine Type="Panel">
+      <InheritanceModifierLabel ManuallyPlaced="true">
+        <Position X="-0.45" Y="-0.255" />
+      </InheritanceModifierLabel>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>CwBIARAAsAAiAACAomIJgCAwABAkGDIUIKCggAREABY=</HashCode>
       <FileName>MainMenu.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Panel" Collapsed="true">
-    <Position X="4.25" Y="1.75" Width="1.5" />
+    <Position X="4" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAIAAAAAAAAAIAACAAAAAAEAAAAAAAAAAEAAQ=</HashCode>
       <FileName>Panel.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GamePlay" Collapsed="true">
-    <Position X="7.75" Y="4.5" Width="1.5" />
-    <InheritanceLine Type="Panel">
-      <InheritanceModifierLabel ManuallyPlaced="true">
-        <Position X="-0.432" Y="-0.242" />
-      </InheritanceModifierLabel>
-    </InheritanceLine>
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAIAIAAAAAAAIAACAAAAAAEAAEAAAgAAAEAAQ=</HashCode>
-      <FileName>GamePlay.h</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Player" Collapsed="true">
-    <Position X="15.25" Y="1.25" Width="1.5" />
+    <Position X="0.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAABGACQAAAAAQAAAAA=</HashCode>
       <FileName>Player.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Leaderboard" Collapsed="true">
-    <Position X="15.25" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAABAAAAAAABAAAAAAAAACAAAAAAAAAA=</HashCode>
-      <FileName>Leaderboard.h</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="LeaderboardPanel" Collapsed="true">
-    <Position X="2.5" Y="4.5" Width="1.5" />
-    <InheritanceLine Type="Panel">
-      <InheritanceModifierLabel ManuallyPlaced="true">
-        <Position X="-0.588" Y="-0.409" />
-      </InheritanceModifierLabel>
-    </InheritanceLine>
-    <TypeIdentifier>
-      <HashCode>AgAAAAAAIAAAAAAAAAIBACAAAAAAEAAUAAAgAAAEAAQ=</HashCode>
-      <FileName>LeaderboardPanel.h</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Settings" Collapsed="true">
-    <Position X="0.75" Y="4.5" Width="1.5" />
+    <Position X="2.25" Y="2.25" Width="1.5" />
     <InheritanceLine Type="Panel">
       <InheritanceModifierLabel ManuallyPlaced="true">
-        <Position X="-0.39" Y="-0.263" />
+        <Position X="-0.409" Y="-0.234" />
       </InheritanceModifierLabel>
     </InheritanceLine>
     <TypeIdentifier>
@@ -88,18 +119,25 @@
       <FileName>Settings.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Enum Name="GameState" Collapsed="true">
-    <Position X="13.25" Y="0.5" Width="1.5" />
+  <Enum Name="Direction" Collapsed="true">
+    <Position X="2.25" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACAAAIAAAAAAAAAAAAAAAAAAACgAAAAAAAAQAAAAAAA=</HashCode>
-      <FileName>GameState.h</FileName>
+      <HashCode>AAAAAAAAgAAAAAABAAAQAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Direction.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="GameDifficulty" Collapsed="true">
-    <Position X="13.25" Y="1.25" Width="1.5" />
+    <Position X="2.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAIAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameDifficulty.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GameState" Collapsed="true">
+    <Position X="2.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAIAAAAAAAAAAAAAAAAAAACgAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>GameState.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />

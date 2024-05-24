@@ -6,9 +6,13 @@
 #include"Enemy.h"
 #include"BasicEnemy.h"
 #include"FastEnemy.h"
+#include"Bullet.h"
 class GamePlay : public Panel
 {
 private:
+	//Bullets
+	std::vector<Bullet>bulletsVector;
+
 	//Enemies
 	std::vector<std::unique_ptr<Enemy>>enemiesVector;
 	std::vector<std::unique_ptr<Enemy>> newEnemiesVector;
@@ -45,6 +49,8 @@ private:
 	void initTextures();
 	void initSprites();
 	void spawnNewEnemy();
+	void updateEnemies();
+	void updateBullets();
 
 public:
 	void draw(sf::RenderWindow*& window);

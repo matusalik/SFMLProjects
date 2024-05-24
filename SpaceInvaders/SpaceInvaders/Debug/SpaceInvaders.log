@@ -1,13 +1,3 @@
 ﻿  Trwa skanowanie źródeł pod kątem zależności modułów...
-  BasicEnemy.cpp
-C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\BasicEnemy.cpp(61,15): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\BasicEnemy.cpp(64,15): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\BasicEnemy.cpp(67,15): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\BasicEnemy.cpp(70,15): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
-  FastEnemy.cpp
-C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\FastEnemy.cpp(61,15): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\FastEnemy.cpp(64,15): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\FastEnemy.cpp(67,15): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\SpaceInvaders\FastEnemy.cpp(70,15): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
-  Generowanie kodu...
-  SpaceInvaders.vcxproj -> C:\Users\admin\Desktop\SFMLProjects\SpaceInvaders\Debug\SpaceInvaders.exe
+  Bullet.cpp
+  SpaceInvaders.vcxproj -> C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\Debug\SpaceInvaders.exe

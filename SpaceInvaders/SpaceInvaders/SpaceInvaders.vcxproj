@@ -136,6 +136,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BasicEnemy.cpp" />
+    <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="FastEnemy.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameDifficulty.h" />
@@ -150,6 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BasicEnemy.h" />
+    <ClInclude Include="Bullet.h" />
     <ClInclude Include="Direction.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="FastEnemy.h" />
@@ -163,6 +165,9 @@
     <ClInclude Include="Panel.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Settings.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

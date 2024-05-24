@@ -18,6 +18,7 @@ private:
 	//Private Functions
 	void initSprite(const float& x, const float& y);
 	void initTexture();
+	void initVariables();
 public:
 	BasicEnemy(const Direction& sentDirection);
 	sf::Sprite getSprite();

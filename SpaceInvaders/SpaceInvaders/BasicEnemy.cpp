@@ -55,6 +55,9 @@ void BasicEnemy::initSprite(const float& x, const float& y) {
 	this->BasicEnemySprite.setTexture(this->BasicEnemyTexture);
 	this->BasicEnemySprite.setPosition(x, y);
 }
+void BasicEnemy::initVariables() {
+	this->health = 1;
+}
 void BasicEnemy::move() {
 	switch (this->direction) {
 	case Direction::NORTH:

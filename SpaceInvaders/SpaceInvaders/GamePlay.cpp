@@ -5,7 +5,7 @@ GamePlay::GamePlay(const GameDifficulty& sent) {
 	this->initVariables();
 	this->initTextures();
 	this->initSprites();
-	this->initPlayer();
+	this->initPlayer(); 
 	this->initEnemies();
 }
 void GamePlay::initPlayer() {
@@ -30,15 +30,15 @@ void GamePlay::initVariables() {
 	this->isPaused = false;
 	switch (this->difficulty) {
 	case GameDifficulty::EASY:
-		this->maxEnemies = 3;
+		this->maxEnemies = 1;
 		std::cout << "easy" << std::endl;
 		break;
 	case GameDifficulty::NORMAL:
-		this->maxEnemies = 5;
+		this->maxEnemies = 2;
 		std::cout << "normal" << std::endl;
 		break;
 	case GameDifficulty::HARD:
-		this->maxEnemies = 7;
+		this->maxEnemies = 3;
 		std::cout << "hard" << std::endl;
 		break;
 	}
@@ -97,6 +97,9 @@ void GamePlay::draw(sf::RenderWindow*& window) {
 		for (const auto& i : this->enemiesVector) {
 			window->draw(i.get()->getSprite());
 		}
+		for (Bullet& i : this->bulletsVector) {
+			window->draw(i.getSprite());
+		}
 	}
 	else if (this->isPaused) {
 		window->draw(this->GamePlayBackgroundSprite);
@@ -107,46 +110,54 @@ void GamePlay::draw(sf::RenderWindow*& window) {
 }
 void GamePlay::update(sf::RenderWindow* window) {
 	this->updateMousePosWindow(window);
-	std::cout << this->enemiesVector.size() << std::endl;
 	if (!this->isPaused) {
-		for (auto it = this->enemiesVector.begin(); it != this->enemiesVector.end(); ) {
-			(*it)->move();
-			bool shouldDelete = false;
-			switch ((*it)->getDirection()) {
-			case Direction::NORTH:
-				if ((*it)->getSprite().getPosition().y + 70 >= this->PlayerSprite.getPosition().y) {
-					shouldDelete = true;
-				}
-				break;
-			case Direction::EAST:
-				if ((*it)->getSprite().getPosition().x <= this->PlayerSprite.getPosition().x + 100) {
-					shouldDelete = true;
-				}
-				break;
-			case Direction::SOUTH:
-				if ((*it)->getSprite().getPosition().y <= this->PlayerSprite.getPosition().y + 100) {
-					shouldDelete = true;
-				}
-				break;
-			case Direction::WEST:
-				if ((*it)->getSprite().getPosition().x + 70 >= this->PlayerSprite.getPosition().x) {
-					shouldDelete = true;
-				}
-				break;
-			}
-			if (shouldDelete) {
-				it = this->enemiesVector.erase(it);
-				this->spawnNewEnemy();
-			}
-			else {
-				++it;
-			}
-		}
-		for (auto& newEnemy : this->newEnemiesVector) {
-			this->enemiesVector.push_back(std::move(newEnemy));
-		}
-		this->newEnemiesVector.clear();
+		updateEnemies();
+		updateBullets();
 	}
+}
+void GamePlay::updateBullets() {
+	for (auto& i : this->bulletsVector) {
+		i.move();
+	}
+}
+void GamePlay::updateEnemies() {
+	for (auto it = this->enemiesVector.begin(); it != this->enemiesVector.end(); ) {
+		(*it)->move();
+		bool shouldDelete = false;
+		switch ((*it)->getDirection()) {
+		case Direction::NORTH:
+			if ((*it)->getSprite().getPosition().y + 70 >= this->PlayerSprite.getPosition().y) {
+				shouldDelete = true;
+			}
+			break;
+		case Direction::EAST:
+			if ((*it)->getSprite().getPosition().x <= this->PlayerSprite.getPosition().x + 100) {
+				shouldDelete = true;
+			}
+			break;
+		case Direction::SOUTH:
+			if ((*it)->getSprite().getPosition().y <= this->PlayerSprite.getPosition().y + 100) {
+				shouldDelete = true;
+			}
+			break;
+		case Direction::WEST:
+			if ((*it)->getSprite().getPosition().x + 70 >= this->PlayerSprite.getPosition().x) {
+				shouldDelete = true;
+			}
+			break;
+		}
+		if (shouldDelete) {
+			it = this->enemiesVector.erase(it);
+			this->spawnNewEnemy();
+		}
+		else {
+			++it;
+		}
+	}
+	for (auto& newEnemy : this->newEnemiesVector) {
+		this->enemiesVector.push_back(std::move(newEnemy));
+	}
+	this->newEnemiesVector.clear();
 }
 void GamePlay::spawnNewEnemy() {
 	int dir = rand() % 4;
@@ -202,6 +213,18 @@ void GamePlay::pollEvents(sf::RenderWindow*& window) {
 			switch (this->ev.key.code) {
 			case sf::Keyboard::Escape:
 				this->isPaused = !this->isPaused;
+				break;
+			case sf::Keyboard::W:
+				this->bulletsVector.push_back(Bullet(Direction::NORTH));
+				break;
+			case sf::Keyboard::D:
+				this->bulletsVector.push_back(Bullet(Direction::EAST));
+				break;
+			case sf::Keyboard::S:
+				this->bulletsVector.push_back(Bullet(Direction::SOUTH));
+				break;
+			case sf::Keyboard::A:
+				this->bulletsVector.push_back(Bullet(Direction::WEST));
 				break;
 			}
 		}
