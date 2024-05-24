@@ -34,7 +34,7 @@ void Bullet::initTexture() {
 	}
 }
 void Bullet::initSprite(const float& x, const float& y) {
-	this->bulletSprite.setColor(sf::Color::Green);
+	//this->bulletSprite.setColor(sf::Color::Green);
 	this->bulletSprite.setTexture(this->bulletTexture);
 	this->bulletSprite.setPosition(x, y);
 }

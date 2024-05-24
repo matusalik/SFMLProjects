@@ -28,6 +28,8 @@ void GamePlay::initEnum() {
 }
 void GamePlay::initVariables() {
 	this->isPaused = false;
+	this->timer = 0;
+	this->shootingBuffer = true;
 	switch (this->difficulty) {
 	case GameDifficulty::EASY:
 		this->maxEnemies = 1;
@@ -97,8 +99,8 @@ void GamePlay::draw(sf::RenderWindow*& window) {
 		for (const auto& i : this->enemiesVector) {
 			window->draw(i.get()->getSprite());
 		}
-		for (Bullet& i : this->bulletsVector) {
-			window->draw(i.getSprite());
+		for (const auto& i : this->bulletsVector) {
+			window->draw(i.get()->getSprite());
 		}
 	}
 	else if (this->isPaused) {
@@ -113,11 +115,18 @@ void GamePlay::update(sf::RenderWindow* window) {
 	if (!this->isPaused) {
 		updateEnemies();
 		updateBullets();
+		if (!this->shootingBuffer) {
+			this->timer++;
+			if (this->timer % 25 == 0) {
+				this->shootingBuffer = true;
+				this->timer = 0;
+			}
+		}
 	}
 }
 void GamePlay::updateBullets() {
-	for (auto& i : this->bulletsVector) {
-		i.move();
+	for (const auto& i : this->bulletsVector) {
+		i.get()->move();
 	}
 }
 void GamePlay::updateEnemies() {
@@ -209,24 +218,29 @@ void GamePlay::pollEvents(sf::RenderWindow*& window) {
 		case sf::Event::Closed:
 			window->close();
 			break;
-		case sf::Event::KeyPressed:
-			switch (this->ev.key.code) {
-			case sf::Keyboard::Escape:
-				this->isPaused = !this->isPaused;
-				break;
-			case sf::Keyboard::W:
-				this->bulletsVector.push_back(Bullet(Direction::NORTH));
-				break;
-			case sf::Keyboard::D:
-				this->bulletsVector.push_back(Bullet(Direction::EAST));
-				break;
-			case sf::Keyboard::S:
-				this->bulletsVector.push_back(Bullet(Direction::SOUTH));
-				break;
-			case sf::Keyboard::A:
-				this->bulletsVector.push_back(Bullet(Direction::WEST));
-				break;
-			}
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+			this->isPaused = !this->isPaused;
+		}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && this->shootingBuffer) {
+			std::unique_ptr<Bullet> tempB = std::make_unique<Bullet>(Direction::NORTH);
+			this->bulletsVector.push_back(std::move(tempB));
+			this->shootingBuffer = false;
+		}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && this->shootingBuffer) {
+			std::unique_ptr<Bullet> tempB = std::make_unique<Bullet>(Direction::EAST);
+			this->bulletsVector.push_back(std::move(tempB));
+			this->shootingBuffer = false;
+		}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && this->shootingBuffer) {
+			std::unique_ptr<Bullet> tempB = std::make_unique<Bullet>(Direction::SOUTH);
+			this->bulletsVector.push_back(std::move(tempB));
+			this->shootingBuffer = false;
+		}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && this->shootingBuffer) {
+			std::unique_ptr<Bullet> tempB = std::make_unique<Bullet>(Direction::WEST);
+			this->bulletsVector.push_back(std::move(tempB));
+			this->shootingBuffer = false;
 		}
 	}
 }

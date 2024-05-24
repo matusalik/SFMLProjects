@@ -11,7 +11,7 @@ class GamePlay : public Panel
 {
 private:
 	//Bullets
-	std::vector<Bullet>bulletsVector;
+	std::vector<std::unique_ptr<Bullet>>bulletsVector;
 
 	//Enemies
 	std::vector<std::unique_ptr<Enemy>>enemiesVector;
@@ -27,7 +27,9 @@ private:
 
 	//Varaibles
 	bool isPaused;
+	bool shootingBuffer;
 	int maxEnemies;
+	int timer;
 	
 	//Event
 	sf::Event ev;
