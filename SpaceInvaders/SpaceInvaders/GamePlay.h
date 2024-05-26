@@ -6,6 +6,7 @@
 #include"Enemy.h"
 #include"BasicEnemy.h"
 #include"FastEnemy.h"
+#include"TankEnemy.h"
 #include"Bullet.h"
 class GamePlay : public Panel
 {

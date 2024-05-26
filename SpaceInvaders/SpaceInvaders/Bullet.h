@@ -24,6 +24,7 @@ private:
 public:
 	Bullet(const Direction& sentDirection);
 	sf::Sprite getSprite();
+	Direction getDirection();
 	void move();
 };
 

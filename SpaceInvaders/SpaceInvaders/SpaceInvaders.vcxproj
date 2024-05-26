@@ -148,6 +148,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Settings.cpp" />
     <ClCompile Include="SpaceInvaders.cpp" />
+    <ClCompile Include="TankEnemy.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BasicEnemy.h" />
@@ -165,6 +166,7 @@
     <ClInclude Include="Panel.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Settings.h" />
+    <ClInclude Include="TankEnemy.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

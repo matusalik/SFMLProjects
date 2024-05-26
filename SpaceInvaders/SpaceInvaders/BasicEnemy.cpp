@@ -61,16 +61,16 @@ void BasicEnemy::initVariables() {
 void BasicEnemy::move() {
 	switch (this->direction) {
 	case Direction::NORTH:
-		this->y = y + 1.5;
+		this->y = y + 2;
 		break;
 	case Direction::EAST:
-		this->x = x - 1.5;
+		this->x = x - 2;
 		break;
 	case Direction::SOUTH:
-		this->y = y - 1.5;
+		this->y = y - 2;
 		break;
 	case Direction::WEST:
-		this->x = x + 1.5;
+		this->x = x + 2;
 		break;
 	}
 	this->BasicEnemySprite.setPosition(this->x, this->y);

@@ -41,19 +41,22 @@ void Bullet::initSprite(const float& x, const float& y) {
 sf::Sprite Bullet::getSprite() {
 	return this->bulletSprite;
 }
+Direction Bullet::getDirection() {
+	return this->direction;
+}
 void Bullet::move() {
 	switch (this->direction) {
 	case Direction::NORTH:
-		this->y = y - 2;
+		this->y = y - 2.5;
 		break;
 	case Direction::EAST:
-		this->x = x + 2;
+		this->x = x + 2.5;
 		break;
 	case Direction::SOUTH:
-		this->y = y + 2;
+		this->y = y + 2.5;
 		break;
 	case Direction::WEST:
-		this->x = x - 2;
+		this->x = x - 2.5;
 		break;
 	}
 	this->bulletSprite.setPosition(this->x, this->y);

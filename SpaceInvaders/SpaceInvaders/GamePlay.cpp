@@ -49,7 +49,7 @@ void GamePlay::initEnemies() {
 	std::cout << this->maxEnemies<<std::endl;
 	for (int i = 0; i < this->maxEnemies; i++) {
 		int dir = rand() % 4;
-		int enemy = rand() % 2;
+		int enemy = rand() % 3;
 		if (dir == 0) {
 			if (enemy == 0) {
 				std::unique_ptr<Enemy> tempE = std::make_unique<BasicEnemy>(Direction::EAST);
@@ -57,6 +57,10 @@ void GamePlay::initEnemies() {
 			}
 			else if (enemy == 1) {
 				std::unique_ptr<Enemy> tempE = std::make_unique<FastEnemy>(Direction::EAST);
+				this->enemiesVector.push_back(std::move(tempE));
+			}
+			else if (enemy == 2) {
+				std::unique_ptr<Enemy> tempE = std::make_unique<TankEnemy>(Direction::EAST);
 				this->enemiesVector.push_back(std::move(tempE));
 			}
 		}
@@ -69,6 +73,10 @@ void GamePlay::initEnemies() {
 				std::unique_ptr<Enemy> tempE = std::make_unique<FastEnemy>(Direction::NORTH);
 				this->enemiesVector.push_back(std::move(tempE));
 			}
+			else if (enemy == 2) {
+				std::unique_ptr<Enemy> tempE = std::make_unique<TankEnemy>(Direction::NORTH);
+				this->enemiesVector.push_back(std::move(tempE));
+			}
 		}
 		else if (dir == 2) {
 			if (enemy == 0) {
@@ -79,6 +87,10 @@ void GamePlay::initEnemies() {
 				std::unique_ptr<Enemy> tempE = std::make_unique<FastEnemy>(Direction::WEST);
 				this->enemiesVector.push_back(std::move(tempE));
 			}
+			else if (enemy == 2) {
+				std::unique_ptr<Enemy> tempE = std::make_unique<TankEnemy>(Direction::WEST);
+				this->enemiesVector.push_back(std::move(tempE));
+			}
 		}
 		else if (dir == 3) {
 			if (enemy == 0) {
@@ -87,6 +99,10 @@ void GamePlay::initEnemies() {
 			}
 			else if (enemy == 1) {
 				std::unique_ptr<Enemy> tempE = std::make_unique<FastEnemy>(Direction::SOUTH);
+				this->enemiesVector.push_back(std::move(tempE));
+			}
+			else if (enemy == 2) {
+				std::unique_ptr<Enemy> tempE = std::make_unique<TankEnemy>(Direction::SOUTH);
 				this->enemiesVector.push_back(std::move(tempE));
 			}
 		}
@@ -108,6 +124,9 @@ void GamePlay::draw(sf::RenderWindow*& window) {
 		for (const auto& i : this->enemiesVector) {
 			window->draw(i.get()->getSprite());
 		}
+		for (const auto& i : this->bulletsVector) {
+			window->draw(i.get()->getSprite());
+		}
 	}
 }
 void GamePlay::update(sf::RenderWindow* window) {
@@ -117,7 +136,7 @@ void GamePlay::update(sf::RenderWindow* window) {
 		updateBullets();
 		if (!this->shootingBuffer) {
 			this->timer++;
-			if (this->timer % 25 == 0) {
+			if (this->timer % 15 == 0) {
 				this->shootingBuffer = true;
 				this->timer = 0;
 			}
@@ -125,8 +144,102 @@ void GamePlay::update(sf::RenderWindow* window) {
 	}
 }
 void GamePlay::updateBullets() {
-	for (const auto& i : this->bulletsVector) {
-		i.get()->move();
+	for (auto it = this->bulletsVector.begin(); it != this->bulletsVector.end(); ) {
+		(*it)->move();
+		bool shouldDelete = false;
+		switch ((*it)->getDirection()) {
+		case Direction::NORTH:
+			if ((*it)->getSprite().getPosition().y <= 0) {
+				shouldDelete = true;
+			}
+			for (auto ite = this->enemiesVector.begin(); ite != this->enemiesVector.end(); ) {
+				bool shouldDeleteEnemy = false;
+				if ((*ite)->getDirection() == Direction::NORTH) {
+					if ((*ite)->getSprite().getPosition().y + 70 >= (*it)->getSprite().getPosition().y) {
+						shouldDelete = true;
+						shouldDeleteEnemy = true;
+					}
+				}
+				if (shouldDeleteEnemy) {
+					ite = this->enemiesVector.erase(ite);
+					this->spawnNewEnemy();
+				}
+				else {
+					++ite;
+				}
+			}
+			break;
+		case Direction::EAST:
+			if ((*it)->getSprite().getPosition().x >= 800) {
+				shouldDelete = true;
+			}
+			for (auto ite = this->enemiesVector.begin(); ite != this->enemiesVector.end(); ) {
+				bool shouldDeleteEnemy = false;
+				if ((*ite)->getDirection() == Direction::EAST) {
+					if ((*ite)->getSprite().getPosition().x <= (*it)->getSprite().getPosition().x + 20) {
+						shouldDelete = true;
+						shouldDeleteEnemy = true;
+					}
+				}
+				if (shouldDeleteEnemy) {
+					ite = this->enemiesVector.erase(ite);
+					this->spawnNewEnemy();
+				}
+				else {
+					++ite;
+				}
+			}
+			break;
+		case Direction::SOUTH:
+			if ((*it)->getSprite().getPosition().y >= 800) {
+				shouldDelete = true;
+			}
+			for (auto ite = this->enemiesVector.begin(); ite != this->enemiesVector.end(); ) {
+				bool shouldDeleteEnemy = false;
+				if ((*ite)->getDirection() == Direction::SOUTH) {
+					if ((*ite)->getSprite().getPosition().y <= (*it)->getSprite().getPosition().y + 20) {
+						shouldDelete = true;
+						shouldDeleteEnemy = true;
+					}
+				}
+				if (shouldDeleteEnemy) {
+					ite = this->enemiesVector.erase(ite);
+					this->spawnNewEnemy();
+				}
+				else {
+					++ite;
+				}
+			}
+			break;
+		case Direction::WEST:
+			if ((*it)->getSprite().getPosition().x <= 0) {
+				shouldDelete = true;
+			}
+			for (auto ite = this->enemiesVector.begin(); ite != this->enemiesVector.end(); ) {
+				bool shouldDeleteEnemy = false;
+				if ((*ite)->getDirection() == Direction::WEST) {
+					if ((*ite)->getSprite().getPosition().x + 70 >= (*it)->getSprite().getPosition().x) {
+						shouldDelete = true;
+						shouldDeleteEnemy = true;
+					}
+				}
+				if (shouldDeleteEnemy) {
+					ite = this->enemiesVector.erase(ite);
+					this->spawnNewEnemy();
+				}
+				else {
+					++ite;
+				}
+			}
+			break;
+		}
+		if (shouldDelete) {
+			it = this->bulletsVector.erase(it);
+		}
+		else {
+			++it;
+		}
+		std::cout << this->bulletsVector.size() << std::endl;
 	}
 }
 void GamePlay::updateEnemies() {
@@ -170,7 +283,7 @@ void GamePlay::updateEnemies() {
 }
 void GamePlay::spawnNewEnemy() {
 	int dir = rand() % 4;
-	int enemy = rand() % 2;
+	int enemy = rand() % 3;
 	if (dir == 0) {
 		if (enemy == 0) {
 			std::unique_ptr<Enemy> tempE = std::make_unique<BasicEnemy>(Direction::EAST);
@@ -178,6 +291,10 @@ void GamePlay::spawnNewEnemy() {
 		}
 		else if (enemy == 1) {
 			std::unique_ptr<Enemy> tempE = std::make_unique<FastEnemy>(Direction::EAST);
+			this->newEnemiesVector.push_back(std::move(tempE));
+		}
+		else if (enemy == 2) {
+			std::unique_ptr<Enemy> tempE = std::make_unique<TankEnemy>(Direction::EAST);
 			this->newEnemiesVector.push_back(std::move(tempE));
 		}
 	}
@@ -190,6 +307,10 @@ void GamePlay::spawnNewEnemy() {
 			std::unique_ptr<Enemy> tempE = std::make_unique<FastEnemy>(Direction::NORTH);
 			this->newEnemiesVector.push_back(std::move(tempE));
 		}
+		else if (enemy == 2) {
+			std::unique_ptr<Enemy> tempE = std::make_unique<TankEnemy>(Direction::NORTH);
+			this->newEnemiesVector.push_back(std::move(tempE));
+		}
 	}
 	else if (dir == 2) {
 		if (enemy == 0) {
@@ -198,6 +319,10 @@ void GamePlay::spawnNewEnemy() {
 		}
 		else if (enemy == 1) {
 			std::unique_ptr<Enemy> tempE = std::make_unique<FastEnemy>(Direction::WEST);
+			this->newEnemiesVector.push_back(std::move(tempE));
+		}
+		else if (enemy == 2) {
+			std::unique_ptr<Enemy> tempE = std::make_unique<TankEnemy>(Direction::WEST);
 			this->newEnemiesVector.push_back(std::move(tempE));
 		}
 	}
@@ -210,6 +335,10 @@ void GamePlay::spawnNewEnemy() {
 			std::unique_ptr<Enemy> tempE = std::make_unique<FastEnemy>(Direction::SOUTH);
 			this->newEnemiesVector.push_back(std::move(tempE));
 		}
+		else if (enemy == 2) {
+			std::unique_ptr<Enemy> tempE = std::make_unique<TankEnemy>(Direction::SOUTH);
+			this->newEnemiesVector.push_back(std::move(tempE));
+		}
 	}
 }
 void GamePlay::pollEvents(sf::RenderWindow*& window) {
@@ -218,26 +347,29 @@ void GamePlay::pollEvents(sf::RenderWindow*& window) {
 		case sf::Event::Closed:
 			window->close();
 			break;
+		case sf::Event::KeyPressed:
+			switch (this->ev.key.code) {
+			case sf::Keyboard::Escape:
+				this->isPaused = !this->isPaused;
+				break;
+			}
 		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
-			this->isPaused = !this->isPaused;
-		}
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && this->shootingBuffer) {
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && this->shootingBuffer && !isPaused) {
 			std::unique_ptr<Bullet> tempB = std::make_unique<Bullet>(Direction::NORTH);
 			this->bulletsVector.push_back(std::move(tempB));
 			this->shootingBuffer = false;
 		}
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && this->shootingBuffer) {
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && this->shootingBuffer && !isPaused) {
 			std::unique_ptr<Bullet> tempB = std::make_unique<Bullet>(Direction::EAST);
 			this->bulletsVector.push_back(std::move(tempB));
 			this->shootingBuffer = false;
 		}
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && this->shootingBuffer) {
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && this->shootingBuffer && !isPaused) {
 			std::unique_ptr<Bullet> tempB = std::make_unique<Bullet>(Direction::SOUTH);
 			this->bulletsVector.push_back(std::move(tempB));
 			this->shootingBuffer = false;
 		}
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && this->shootingBuffer) {
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && this->shootingBuffer && !isPaused){
 			std::unique_ptr<Bullet> tempB = std::make_unique<Bullet>(Direction::WEST);
 			this->bulletsVector.push_back(std::move(tempB));
 			this->shootingBuffer = false;
