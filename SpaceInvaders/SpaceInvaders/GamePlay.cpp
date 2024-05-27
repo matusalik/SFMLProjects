@@ -156,8 +156,10 @@ void GamePlay::updateBullets() {
 				bool shouldDeleteEnemy = false;
 				if ((*ite)->getDirection() == Direction::NORTH) {
 					if ((*ite)->getSprite().getPosition().y + 70 >= (*it)->getSprite().getPosition().y) {
+						if ((*ite)->enemyHit()) {
+							shouldDeleteEnemy = true;
+						}
 						shouldDelete = true;
-						shouldDeleteEnemy = true;
 					}
 				}
 				if (shouldDeleteEnemy) {
@@ -177,8 +179,10 @@ void GamePlay::updateBullets() {
 				bool shouldDeleteEnemy = false;
 				if ((*ite)->getDirection() == Direction::EAST) {
 					if ((*ite)->getSprite().getPosition().x <= (*it)->getSprite().getPosition().x + 20) {
+						if ((*ite)->enemyHit()) {
+							shouldDeleteEnemy = true;
+						}
 						shouldDelete = true;
-						shouldDeleteEnemy = true;
 					}
 				}
 				if (shouldDeleteEnemy) {
@@ -198,8 +202,10 @@ void GamePlay::updateBullets() {
 				bool shouldDeleteEnemy = false;
 				if ((*ite)->getDirection() == Direction::SOUTH) {
 					if ((*ite)->getSprite().getPosition().y <= (*it)->getSprite().getPosition().y + 20) {
+						if ((*ite)->enemyHit()) {
+							shouldDeleteEnemy = true;
+						}
 						shouldDelete = true;
-						shouldDeleteEnemy = true;
 					}
 				}
 				if (shouldDeleteEnemy) {
@@ -219,8 +225,10 @@ void GamePlay::updateBullets() {
 				bool shouldDeleteEnemy = false;
 				if ((*ite)->getDirection() == Direction::WEST) {
 					if ((*ite)->getSprite().getPosition().x + 70 >= (*it)->getSprite().getPosition().x) {
+						if ((*ite)->enemyHit()) {
+							shouldDeleteEnemy = true;
+						}
 						shouldDelete = true;
-						shouldDeleteEnemy = true;
 					}
 				}
 				if (shouldDeleteEnemy) {

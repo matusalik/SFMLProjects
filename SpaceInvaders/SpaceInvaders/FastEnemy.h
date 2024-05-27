@@ -24,5 +24,6 @@ public:
 	sf::Sprite getSprite();
 	Direction getDirection();
 	void move();
+	bool enemyHit();
 };
 

@@ -25,7 +25,7 @@ BasicEnemy::BasicEnemy(const Direction& sentDirection) {
 	this->direction = sentDirection;
 	this->initTexture();
 	this->initSprite(this->x, this->y);
-	
+	this->initVariables();
 }
 void BasicEnemy::initTexture() {
 	switch (this->direction) {
@@ -80,4 +80,14 @@ sf::Sprite BasicEnemy::getSprite() {
 }
 Direction BasicEnemy::getDirection() {
 	return this->direction;
+}
+bool BasicEnemy::enemyHit() {
+	this->health--;
+	std::cout << "HEALTH: " << this->health << std::endl;
+	if (this->health == 0) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }

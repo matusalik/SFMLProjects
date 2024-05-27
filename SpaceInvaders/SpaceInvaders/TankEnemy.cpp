@@ -25,7 +25,7 @@ TankEnemy::TankEnemy(const Direction& sentDirection) {
 	this->direction = sentDirection;
 	this->initTexture();
 	this->initSprite(this->x, this->y);
-
+	this->initVariables();
 }
 void TankEnemy::initTexture() {
 	switch (this->direction) {
@@ -80,4 +80,13 @@ sf::Sprite TankEnemy::getSprite() {
 }
 Direction TankEnemy::getDirection() {
 	return this->direction;
+}
+bool TankEnemy::enemyHit() {
+	this->health--;
+	if (this->health == 0) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }

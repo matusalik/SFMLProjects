@@ -25,7 +25,7 @@ FastEnemy::FastEnemy(const Direction& sentDirection) {
 	this->direction = sentDirection;
 	this->initTexture();
 	this->initSprite(this->x, this->y);
-
+	this->initVariables();
 }
 void FastEnemy::initTexture() {
 	switch (this->direction) {
@@ -80,4 +80,13 @@ sf::Sprite FastEnemy::getSprite() {
 }
 Direction FastEnemy::getDirection() {
 	return this->direction;
+}
+bool FastEnemy::enemyHit() {
+	this->health--;
+	if (this->health == 0) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
