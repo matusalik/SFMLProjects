@@ -3,6 +3,7 @@ GamePlay::GamePlay(const GameDifficulty& sent) {
 	this->difficulty = sent;
 	this->initEnum();
 	this->initVariables();
+	this->initFont();
 	this->initTextures();
 	this->initSprites();
 	this->initPlayer(); 
@@ -30,6 +31,7 @@ void GamePlay::initVariables() {
 	this->isPaused = false;
 	this->timer = 0;
 	this->shootingBuffer = true;
+	this->isGameOver = false;
 	switch (this->difficulty) {
 	case GameDifficulty::EASY:
 		this->maxEnemies = 1;
@@ -108,30 +110,55 @@ void GamePlay::initEnemies() {
 		}
 	}
 }
+void GamePlay::initFont() {
+	if (!this->gamePlayFont.loadFromFile("fonts/PressStart2P-vaV7.ttf")) {
+		std::cout << "Couldn't load the font" << std::endl;
+	}
+}
 void GamePlay::draw(sf::RenderWindow*& window) {
-	if (!this->isPaused) {
-		window->draw(this->GamePlayBackgroundSprite);
-		window->draw(this->PlayerSprite);
-		for (const auto& i : this->enemiesVector) {
-			window->draw(i.get()->getSprite());
+	if (!isGameOver) {
+		if (!this->isPaused) {
+			window->draw(this->GamePlayBackgroundSprite);
+			window->draw(this->PlayerSprite);
+			for (const auto& i : this->enemiesVector) {
+				window->draw(i.get()->getSprite());
+			}
+			for (const auto& i : this->bulletsVector) {
+				window->draw(i.get()->getSprite());
+			}
 		}
-		for (const auto& i : this->bulletsVector) {
-			window->draw(i.get()->getSprite());
+		else if (this->isPaused) {
+			window->draw(this->GamePlayBackgroundSprite);
+			for (const auto& i : this->enemiesVector) {
+				window->draw(i.get()->getSprite());
+			}
+			for (const auto& i : this->bulletsVector) {
+				window->draw(i.get()->getSprite());
+			}
 		}
 	}
-	else if (this->isPaused) {
+	if (this->isGameOver) {
 		window->draw(this->GamePlayBackgroundSprite);
-		for (const auto& i : this->enemiesVector) {
-			window->draw(i.get()->getSprite());
-		}
-		for (const auto& i : this->bulletsVector) {
-			window->draw(i.get()->getSprite());
-		}
+		this->drawGameOverPanel(window);
 	}
+}
+void GamePlay::drawGameOverPanel(sf::RenderWindow*& window) {
+	sf::RectangleShape panel(sf::Vector2f(500.f, 500.f));
+	panel.setFillColor(sf::Color(163, 161, 152));
+	panel.setOutlineColor(sf::Color::Black);
+	panel.setOutlineThickness(10.f);
+	panel.setPosition(sf::Vector2f(140.f, 140.f));
+	sf::Text gameOver("GAME OVER", this->gamePlayFont, 50U);
+	gameOver.setPosition(sf::Vector2f(160.f, 160.f));
+	gameOver.setFillColor(sf::Color(100, 255, 43));
+	gameOver.setOutlineColor(sf::Color::Black);
+	gameOver.setOutlineThickness(5.f);
+	window->draw(panel);
+	window->draw(gameOver);
 }
 void GamePlay::update(sf::RenderWindow* window) {
 	this->updateMousePosWindow(window);
-	if (!this->isPaused) {
+	if (!this->isPaused && !isGameOver) {
 		updateEnemies();
 		updateBullets();
 		if (!this->shootingBuffer) {
@@ -278,7 +305,8 @@ void GamePlay::updateEnemies() {
 		}
 		if (shouldDelete) {
 			it = this->enemiesVector.erase(it);
-			this->spawnNewEnemy();
+			this->isGameOver = true;
+			std::cout << "GAME OVER" << std::endl;
 		}
 		else {
 			++it;

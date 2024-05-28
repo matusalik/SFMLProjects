@@ -26,9 +26,13 @@ private:
 	sf::Sprite GamePlayBackgroundSprite;
 	sf::Sprite PlayerSprite;
 
+	//Font
+	sf::Font gamePlayFont;
+
 	//Varaibles
 	bool isPaused;
 	bool shootingBuffer;
+	bool isGameOver;
 	int maxEnemies;
 	int timer;
 	
@@ -51,9 +55,11 @@ private:
 	void initEnum();
 	void initTextures();
 	void initSprites();
+	void initFont();
 	void spawnNewEnemy();
 	void updateEnemies();
 	void updateBullets();
+	void drawGameOverPanel(sf::RenderWindow*& window);
 
 public:
 	void draw(sf::RenderWindow*& window);
