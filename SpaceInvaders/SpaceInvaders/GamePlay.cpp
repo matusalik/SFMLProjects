@@ -31,7 +31,8 @@ void GamePlay::initVariables() {
 	this->isPaused = false;
 	this->timer = 0;
 	this->shootingBuffer = true;
-	this->isGameOver = false;
+	this->isGameOver = true;
+	this->clearVectors = false;
 	switch (this->difficulty) {
 	case GameDifficulty::EASY:
 		this->maxEnemies = 1;
@@ -138,6 +139,11 @@ void GamePlay::draw(sf::RenderWindow*& window) {
 		}
 	}
 	if (this->isGameOver) {
+		if (this->clearVectors) {
+			this->enemiesVector.clear();
+			this->bulletsVector.clear();
+			this->clearVectors = false;
+		}
 		window->draw(this->GamePlayBackgroundSprite);
 		this->drawGameOverPanel(window);
 	}
@@ -153,8 +159,28 @@ void GamePlay::drawGameOverPanel(sf::RenderWindow*& window) {
 	gameOver.setFillColor(sf::Color(100, 255, 43));
 	gameOver.setOutlineColor(sf::Color::Black);
 	gameOver.setOutlineThickness(5.f);
+	sf::RectangleShape exit(sf::Vector2f(200.f, 80.f));
+	exit.setPosition(sf::Vector2f(160.f, 540.f));
+	exit.setFillColor(sf::Color(140, 140, 140));
+	exit.setOutlineColor(sf::Color(97, 97, 97));
+	exit.setOutlineThickness(10.f);
+	sf::RectangleShape restart(sf::Vector2f(200.f, 80.f));
+	restart.setPosition(sf::Vector2f(420.f, 540.f));
+	restart.setFillColor(sf::Color(140, 140, 140));
+	restart.setOutlineColor(sf::Color(97, 97, 97));
+	restart.setOutlineThickness(10.f);
+	this->exitText.setFont(this->gamePlayFont);
+	this->exitText.setString("EXIT");
+	this->exitText.setPosition(sf::Vector2f(195.f, 565.f));
+	this->restartText.setFont(this->gamePlayFont);
+	this->restartText.setString("REPLAY");
+	this->restartText.setPosition(sf::Vector2f(450.f, 565.f));
 	window->draw(panel);
 	window->draw(gameOver);
+	window->draw(exit);
+	window->draw(restart);
+	window->draw(this->exitText);
+	window->draw(this->restartText);
 }
 void GamePlay::update(sf::RenderWindow* window) {
 	this->updateMousePosWindow(window);
@@ -274,6 +300,10 @@ void GamePlay::updateBullets() {
 		else {
 			++it;
 		}
+		for (auto& newEnemy : this->newEnemiesVector) {
+			this->enemiesVector.push_back(std::move(newEnemy));
+		}
+		this->newEnemiesVector.clear();
 		std::cout << this->bulletsVector.size() << std::endl;
 	}
 }
@@ -306,16 +336,13 @@ void GamePlay::updateEnemies() {
 		if (shouldDelete) {
 			it = this->enemiesVector.erase(it);
 			this->isGameOver = true;
+			this->clearVectors = true;
 			std::cout << "GAME OVER" << std::endl;
 		}
 		else {
 			++it;
 		}
 	}
-	for (auto& newEnemy : this->newEnemiesVector) {
-		this->enemiesVector.push_back(std::move(newEnemy));
-	}
-	this->newEnemiesVector.clear();
 }
 void GamePlay::spawnNewEnemy() {
 	int dir = rand() % 4;

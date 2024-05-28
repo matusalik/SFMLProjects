@@ -26,13 +26,16 @@ private:
 	sf::Sprite GamePlayBackgroundSprite;
 	sf::Sprite PlayerSprite;
 
-	//Font
+	//Text and fonts
+	sf::Text exitText;
+	sf::Text restartText;
 	sf::Font gamePlayFont;
 
 	//Varaibles
 	bool isPaused;
 	bool shootingBuffer;
 	bool isGameOver;
+	bool clearVectors;
 	int maxEnemies;
 	int timer;
 	
