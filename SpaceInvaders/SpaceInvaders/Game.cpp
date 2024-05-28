@@ -92,6 +92,10 @@ void Game::pollEvents() {
 	}
 	if (this->state == GameState::GAME_PLAY) {
 		this->gamePlay->pollEvents(this->window);
+		if (this->gamePlay->returnGameState() == GameState::MAIN_MENU) {
+			this->state = GameState::MAIN_MENU;
+			this->gamePlay->setState(GameState::GAME_PLAY);
+		}
 	}
 }
 void Game::update() {

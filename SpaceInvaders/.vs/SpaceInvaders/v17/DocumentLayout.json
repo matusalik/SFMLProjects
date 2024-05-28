@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\admin\\Desktop\\SFMLProjects\\SpaceInvaders\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\admin\\Desktop\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\GamePlay.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\GamePlay.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\admin\\Desktop\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\GamePlay.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\GamePlay.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\admin\\Desktop\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\GamePlay.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\GamePlay.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\admin\\Desktop\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,26 +26,39 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "Game.cpp",
+              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\Game.cpp",
+              "RelativeDocumentMoniker": "SpaceInvaders\\Game.cpp",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\Game.cpp",
+              "RelativeToolTip": "SpaceInvaders\\Game.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACoAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-28T11:30:05.316Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "GamePlay.h",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\GamePlay.h",
               "RelativeDocumentMoniker": "SpaceInvaders\\GamePlay.h",
               "ToolTip": "C:\\Users\\admin\\Desktop\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\GamePlay.h",
               "RelativeToolTip": "SpaceInvaders\\GamePlay.h",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAAB4AAAAWAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-05-28T08:54:13.322Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "GamePlay.cpp",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\GamePlay.cpp",
               "RelativeDocumentMoniker": "SpaceInvaders\\GamePlay.cpp",
               "ToolTip": "C:\\Users\\admin\\Desktop\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\GamePlay.cpp",
               "RelativeToolTip": "SpaceInvaders\\GamePlay.cpp",
-              "ViewState": "AQIAAJsAAAAAAAAAAAAAAKUAAAAgAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADEAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-26T16:53:27.917Z",
               "EditorCaption": ""

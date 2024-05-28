@@ -31,7 +31,7 @@ void GamePlay::initVariables() {
 	this->isPaused = false;
 	this->timer = 0;
 	this->shootingBuffer = true;
-	this->isGameOver = true;
+	this->isGameOver = false;
 	this->clearVectors = false;
 	switch (this->difficulty) {
 	case GameDifficulty::EASY:
@@ -172,9 +172,13 @@ void GamePlay::drawGameOverPanel(sf::RenderWindow*& window) {
 	this->exitText.setFont(this->gamePlayFont);
 	this->exitText.setString("EXIT");
 	this->exitText.setPosition(sf::Vector2f(195.f, 565.f));
+	this->exitText.setFillColor(sf::Color::Black);
+	this->exitText.setOutlineColor(sf::Color(100, 255, 43));
 	this->restartText.setFont(this->gamePlayFont);
 	this->restartText.setString("REPLAY");
-	this->restartText.setPosition(sf::Vector2f(450.f, 565.f));
+	this->restartText.setPosition(sf::Vector2f(430.f, 565.f));
+	this->restartText.setFillColor(sf::Color::Black);
+	this->restartText.setOutlineColor(sf::Color(100, 255, 43));
 	window->draw(panel);
 	window->draw(gameOver);
 	window->draw(exit);
@@ -184,7 +188,7 @@ void GamePlay::drawGameOverPanel(sf::RenderWindow*& window) {
 }
 void GamePlay::update(sf::RenderWindow* window) {
 	this->updateMousePosWindow(window);
-	if (!this->isPaused && !isGameOver) {
+	if (!this->isPaused && !this->isGameOver) {
 		updateEnemies();
 		updateBullets();
 		if (!this->shootingBuffer) {
@@ -193,6 +197,20 @@ void GamePlay::update(sf::RenderWindow* window) {
 				this->shootingBuffer = true;
 				this->timer = 0;
 			}
+		}
+	}
+	if (this->isGameOver) {
+		if (this->mousePosWindow.x >= 160.f && this->mousePosWindow.x <= 360.f && this->mousePosWindow.y >= 540.f && this->mousePosWindow.y <= 620.f) {
+			this->exitText.setOutlineThickness(5.f);
+		}
+		else {
+			this->exitText.setOutlineThickness(0.f);
+		}
+		if (this->mousePosWindow.x >= 420.f && this->mousePosWindow.x <= 620.f && this->mousePosWindow.y >= 540.f && this->mousePosWindow.y <= 620.f) {
+			this->restartText.setOutlineThickness(5.f);
+		}
+		else {
+			this->restartText.setOutlineThickness(0.f);
 		}
 	}
 }
@@ -405,37 +423,58 @@ void GamePlay::spawnNewEnemy() {
 	}
 }
 void GamePlay::pollEvents(sf::RenderWindow*& window) {
-	while (window->pollEvent(this->ev)) {
-		switch (this->ev.type) {
-		case sf::Event::Closed:
-			window->close();
-			break;
-		case sf::Event::KeyPressed:
-			switch (this->ev.key.code) {
-			case sf::Keyboard::Escape:
-				this->isPaused = !this->isPaused;
+	if (!this->isGameOver) {
+		while (window->pollEvent(this->ev)) {
+			switch (this->ev.type) {
+			case sf::Event::Closed:
+				window->close();
 				break;
+			case sf::Event::KeyPressed:
+				switch (this->ev.key.code) {
+				case sf::Keyboard::Escape:
+					this->isPaused = !this->isPaused;
+					break;
+				}
+			}
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && this->shootingBuffer && !isPaused) {
+				std::unique_ptr<Bullet> tempB = std::make_unique<Bullet>(Direction::NORTH);
+				this->bulletsVector.push_back(std::move(tempB));
+				this->shootingBuffer = false;
+			}
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && this->shootingBuffer && !isPaused) {
+				std::unique_ptr<Bullet> tempB = std::make_unique<Bullet>(Direction::EAST);
+				this->bulletsVector.push_back(std::move(tempB));
+				this->shootingBuffer = false;
+			}
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && this->shootingBuffer && !isPaused) {
+				std::unique_ptr<Bullet> tempB = std::make_unique<Bullet>(Direction::SOUTH);
+				this->bulletsVector.push_back(std::move(tempB));
+				this->shootingBuffer = false;
+			}
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && this->shootingBuffer && !isPaused) {
+				std::unique_ptr<Bullet> tempB = std::make_unique<Bullet>(Direction::WEST);
+				this->bulletsVector.push_back(std::move(tempB));
+				this->shootingBuffer = false;
 			}
 		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && this->shootingBuffer && !isPaused) {
-			std::unique_ptr<Bullet> tempB = std::make_unique<Bullet>(Direction::NORTH);
-			this->bulletsVector.push_back(std::move(tempB));
-			this->shootingBuffer = false;
-		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && this->shootingBuffer && !isPaused) {
-			std::unique_ptr<Bullet> tempB = std::make_unique<Bullet>(Direction::EAST);
-			this->bulletsVector.push_back(std::move(tempB));
-			this->shootingBuffer = false;
-		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && this->shootingBuffer && !isPaused) {
-			std::unique_ptr<Bullet> tempB = std::make_unique<Bullet>(Direction::SOUTH);
-			this->bulletsVector.push_back(std::move(tempB));
-			this->shootingBuffer = false;
-		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && this->shootingBuffer && !isPaused){
-			std::unique_ptr<Bullet> tempB = std::make_unique<Bullet>(Direction::WEST);
-			this->bulletsVector.push_back(std::move(tempB));
-			this->shootingBuffer = false;
+	}
+	if (this->isGameOver) {
+		while (window->pollEvent(this->ev)) {
+			switch (this->ev.type) {
+			case sf::Event::Closed:
+				window->close();
+				break;
+			case sf::Event::MouseButtonPressed:
+				if (this->mousePosWindow.x >= 160.f && this->mousePosWindow.x <= 360.f && this->mousePosWindow.y >= 540.f && this->mousePosWindow.y <= 620.f) {
+					this->state = GameState::MAIN_MENU;
+					this->isGameOver = false;
+				}
+				if (this->mousePosWindow.x >= 420.f && this->mousePosWindow.x <= 620.f && this->mousePosWindow.y >= 540.f && this->mousePosWindow.y <= 620.f) {
+					this->initEnemies();
+					this->isGameOver = false;
+				}
+				break;
+			}
 		}
 	}
 }
