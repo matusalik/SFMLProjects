@@ -16,6 +16,9 @@
 class Game
 {
 private:
+	//Player
+	Player player;
+
 	//Panels
 	Panel* gamePlay;
 	Panel* mainMenu;

@@ -137,11 +137,21 @@ void MainMenu::initVariables() {
 	this->NickStr = "";
 	this->mainMenuCharacterSize = 40;
 	this->mainMenuHowOftenResizeCounter = 0;
+	this->isGuestCheckboxClicked = false;
 	this->charSizeState = true;
 	this->isNickTextBoxClicked = false;
 }
 void MainMenu::isNickValid() {
 	std::string temp = this->Nick.getString();
+}
+bool MainMenu::checkIfPlayerExists() {
+	Leaderboard leaderboard;
+	for (auto i : leaderboard.getDatabase()) {
+		if (player.getNick() == i.getNick()) {
+			return true;
+		}
+		return false;
+	}
 }
 void MainMenu::updateMainMenuCharSize() {
 	if (this->mainMenuHowOftenResizeCounter % 4 == 0) {
@@ -201,6 +211,12 @@ void MainMenu::pollEvents(sf::RenderWindow*& window) {
 			}
 			if (mousePosWindow.x >= 257 && mousePosWindow.x <= 537 && mousePosWindow.y >= 420 && mousePosWindow.y <= 500) {
 				this->state = GameState::GAME_PLAY;
+				if (!this->isGuestCheckboxClicked) {
+					player.setNick(this->NickStr);
+					if (checkIfPlayerExists()) {
+						player = getExistingPlayer();
+					}
+				}
 			}
 			if (mousePosWindow.x >= 257 && mousePosWindow.x <= 537 && mousePosWindow.y >= 560 && mousePosWindow.y <= 640) {
 				this->state = GameState::HELP_PANEL;
@@ -214,16 +230,16 @@ void MainMenu::pollEvents(sf::RenderWindow*& window) {
 					this->NickStr = "";
 					this->Nick.setString(this->NickStr);
 					this->nickTextBox.setFillColor(sf::Color(207, 207, 207));
-					this->isGuestChecked = true;
+					this->isGuestCheckboxClicked = true;
 
 				}
 				else {
 					this->tick.setString("");
 					this->nickTextBox.setFillColor(sf::Color::White);
-					this->isGuestChecked = false;
+					this->isGuestCheckboxClicked = false;
 				}
 			}
-			if (mousePosWindow.x >= 247 && mousePosWindow.x <= 547 && mousePosWindow.y >= 200 && mousePosWindow.y <= 250 && !this->isGuestChecked) {
+			if (mousePosWindow.x >= 247 && mousePosWindow.x <= 547 && mousePosWindow.y >= 200 && mousePosWindow.y <= 250 && !this->isGuestCheckboxClicked) {
 				this->isNickTextBoxClicked = true;
 			}
 			else {
@@ -248,6 +264,14 @@ void MainMenu::pollEvents(sf::RenderWindow*& window) {
 					}
 				}
 			}
+		}
+	}
+}
+Player MainMenu::getExistingPlayer() {
+	Leaderboard leaderboard;
+	for (auto i : leaderboard.getDatabase()) {
+		if (this->player.getNick() == i.getNick()) {
+			return i;
 		}
 	}
 }
@@ -293,7 +317,7 @@ void MainMenu::update(sf::RenderWindow* window) {
 	else {
 		this->playButtonText.setOutlineThickness(0.f);
 	}
-	if (mousePosWindow.x >= 247 && mousePosWindow.x <= 547 && mousePosWindow.y >= 200 && mousePosWindow.y <= 250 && !this->isGuestChecked) {
+	if (mousePosWindow.x >= 247 && mousePosWindow.x <= 547 && mousePosWindow.y >= 200 && mousePosWindow.y <= 250 && !this->isGuestCheckboxClicked) {
 		this->nickTextBox.setOutlineThickness(4.f);
 	}
 	else if (!this->isNickTextBoxClicked) {
@@ -308,4 +332,7 @@ GameState MainMenu::returnGameState() {
 }
 void MainMenu::setState(GameState sentState) {
 	this->state = sentState;
+}
+Player MainMenu::getPlayer() {
+	return this->player;
 }

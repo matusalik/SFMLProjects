@@ -56,6 +56,15 @@ void Game::pollEvents() {
 			else {
 				std::cout << "Cast failed" << std::endl;
 			}
+			MainMenu* menu = dynamic_cast<MainMenu*>(this->mainMenu);
+			if (menu) {
+				this->player = menu->getPlayer();
+				std::cout << player.getNick() << std::endl;
+				std::cout << player.getScore() << std::endl;
+			}
+			else {
+				std::cout << "Cast failed" << std::endl;
+			}
 			this->gamePlay = new GamePlay(this->difficulty);
 			this->state = GameState::GAME_PLAY;
 			this->mainMenu->setState(GameState::MAIN_MENU);

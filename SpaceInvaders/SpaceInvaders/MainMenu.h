@@ -10,6 +10,9 @@
 class MainMenu : public Panel
 {
 private:
+	//Player
+	Player player;
+
 	//Sprite
 	sf::Sprite mainMenuBackgroundSprite;
 	sf::Sprite settingsButtonSprite;
@@ -26,10 +29,11 @@ private:
 	GameState state;
 
 	//Variables
-	bool isGuestChecked = false;
+	bool isGuestCheckboxClicked;
 	int mainMenuCharacterSize;
 	int mainMenuHowOftenResizeCounter;
 	bool charSizeState;
+	bool isNickTextBoxClicked;
 
 	//Events
 	sf::Event ev;
@@ -45,6 +49,8 @@ private:
 	void initVariables();
 	void isNickValid();
 	void updateMousePosWindow(sf::RenderWindow* window);
+	bool checkIfPlayerExists();
+	Player getExistingPlayer();
 
 	//Buttons
 	sf::RectangleShape playButton;
@@ -56,7 +62,6 @@ private:
 
 	//Text boxes
 	sf::RectangleShape nickTextBox;
-	bool isNickTextBoxClicked;
 
 	//Text and fonts
 	sf::Text MainMenuTitle;
@@ -82,6 +87,7 @@ public:
 	void update(sf::RenderWindow* window);
 	GameState returnGameState();
 	void setState(GameState sentState);
+	Player getPlayer();
 
 	//Constructors dectructors
 	MainMenu();

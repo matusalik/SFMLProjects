@@ -11,7 +11,8 @@ Leaderboard::Leaderboard() {
 				std::string nick;
 				int score;
 				if (iss >> nick >> score) {
-					Player temp(nick);
+					Player temp;
+					temp.setNick(nick);
 					temp.setScore(score);
 					this->database.push_back(temp);
 				}

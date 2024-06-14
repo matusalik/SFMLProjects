@@ -1,6 +1,5 @@
 #include "Player.h"
-Player::Player(std::string sentNick) {
-	this->nick = sentNick;
+Player::Player() {
 	this->score = 0;
 }
 std::string Player::getNick() {

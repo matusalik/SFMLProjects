@@ -466,8 +466,7 @@ void GamePlay::pollEvents(sf::RenderWindow*& window) {
 				break;
 			case sf::Event::MouseButtonPressed:
 				if (this->mousePosWindow.x >= 160.f && this->mousePosWindow.x <= 360.f && this->mousePosWindow.y >= 540.f && this->mousePosWindow.y <= 620.f) {
-					this->state = GameState::MAIN_MENU;
-					this->isGameOver = false;
+					window->close();
 				}
 				if (this->mousePosWindow.x >= 420.f && this->mousePosWindow.x <= 620.f && this->mousePosWindow.y >= 540.f && this->mousePosWindow.y <= 620.f) {
 					this->initEnemies();
