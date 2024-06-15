@@ -217,6 +217,9 @@ void MainMenu::pollEvents(sf::RenderWindow*& window) {
 						player = getExistingPlayer();
 					}
 				}
+				else {
+					player.setNick("GUEST");
+				}
 			}
 			if (mousePosWindow.x >= 257 && mousePosWindow.x <= 537 && mousePosWindow.y >= 560 && mousePosWindow.y <= 640) {
 				this->state = GameState::HELP_PANEL;

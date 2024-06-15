@@ -65,7 +65,7 @@ void Game::pollEvents() {
 			else {
 				std::cout << "Cast failed" << std::endl;
 			}
-			this->gamePlay = new GamePlay(this->difficulty);
+			this->gamePlay = new GamePlay(this->difficulty, this->player);
 			this->state = GameState::GAME_PLAY;
 			this->mainMenu->setState(GameState::MAIN_MENU);
 		}

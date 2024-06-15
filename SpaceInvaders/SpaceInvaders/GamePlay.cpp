@@ -1,10 +1,12 @@
 #include "GamePlay.h"
-GamePlay::GamePlay(const GameDifficulty& sent) {
+GamePlay::GamePlay(const GameDifficulty& sent, const Player& sentPlayer) {
 	this->difficulty = sent;
+	this->player = sentPlayer;
 	this->initEnum();
 	this->initVariables();
 	this->initFont();
 	this->initTextures();
+	this->initText();
 	this->initSprites();
 	this->initPlayer(); 
 	this->initEnemies();
@@ -33,6 +35,7 @@ void GamePlay::initVariables() {
 	this->shootingBuffer = true;
 	this->isGameOver = false;
 	this->clearVectors = false;
+	this->score = 0;
 	switch (this->difficulty) {
 	case GameDifficulty::EASY:
 		this->maxEnemies = 1;
@@ -111,6 +114,14 @@ void GamePlay::initEnemies() {
 		}
 	}
 }
+void GamePlay::initText() {
+	this->scoreText.setFont(this->gamePlayFont);
+	this->scoreText.setString(std::to_string(this->score));
+	this->scoreText.setFillColor(sf::Color(100, 255, 43));
+	this->scoreText.setOutlineColor(sf::Color::Black);
+	this->scoreText.setOutlineThickness(3.f);
+	this->scoreText.setPosition(10.f, 10.f);
+}
 void GamePlay::initFont() {
 	if (!this->gamePlayFont.loadFromFile("fonts/PressStart2P-vaV7.ttf")) {
 		std::cout << "Couldn't load the font" << std::endl;
@@ -121,6 +132,7 @@ void GamePlay::draw(sf::RenderWindow*& window) {
 		if (!this->isPaused) {
 			window->draw(this->GamePlayBackgroundSprite);
 			window->draw(this->PlayerSprite);
+			window->draw(this->scoreText);
 			for (const auto& i : this->enemiesVector) {
 				window->draw(i.get()->getSprite());
 			}
@@ -159,6 +171,36 @@ void GamePlay::drawGameOverPanel(sf::RenderWindow*& window) {
 	gameOver.setFillColor(sf::Color(100, 255, 43));
 	gameOver.setOutlineColor(sf::Color::Black);
 	gameOver.setOutlineThickness(5.f);
+	sf::Text nickText;
+	nickText.setFont(this->gamePlayFont);
+	nickText.setString("NICK: ");
+	nickText.setPosition(sf::Vector2f(160.f, 250.f));
+	nickText.setFillColor(sf::Color::Black);
+	sf::Text nick;
+	nick.setFont(this->gamePlayFont);
+	nick.setString(this->player.getNick());
+	nick.setPosition(sf::Vector2f(310.f, 245.f));
+	nick.setFillColor(sf::Color::Black);
+	sf::Text scoreText;
+	scoreText.setFont(this->gamePlayFont);
+	scoreText.setString("SCORE: ");
+	scoreText.setPosition(sf::Vector2f(160.f, 305.f));
+	scoreText.setFillColor(sf::Color::Black);
+	sf::Text score;
+	score.setFont(this->gamePlayFont);
+	score.setString(std::to_string(this->score));
+	score.setPosition(sf::Vector2f(335.f, 305.f));
+	score.setFillColor(sf::Color::Black);
+	sf::Text highScoreText;
+	highScoreText.setFont(this->gamePlayFont);
+	highScoreText.setString("HIGHSCORE: ");
+	highScoreText.setPosition(sf::Vector2f(160.f, 360.f));
+	highScoreText.setFillColor(sf::Color::Black);
+	sf::Text highScore;
+	highScore.setFont(this->gamePlayFont);
+	highScore.setString(std::to_string(this->player.getScore()));
+	highScore.setPosition(sf::Vector2f(450.f, 360.f));
+	highScore.setFillColor(sf::Color::Black);
 	sf::RectangleShape exit(sf::Vector2f(200.f, 80.f));
 	exit.setPosition(sf::Vector2f(160.f, 540.f));
 	exit.setFillColor(sf::Color(140, 140, 140));
@@ -181,6 +223,12 @@ void GamePlay::drawGameOverPanel(sf::RenderWindow*& window) {
 	this->restartText.setOutlineColor(sf::Color(100, 255, 43));
 	window->draw(panel);
 	window->draw(gameOver);
+	window->draw(nickText);
+	window->draw(nick);
+	window->draw(scoreText);
+	window->draw(score);
+	window->draw(highScoreText);
+	window->draw(highScore);
 	window->draw(exit);
 	window->draw(restart);
 	window->draw(this->exitText);
@@ -191,6 +239,7 @@ void GamePlay::update(sf::RenderWindow* window) {
 	if (!this->isPaused && !this->isGameOver) {
 		updateEnemies();
 		updateBullets();
+		updateScore();
 		if (!this->shootingBuffer) {
 			this->timer++;
 			if (this->timer % 15 == 0) {
@@ -236,6 +285,7 @@ void GamePlay::updateBullets() {
 				if (shouldDeleteEnemy) {
 					ite = this->enemiesVector.erase(ite);
 					this->spawnNewEnemy();
+					score++;
 				}
 				else {
 					++ite;
@@ -259,6 +309,7 @@ void GamePlay::updateBullets() {
 				if (shouldDeleteEnemy) {
 					ite = this->enemiesVector.erase(ite);
 					this->spawnNewEnemy();
+					score++;
 				}
 				else {
 					++ite;
@@ -282,6 +333,7 @@ void GamePlay::updateBullets() {
 				if (shouldDeleteEnemy) {
 					ite = this->enemiesVector.erase(ite);
 					this->spawnNewEnemy();
+					score++;
 				}
 				else {
 					++ite;
@@ -305,6 +357,7 @@ void GamePlay::updateBullets() {
 				if (shouldDeleteEnemy) {
 					ite = this->enemiesVector.erase(ite);
 					this->spawnNewEnemy();
+					score++;
 				}
 				else {
 					++ite;
@@ -361,6 +414,9 @@ void GamePlay::updateEnemies() {
 			++it;
 		}
 	}
+}
+void GamePlay::updateScore() {
+	this->scoreText.setString(std::to_string(this->score));
 }
 void GamePlay::spawnNewEnemy() {
 	int dir = rand() % 4;
@@ -470,6 +526,7 @@ void GamePlay::pollEvents(sf::RenderWindow*& window) {
 				}
 				if (this->mousePosWindow.x >= 420.f && this->mousePosWindow.x <= 620.f && this->mousePosWindow.y >= 540.f && this->mousePosWindow.y <= 620.f) {
 					this->initEnemies();
+					this->score = 0;
 					this->isGameOver = false;
 				}
 				break;

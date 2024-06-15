@@ -1,6 +1,7 @@
 #pragma once
 #include<iostream>
 #include<thread>
+#include"Player.h"
 #include"Panel.h"
 #include"GameState.h"
 #include"Enemy.h"
@@ -11,6 +12,9 @@
 class GamePlay : public Panel
 {
 private:
+	//Player
+	Player player;
+	
 	//Bullets
 	std::vector<std::unique_ptr<Bullet>>bulletsVector;
 
@@ -29,6 +33,7 @@ private:
 	//Text and fonts
 	sf::Text exitText;
 	sf::Text restartText;
+	sf::Text scoreText;
 	sf::Font gamePlayFont;
 
 	//Varaibles
@@ -38,7 +43,8 @@ private:
 	bool clearVectors;
 	int maxEnemies;
 	int timer;
-	
+	int score;
+
 	//Event
 	sf::Event ev;
 
@@ -59,9 +65,11 @@ private:
 	void initTextures();
 	void initSprites();
 	void initFont();
+	void initText();
 	void spawnNewEnemy();
 	void updateEnemies();
 	void updateBullets();
+	void updateScore();
 	void drawGameOverPanel(sf::RenderWindow*& window);
 
 public:
@@ -72,6 +80,6 @@ public:
 	void setState(GameState sentState);
 	void updateMousePosWindow(sf::RenderWindow* window);
 	void setDifficulty(GameDifficulty sent);
-	GamePlay(const GameDifficulty& sent);
+	GamePlay(const GameDifficulty& sent, const Player& sentPlayer);
 };
 
