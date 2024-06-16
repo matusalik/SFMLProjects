@@ -33,3 +33,37 @@ std::filesystem::path Leaderboard::findFile(const std::string& name) {
 std::vector<Player>Leaderboard::getDatabase() {
 	return this->database;
 }
+void Leaderboard::updateDatabase(Player& player) {
+	std::ofstream ofs("Data\\database.txt", std::ofstream::trunc);
+	if (ofs.is_open()) {
+		if (isPlayerInBase(player)) {
+			for (auto& i : this->database) {
+				if (i.getNick() == player.getNick()) {
+					i.setScore(player.getScore());
+				}
+			}
+		}
+		else {
+			this->database.push_back(player);
+		}
+		for (int i = 0; i < this->database.size(); i++) {
+			std::string tempPlayer;
+			std::string nickStr = this->database[i].getNick();
+			std::string scoreStr = std::to_string(this->database[i].getScore());
+			tempPlayer = nickStr + " " + scoreStr + "\n";
+			ofs << tempPlayer;
+		}
+		ofs.close();
+	}
+	else {
+		std::cout << "Couldn't open the file!" << std::endl;
+	}
+}
+bool Leaderboard::isPlayerInBase(Player& player) {
+	for (auto i : this->database) {
+		if (i.getNick() == player.getNick()) {
+			return true;
+		}
+	}
+	return false;
+}

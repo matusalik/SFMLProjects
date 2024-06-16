@@ -150,8 +150,8 @@ bool MainMenu::checkIfPlayerExists() {
 		if (player.getNick() == i.getNick()) {
 			return true;
 		}
-		return false;
 	}
+	return false;
 }
 void MainMenu::updateMainMenuCharSize() {
 	if (this->mainMenuHowOftenResizeCounter % 4 == 0) {

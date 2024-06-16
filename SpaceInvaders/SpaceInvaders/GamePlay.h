@@ -1,8 +1,9 @@
 #pragma once
 #include<iostream>
 #include<thread>
-#include"Player.h"
 #include"Panel.h"
+#include"Player.h"
+#include"Leaderboard.h"
 #include"GameState.h"
 #include"Enemy.h"
 #include"BasicEnemy.h"
@@ -12,6 +13,9 @@
 class GamePlay : public Panel
 {
 private:
+	//Leaderboard
+	Leaderboard leaderboard;
+
 	//Player
 	Player player;
 	
@@ -41,6 +45,7 @@ private:
 	bool shootingBuffer;
 	bool isGameOver;
 	bool clearVectors;
+	bool isHighScore;
 	int maxEnemies;
 	int timer;
 	int score;

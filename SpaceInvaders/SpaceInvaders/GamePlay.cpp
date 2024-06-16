@@ -35,6 +35,7 @@ void GamePlay::initVariables() {
 	this->shootingBuffer = true;
 	this->isGameOver = false;
 	this->clearVectors = false;
+	this->isHighScore = false;
 	this->score = 0;
 	switch (this->difficulty) {
 	case GameDifficulty::EASY:
@@ -233,6 +234,14 @@ void GamePlay::drawGameOverPanel(sf::RenderWindow*& window) {
 	window->draw(restart);
 	window->draw(this->exitText);
 	window->draw(this->restartText);
+	if (this->isHighScore) {
+		sf::Text newHighScore;
+		newHighScore.setFont(this->gamePlayFont);
+		newHighScore.setString("NEW HIGH SCORE!");
+		newHighScore.setPosition(sf::Vector2f(170.f, 415.f));
+		newHighScore.setFillColor(sf::Color::Red);
+		window->draw(newHighScore);
+	}
 }
 void GamePlay::update(sf::RenderWindow* window) {
 	this->updateMousePosWindow(window);
@@ -408,6 +417,11 @@ void GamePlay::updateEnemies() {
 			it = this->enemiesVector.erase(it);
 			this->isGameOver = true;
 			this->clearVectors = true;
+			if (this->score > this->player.getScore()) {
+				this->isHighScore = true;
+				this->player.setScore(this->score);
+				this->leaderboard.updateDatabase(this->player);
+			}
 			std::cout << "GAME OVER" << std::endl;
 		}
 		else {
@@ -417,7 +431,7 @@ void GamePlay::updateEnemies() {
 }
 void GamePlay::updateScore() {
 	this->scoreText.setString(std::to_string(this->score));
-}
+}	
 void GamePlay::spawnNewEnemy() {
 	int dir = rand() % 4;
 	int enemy = rand() % 3;
@@ -528,6 +542,7 @@ void GamePlay::pollEvents(sf::RenderWindow*& window) {
 					this->initEnemies();
 					this->score = 0;
 					this->isGameOver = false;
+					this->isHighScore = false;
 				}
 				break;
 			}
