@@ -1,4 +1,3 @@
 ﻿  Trwa skanowanie źródeł pod kątem zależności modułów...
-  Leaderboard.cpp
-C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\Leaderboard.cpp(49,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+  GamePlay.cpp
   SpaceInvaders.vcxproj -> C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\Debug\SpaceInvaders.exe

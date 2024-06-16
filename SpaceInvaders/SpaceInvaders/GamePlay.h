@@ -28,7 +28,10 @@ private:
 
 	//Textures
 	sf::Texture GamePlayBackgroundTexture;
-	sf::Texture PlayerTexture;
+	sf::Texture PlayerTextureNorth;
+	sf::Texture PlayerTextureEast;
+	sf::Texture PlayerTextureSouth;
+	sf::Texture PlayerTextureWest;
 
 	//Sprites
 	sf::Sprite GamePlayBackgroundSprite;

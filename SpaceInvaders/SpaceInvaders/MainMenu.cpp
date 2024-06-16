@@ -140,9 +140,19 @@ void MainMenu::initVariables() {
 	this->isGuestCheckboxClicked = false;
 	this->charSizeState = true;
 	this->isNickTextBoxClicked = false;
+	this->isRegexMatched = false;
 }
 void MainMenu::isNickValid() {
 	std::string temp = this->Nick.getString();
+}
+void MainMenu::checkRegex() {
+	std::regex pattern("^[A-Za-z]+$");
+	if (std::regex_match(this->NickStr, pattern)) {
+		this->isRegexMatched = true;
+	}
+	else {
+		this->isRegexMatched = false;
+	}
 }
 bool MainMenu::checkIfPlayerExists() {
 	Leaderboard leaderboard;
@@ -282,6 +292,7 @@ void MainMenu::update(sf::RenderWindow* window) {
 	this->updateMainMenuCharSize();
 	this->updateMousePosWindow(window);
 	this->isNickValid();
+	this->checkRegex();
 	if (mousePosWindow.x >= 730 && mousePosWindow.x <= 780 && mousePosWindow.y >= 650 && mousePosWindow.y <= 700) {
 		this->leaderboardsButtonSprite.setTexture(this->leaderboardsButtonTextureOutline);
 	}
@@ -325,6 +336,18 @@ void MainMenu::update(sf::RenderWindow* window) {
 	}
 	else if (!this->isNickTextBoxClicked) {
 		this->nickTextBox.setOutlineThickness(0.f);
+	}
+	if (this->isRegexMatched && !this->isGuestCheckboxClicked) {
+		this->nickValidationInfo.setFillColor(sf::Color(100, 255, 43));
+		this->nickValidationInfo.setString("NICK VALID");
+	}
+	else if (!this->isRegexMatched && !this->isGuestCheckboxClicked){
+		this->nickValidationInfo.setFillColor(sf::Color::Red);
+		this->nickValidationInfo.setString("NICK INVALID");
+	}
+	else if (this->isGuestCheckboxClicked) {
+		this->nickValidationInfo.setFillColor(sf::Color(100, 255, 43));
+		this->nickValidationInfo.setString("GUEST");
 	}
 }
 void MainMenu::updateMousePosWindow(sf::RenderWindow* window) {

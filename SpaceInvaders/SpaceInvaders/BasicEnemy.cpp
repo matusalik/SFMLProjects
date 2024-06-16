@@ -81,6 +81,9 @@ sf::Sprite BasicEnemy::getSprite() {
 Direction BasicEnemy::getDirection() {
 	return this->direction;
 }
+void BasicEnemy::setSprite() {
+
+}
 bool BasicEnemy::enemyHit() {
 	this->health--;
 	std::cout << "HEALTH: " << this->health << std::endl;

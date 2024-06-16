@@ -28,35 +28,21 @@ TankEnemy::TankEnemy(const Direction& sentDirection) {
 	this->initVariables();
 }
 void TankEnemy::initTexture() {
-	switch (this->direction) {
-	case Direction::NORTH:
-		if (!this->TankEnemyTexture.loadFromFile("sprites/TankEnemySprite.png")) {
-			std::cout << "Couldn't load TankEnemyTexture!" << std::endl;
-		}
-		break;
-	case Direction::EAST:
-		if (!this->TankEnemyTexture.loadFromFile("sprites/TankEnemySprite.png")) {
-			std::cout << "Couldn't load TankEnemyTexture!" << std::endl;
-		}
-		break;
-	case Direction::SOUTH:
-		if (!this->TankEnemyTexture.loadFromFile("sprites/TankEnemySprite.png")) {
-			std::cout << "Couldn't load TankEnemyTexture!" << std::endl;
-		}
-		break;
-	case Direction::WEST:
-		if (!this->TankEnemyTexture.loadFromFile("sprites/TankEnemySprite.png")) {
-			std::cout << "Couldn't load TankEnemyTexture!" << std::endl;
-		}
-		break;
+	if (!this->TankEnemyTexture1.loadFromFile("sprites/TankEnemySprite1.png")) {
+		std::cout << "Couldn't load TankEnemyTexture!" << std::endl;
+	}
+	if (!this->TankEnemyTexture2.loadFromFile("sprites/TankEnemySprite2.png")) {
+		std::cout << "Couldn't load TankEnemyTexture!" << std::endl;
 	}
 }
 void TankEnemy::initSprite(const float& x, const float& y) {
-	this->TankEnemySprite.setTexture(this->TankEnemyTexture);
+	this->TankEnemySprite.setTexture(this->TankEnemyTexture1);
 	this->TankEnemySprite.setPosition(x, y);
 }
 void TankEnemy::initVariables() {
 	this->health = 2;
+	this->counter = 0;
+	this->textureSwitch = false;
 }
 void TankEnemy::move() {
 	switch (this->direction) {
@@ -73,13 +59,27 @@ void TankEnemy::move() {
 		this->x = x + 1.5;
 		break;
 	}
+	this->counter++;
 	this->TankEnemySprite.setPosition(this->x, this->y);
+	if (this->counter % 15 == 0) {
+		if (this->textureSwitch) {
+			this->TankEnemySprite.setTexture(this->TankEnemyTexture1);
+			this->textureSwitch = false;
+		}
+		else {
+			this->TankEnemySprite.setTexture(this->TankEnemyTexture2);
+			this->textureSwitch = true;
+		}
+	}
 }
 sf::Sprite TankEnemy::getSprite() {
 	return this->TankEnemySprite;
 }
 Direction TankEnemy::getDirection() {
 	return this->direction;
+}
+void TankEnemy::setSprite() {
+
 }
 bool TankEnemy::enemyHit() {
 	this->health--;

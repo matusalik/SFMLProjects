@@ -11,5 +11,6 @@ public:
 	virtual Direction getDirection() = 0;
 	virtual void move() = 0;
 	virtual bool enemyHit() = 0;
+	virtual void setSprite() = 0;
 };
 

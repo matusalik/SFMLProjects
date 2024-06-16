@@ -18,13 +18,22 @@ void GamePlay::initTextures() {
 	if (!this->GamePlayBackgroundTexture.loadFromFile("backgrounds/GamePlayBackground.png")) {
 		std::cout << "Couldn't load GamePlayBackground!" << std::endl;
 	}
-	if (!this->PlayerTexture.loadFromFile("sprites/PlayerSprite.png")) {
+	if (!this->PlayerTextureNorth.loadFromFile("sprites/PlayerSpriteNorth.png")) {
+		std::cout << "Couldn't load PlayerSprite!" << std::endl;
+	}
+	if (!this->PlayerTextureEast.loadFromFile("sprites/PlayerSpriteEast.png")) {
+		std::cout << "Couldn't load PlayerSprite!" << std::endl;
+	}
+	if (!this->PlayerTextureSouth.loadFromFile("sprites/PlayerSpriteSouth.png")) {
+		std::cout << "Couldn't load PlayerSprite!" << std::endl;
+	}
+	if (!this->PlayerTextureWest.loadFromFile("sprites/PlayerSpriteWest.png")) {
 		std::cout << "Couldn't load PlayerSprite!" << std::endl;
 	}
 }
 void GamePlay::initSprites() {
 	this->GamePlayBackgroundSprite.setTexture(this->GamePlayBackgroundTexture);
-	this->PlayerSprite.setTexture(this->PlayerTexture);
+	this->PlayerSprite.setTexture(this->PlayerTextureNorth);
 }
 void GamePlay::initEnum() {
 	this->state = GameState::GAME_PLAY;
@@ -419,8 +428,10 @@ void GamePlay::updateEnemies() {
 			this->clearVectors = true;
 			if (this->score > this->player.getScore()) {
 				this->isHighScore = true;
-				this->player.setScore(this->score);
-				this->leaderboard.updateDatabase(this->player);
+				if (this->player.getNick() != "GUEST") {
+					this->player.setScore(this->score);
+					this->leaderboard.updateDatabase(this->player);
+				}
 			}
 			std::cout << "GAME OVER" << std::endl;
 		}
@@ -507,21 +518,25 @@ void GamePlay::pollEvents(sf::RenderWindow*& window) {
 				}
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && this->shootingBuffer && !isPaused) {
+				this->PlayerSprite.setTexture(this->PlayerTextureNorth);
 				std::unique_ptr<Bullet> tempB = std::make_unique<Bullet>(Direction::NORTH);
 				this->bulletsVector.push_back(std::move(tempB));
 				this->shootingBuffer = false;
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && this->shootingBuffer && !isPaused) {
+				this->PlayerSprite.setTexture(this->PlayerTextureEast);
 				std::unique_ptr<Bullet> tempB = std::make_unique<Bullet>(Direction::EAST);
 				this->bulletsVector.push_back(std::move(tempB));
 				this->shootingBuffer = false;
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && this->shootingBuffer && !isPaused) {
+				this->PlayerSprite.setTexture(this->PlayerTextureSouth);
 				std::unique_ptr<Bullet> tempB = std::make_unique<Bullet>(Direction::SOUTH);
 				this->bulletsVector.push_back(std::move(tempB));
 				this->shootingBuffer = false;
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && this->shootingBuffer && !isPaused) {
+				this->PlayerSprite.setTexture(this->PlayerTextureWest);
 				std::unique_ptr<Bullet> tempB = std::make_unique<Bullet>(Direction::WEST);
 				this->bulletsVector.push_back(std::move(tempB));
 				this->shootingBuffer = false;

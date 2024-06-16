@@ -81,6 +81,9 @@ sf::Sprite FastEnemy::getSprite() {
 Direction FastEnemy::getDirection() {
 	return this->direction;
 }
+void FastEnemy::setSprite() {
+
+}
 bool FastEnemy::enemyHit() {
 	this->health--;
 	if (this->health == 0) {

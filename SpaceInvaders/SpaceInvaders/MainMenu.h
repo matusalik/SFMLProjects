@@ -5,6 +5,7 @@
 #include<SFML/Window.hpp>
 #include<SFML/Audio.hpp>
 #include<SFML/Network.hpp>
+#include<regex>
 #include"Panel.h"
 #include"Leaderboard.h"
 class MainMenu : public Panel
@@ -34,6 +35,7 @@ private:
 	int mainMenuHowOftenResizeCounter;
 	bool charSizeState;
 	bool isNickTextBoxClicked;
+	bool isRegexMatched;
 
 	//Events
 	sf::Event ev;
@@ -48,6 +50,7 @@ private:
 	void initTextBoxes();
 	void initVariables();
 	void isNickValid();
+	void checkRegex();
 	void updateMousePosWindow(sf::RenderWindow* window);
 	bool checkIfPlayerExists();
 	Player getExistingPlayer();
