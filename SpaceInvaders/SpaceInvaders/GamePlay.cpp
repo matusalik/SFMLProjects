@@ -158,6 +158,7 @@ void GamePlay::draw(sf::RenderWindow*& window) {
 			for (const auto& i : this->bulletsVector) {
 				window->draw(i.get()->getSprite());
 			}
+			this->drawPausePanel(window);
 		}
 	}
 	if (this->isGameOver) {
@@ -251,6 +252,21 @@ void GamePlay::drawGameOverPanel(sf::RenderWindow*& window) {
 		newHighScore.setFillColor(sf::Color::Red);
 		window->draw(newHighScore);
 	}
+}
+void GamePlay::drawPausePanel(sf::RenderWindow*& window) {
+	sf::RectangleShape panel(sf::Vector2f(500.f, 500.f));
+	panel.setFillColor(sf::Color(163, 161, 152));
+	panel.setOutlineColor(sf::Color::Black);
+	panel.setOutlineThickness(10.f);
+	panel.setPosition(sf::Vector2f(140.f, 140.f));
+	sf::Text paused("GAME PAUSED", this->gamePlayFont, 50U);
+	paused.setPosition(sf::Vector2f(160.f, 350.f));
+	paused.setFillColor(sf::Color(100, 255, 43));
+	paused.setCharacterSize(41.f);
+	paused.setOutlineColor(sf::Color::Black);
+	paused.setOutlineThickness(5.f);
+	window->draw(panel);
+	window->draw(paused);
 }
 void GamePlay::update(sf::RenderWindow* window) {
 	this->updateMousePosWindow(window);

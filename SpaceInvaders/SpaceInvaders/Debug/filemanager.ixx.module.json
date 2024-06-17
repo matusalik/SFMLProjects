@@ -1,0 +1,22 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "Debug\\FileManager.ixx.obj",
+            "outputs": [
+                "C:\\Users\\mateu\\OneDrive\\Pulpit\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\Debug\\vc143.pdb",
+                "Debug\\",
+                "C:\\Users\\mateu\\OneDrive\\Pulpit\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\Debug\\FileManager.ixx.ifc"
+            ],
+            "provides": [
+                {
+                    "logical-name": "FileManager",
+                    "source-path": "c:\\users\\mateu\\onedrive\\pulpit\\sfmlprojects\\spaceinvaders\\spaceinvaders\\filemanager.ixx",
+                    "is-interface": true
+                }
+            ],
+            "requires": []
+        }
+    ]
+}

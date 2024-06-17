@@ -219,7 +219,8 @@ void MainMenu::pollEvents(sf::RenderWindow*& window) {
 			if (mousePosWindow.x >= 730 && mousePosWindow.x <= 780 && mousePosWindow.y >= 650 && mousePosWindow.y <= 700) {
 				this->state = GameState::LEADERBOARD;
 			}
-			if (mousePosWindow.x >= 257 && mousePosWindow.x <= 537 && mousePosWindow.y >= 420 && mousePosWindow.y <= 500) {
+			if ((mousePosWindow.x >= 257 && mousePosWindow.x <= 537 && mousePosWindow.y >= 420 && mousePosWindow.y <= 500 && this->isRegexMatched) || 
+				(mousePosWindow.x >= 257 && mousePosWindow.x <= 537 && mousePosWindow.y >= 420 && mousePosWindow.y <= 500 && this->isGuestCheckboxClicked)) {
 				this->state = GameState::GAME_PLAY;
 				if (!this->isGuestCheckboxClicked) {
 					player.setNick(this->NickStr);

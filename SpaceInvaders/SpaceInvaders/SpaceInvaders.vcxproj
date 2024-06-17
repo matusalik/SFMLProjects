@@ -138,6 +138,7 @@
     <ClCompile Include="BasicEnemy.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="FastEnemy.cpp" />
+    <ClCompile Include="FileManager.ixx" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameDifficulty.h" />
     <ClCompile Include="GamePlay.cpp" />

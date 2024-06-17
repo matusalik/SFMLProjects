@@ -1,3 +1,51 @@
 ﻿  Trwa skanowanie źródeł pod kątem zależności modułów...
+  FileManager.ixx
+  Trwa kompilowanie…
+  FileManager.ixx
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\FileManager.ixx(9,26): warning C5201: deklaracja modułu może występować tylko na początku jednostki translacji, chyba że zostanie użyty fragment modułu globalnego
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\FileManager.ixx(46,23): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+  Game.cpp
   GamePlay.cpp
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\GamePlay.cpp(265,26): warning C4244: "argument": konwersja z "float" do "unsigned int", możliwa utrata danych
+  Leaderboard.cpp
+  LeaderboardPanel.cpp
+  MainMenu.cpp
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(51,56): warning C4244: "argument": konwersja z "float" do "sf::Uint8", możliwa utrata danych
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(51,49): warning C4244: "argument": konwersja z "float" do "sf::Uint8", możliwa utrata danych
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(51,42): warning C4244: "argument": konwersja z "float" do "sf::Uint8", możliwa utrata danych
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(88,70): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(88,70): warning C4244:         with
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(88,70): warning C4244:         [
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(88,70): warning C4244:             T=int
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(88,70): warning C4244:         ]
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(88,50): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(88,50): warning C4244:         with
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(88,50): warning C4244:         [
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(88,50): warning C4244:             T=int
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(88,50): warning C4244:         ]
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(107,44): warning C4244: "argument": konwersja z "float" do "unsigned int", możliwa utrata danych
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(170,72): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(170,72): warning C4244:         with
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(170,72): warning C4244:         [
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(170,72): warning C4244:             T=int
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(170,72): warning C4244:         ]
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(170,52): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(170,52): warning C4244:         with
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(170,52): warning C4244:         [
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(170,52): warning C4244:             T=int
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(170,52): warning C4244:         ]
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(178,72): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(178,72): warning C4244:         with
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(178,72): warning C4244:         [
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(178,72): warning C4244:             T=int
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(178,72): warning C4244:         ]
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(178,52): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(178,52): warning C4244:         with
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(178,52): warning C4244:         [
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(178,52): warning C4244:             T=int
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(178,52): warning C4244:         ]
+  SpaceInvaders.cpp
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\SpaceInvaders.cpp(5,25): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+  Generowanie kodu...
+C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\SpaceInvaders\MainMenu.cpp(291,1): warning C4715: "MainMenu::getExistingPlayer”: niewszystkie ścieżki kodu zwracają wartość
   SpaceInvaders.vcxproj -> C:\Users\mateu\OneDrive\Pulpit\SFMLProjects\SpaceInvaders\Debug\SpaceInvaders.exe

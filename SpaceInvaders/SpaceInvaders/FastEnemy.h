@@ -8,12 +8,15 @@ private:
 	float x;
 	float y;
 	int health;
+	int counter;
+	int textureSwitch;
 
 	//Sprite
 	sf::Sprite FastEnemySprite;
 
 	//Teture
-	sf::Texture FastEnemyTexture;
+	sf::Texture FastEnemyTexture1;
+	sf::Texture FastEnemyTexture2;
 
 	//Private Functions
 	void initSprite(const float& x, const float& y);
@@ -23,7 +26,6 @@ public:
 	FastEnemy(const Direction& sentDirection);
 	sf::Sprite getSprite();
 	Direction getDirection();
-	void setSprite();
 	void move();
 	bool enemyHit();
 };

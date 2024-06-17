@@ -79,6 +79,7 @@ private:
 	void updateBullets();
 	void updateScore();
 	void drawGameOverPanel(sf::RenderWindow*& window);
+	void drawPausePanel(sf::RenderWindow*& window);
 
 public:
 	void draw(sf::RenderWindow*& window);

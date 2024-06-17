@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SFMLProjects\\SpaceInvaders\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\mateu\\OneDrive\\Pulpit\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\GamePlay.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\GamePlay.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\mateu\\OneDrive\\Pulpit\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\FileManager.ixx||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\FileManager.ixx||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\mateu\\OneDrive\\Pulpit\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\MainMenu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\MainMenu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|C:\\Users\\mateu\\OneDrive\\Pulpit\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\LeaderboardPanel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{949CA260-6C9A-4CCD-AB25-7BD2850B83D0}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\LeaderboardPanel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "GamePlay.cpp",
-              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\GamePlay.cpp",
-              "RelativeDocumentMoniker": "SpaceInvaders\\GamePlay.cpp",
-              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\GamePlay.cpp",
-              "RelativeToolTip": "SpaceInvaders\\GamePlay.cpp",
-              "ViewState": "AQIAAJ4BAAAAAAAAAAAAAKcBAAADAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-06-16T21:44:23.144Z",
+              "Title": "FileManager.ixx",
+              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\FileManager.ixx",
+              "RelativeDocumentMoniker": "SpaceInvaders\\FileManager.ixx",
+              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\FileManager.ixx",
+              "RelativeToolTip": "SpaceInvaders\\FileManager.ixx",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001913|",
+              "WhenOpened": "2024-06-17T20:51:20.047Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MainMenu.cpp",
-              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\MainMenu.cpp",
-              "RelativeDocumentMoniker": "SpaceInvaders\\MainMenu.cpp",
-              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\MainMenu.cpp",
-              "RelativeToolTip": "SpaceInvaders\\MainMenu.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAN0AAABvAAAA",
+              "Title": "LeaderboardPanel.cpp",
+              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\LeaderboardPanel.cpp",
+              "RelativeDocumentMoniker": "SpaceInvaders\\LeaderboardPanel.cpp",
+              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Pulpit\\SFMLProjects\\SpaceInvaders\\SpaceInvaders\\LeaderboardPanel.cpp",
+              "RelativeToolTip": "SpaceInvaders\\LeaderboardPanel.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC4AAABCAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-06-16T21:35:28.528Z",
+              "WhenOpened": "2024-06-17T20:24:32.97Z",
               "EditorCaption": ""
             }
           ]

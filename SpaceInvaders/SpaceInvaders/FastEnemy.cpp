@@ -28,35 +28,21 @@ FastEnemy::FastEnemy(const Direction& sentDirection) {
 	this->initVariables();
 }
 void FastEnemy::initTexture() {
-	switch (this->direction) {
-	case Direction::NORTH:
-		if (!this->FastEnemyTexture.loadFromFile("sprites/FastEnemySprite.png")) {
-			std::cout << "Couldn't load FastEnemyTexture!" << std::endl;
-		}
-		break;
-	case Direction::EAST:
-		if (!this->FastEnemyTexture.loadFromFile("sprites/FastEnemySprite.png")) {
-			std::cout << "Couldn't load FastEnemyTexture!" << std::endl;
-		}
-		break;
-	case Direction::SOUTH:
-		if (!this->FastEnemyTexture.loadFromFile("sprites/FastEnemySprite.png")) {
-			std::cout << "Couldn't load FastEnemyTexture!" << std::endl;
-		}
-		break;
-	case Direction::WEST:
-		if (!this->FastEnemyTexture.loadFromFile("sprites/FastEnemySprite.png")) {
-			std::cout << "Couldn't load FastEnemyTexture!" << std::endl;
-		}
-		break;
+	if (!this->FastEnemyTexture1.loadFromFile("sprites/FastEnemySprite1.png")) {
+		std::cout << "Couldn't load FastEnemyTexture!" << std::endl;
+	}
+	if (!this->FastEnemyTexture2.loadFromFile("sprites/FastEnemySprite2.png")) {
+		std::cout << "Couldn't load FastEnemyTexture!" << std::endl;
 	}
 }
 void FastEnemy::initSprite(const float& x, const float& y) {
-	this->FastEnemySprite.setTexture(this->FastEnemyTexture);
+	this->FastEnemySprite.setTexture(this->FastEnemyTexture1);
 	this->FastEnemySprite.setPosition(x, y);
 }
 void FastEnemy::initVariables() {
 	this->health = 1;
+	this->textureSwitch = false;
+	this->counter = 0;
 }
 void FastEnemy::move() {
 	switch (this->direction) {
@@ -74,15 +60,24 @@ void FastEnemy::move() {
 		break;
 	}
 	this->FastEnemySprite.setPosition(this->x, this->y);
+	this->counter++;
+	this->FastEnemySprite.setPosition(this->x, this->y);
+	if (this->counter % 15 == 0) {
+		if (this->textureSwitch) {
+			this->FastEnemySprite.setTexture(this->FastEnemyTexture1);
+			this->textureSwitch = false;
+		}
+		else {
+			this->FastEnemySprite.setTexture(this->FastEnemyTexture2);
+			this->textureSwitch = true;
+		}
+	}
 }
 sf::Sprite FastEnemy::getSprite() {
 	return this->FastEnemySprite;
 }
 Direction FastEnemy::getDirection() {
 	return this->direction;
-}
-void FastEnemy::setSprite() {
-
 }
 bool FastEnemy::enemyHit() {
 	this->health--;

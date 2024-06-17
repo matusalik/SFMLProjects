@@ -26,7 +26,6 @@ public:
 	TankEnemy(const Direction& sentDirection);
 	sf::Sprite getSprite();
 	Direction getDirection();
-	void setSprite();
 	void move();
 	bool enemyHit();
 };

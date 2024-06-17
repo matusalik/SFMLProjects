@@ -78,9 +78,6 @@ sf::Sprite TankEnemy::getSprite() {
 Direction TankEnemy::getDirection() {
 	return this->direction;
 }
-void TankEnemy::setSprite() {
-
-}
 bool TankEnemy::enemyHit() {
 	this->health--;
 	if (this->health == 0) {
